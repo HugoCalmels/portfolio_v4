@@ -28,6 +28,8 @@ export function TabsSelect({
   error = false,
   fontSizeClass = '',
 }: TabsSelectProps) {
+  if (!options || options.length === 0) return null
+
   return (
     <fieldset className={styles.tabsSelectFieldset}>
       <legend className={`${styles.formLabel} ${error ? styles.errorLabel : ''}`}>

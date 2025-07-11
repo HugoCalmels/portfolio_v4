@@ -1,7 +1,8 @@
 'use client'
 import React, { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { TabsSelect } from './TabsSelect'
-import styles from './ContactForm.module.css' // même style que ContactForm
+import styles from './ContactForm.module.css'
 
 interface QuoteFields {
   lastName: string
@@ -14,10 +15,10 @@ interface QuoteFields {
 interface QuoteFormProps {
   budgetOptions: { label: string; value: string }[]
   projectTypeOptions: { label: string; value: string }[]
-  onSubmit: (fields: QuoteFields, budget: string, projectType: string) => void
 }
 
-export default function QuoteForm({ budgetOptions, projectTypeOptions, onSubmit }: QuoteFormProps) {
+export default function QuoteForm({ budgetOptions, projectTypeOptions }: QuoteFormProps) {
+  const t = useTranslations('quote')
   const [fields, setFields] = useState<QuoteFields>({
     lastName: '',
     firstName: '',
@@ -28,6 +29,10 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions, onSubmit 
   const [budget, setBudget] = useState('')
   const [projectType, setProjectType] = useState('')
   const [errors, setErrors] = useState<Record<string, boolean>>({})
+  const [success, setSuccess] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  const API_URL = process.env.NEXT_PUBLIC_API_URL_PROD || 'http://localhost:8080/api'
 
   const emailIsValid = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
@@ -43,71 +48,90 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions, onSubmit 
     return Object.keys(newErrors).length === 0
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (validate()) onSubmit(fields, budget, projectType)
+    setSuccess(false)
+    if (!validate()) return
+    setLoading(true)
+
+    try {
+      const response = await fetch(`${API_URL}/mail/quote`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...fields,
+          budget,
+          projectType,
+        }),
+      })
+
+      if (response.ok) {
+        setFields({ lastName: '', firstName: '', email: '', phone: '', details: '' })
+        setBudget('')
+        setProjectType('')
+        setSuccess(true)
+      } else {
+        console.error('Erreur serveur')
+      }
+    } catch (err) {
+      console.error('Erreur réseau :', err)
+    } finally {
+      setLoading(false)
+    }
   }
 
   function handleChange(field: keyof QuoteFields, value: string) {
-    setFields((f) => ({ ...f, [field]: value }))
+    setFields((prev) => ({ ...prev, [field]: value }))
     setErrors((e) => ({ ...e, [field]: false }))
   }
 
   return (
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
       <label className={`${styles.formLabel} ${errors.lastName ? styles.errorLabel : ''}`}>
-        Nom
+        {t('lastName')}
         <input
           className={`${styles.formInput} ${errors.lastName ? styles.errorInput : ''}`}
           type="text"
-          required
-          placeholder="Votre nom"
           value={fields.lastName}
           onChange={(e) => handleChange('lastName', e.target.value)}
-          name="lastName"
+          required
         />
       </label>
 
       <label className={`${styles.formLabel} ${errors.firstName ? styles.errorLabel : ''}`}>
-        Prénom
+        {t('firstName')}
         <input
           className={`${styles.formInput} ${errors.firstName ? styles.errorInput : ''}`}
           type="text"
-          required
-          placeholder="Votre prénom"
           value={fields.firstName}
           onChange={(e) => handleChange('firstName', e.target.value)}
-          name="firstName"
+          required
         />
       </label>
 
       <label className={`${styles.formLabel} ${errors.email ? styles.errorLabel : ''}`}>
-        Adresse email
+        {t('email')}
         <input
           className={`${styles.formInput} ${errors.email ? styles.errorInput : ''}`}
           type="email"
-          required
-          placeholder="votre@email.com"
           value={fields.email}
           onChange={(e) => handleChange('email', e.target.value)}
-          name="email"
+          required
         />
       </label>
 
       <label className={styles.formLabel}>
-        Téléphone
+        {t('phone')}
         <input
           className={styles.formInput}
           type="tel"
-          placeholder="Votre numéro de téléphone"
           value={fields.phone}
           onChange={(e) => handleChange('phone', e.target.value)}
-          name="phone"
         />
       </label>
 
       <TabsSelect
-        label="Budget indicatif"
+        label={t('budget')}
         name="budget"
         options={budgetOptions}
         value={budget}
@@ -121,7 +145,7 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions, onSubmit 
       />
 
       <TabsSelect
-        label="Quel type de projet ?"
+        label={t('projectType')}
         name="projectType"
         options={projectTypeOptions}
         value={projectType}
@@ -135,21 +159,21 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions, onSubmit 
       />
 
       <label className={`${styles.formLabel} ${errors.details ? styles.errorLabel : ''}`}>
-        Expliquez votre besoin en quelques lignes
+        {t('details')}
         <textarea
           className={`${styles.formInput} ${errors.details ? styles.errorInput : ''}`}
           rows={5}
-          placeholder="Ex. : site vitrine pour ma société de conseil à Toulouse..."
-          required
           value={fields.details}
           onChange={(e) => handleChange('details', e.target.value)}
-          name="details"
+          required
         />
       </label>
 
-      <button type="submit" className={styles.cta}>
-        Demander un devis
+      <button type="submit" className={styles.cta} disabled={loading}>
+        {loading ? t('loading') : t('cta')}
       </button>
+
+      {success && <p className={styles.successMessage}>{t('success')}</p>}
     </form>
   )
 }

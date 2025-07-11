@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import styles from './ContactForm.module.css'
 
 interface ContactFields {
@@ -8,13 +9,14 @@ interface ContactFields {
   message: string
 }
 
-interface ContactFormProps {
-  onSubmit: (fields: ContactFields) => void
-}
-
-export default function ContactForm({ onSubmit }: ContactFormProps) {
+export default function ContactForm() {
+  const t = useTranslations('contactForm')
   const [fields, setFields] = useState<ContactFields>({ name: '', email: '', message: '' })
   const [errors, setErrors] = useState<Record<string, boolean>>({})
+  const [success, setSuccess] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  const API_URL = process.env.NEXT_PUBLIC_API_URL_PROD
 
   const emailIsValid = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
@@ -27,9 +29,28 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
     return Object.keys(newErrors).length === 0
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (validate()) onSubmit(fields)
+    if (!validate()) return
+    setLoading(true)
+    try {
+      const response = await fetch(`${API_URL}/mail`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(fields),
+      })
+
+      if (response.ok) {
+        setSuccess(true)
+        setFields({ name: '', email: '', message: '' })
+      } else {
+        console.error('Server error')
+      }
+    } catch (err) {
+      console.error('Network error:', err)
+    } finally {
+      setLoading(false)
+    }
   }
 
   function handleChange(field: keyof ContactFields, value: string) {
@@ -40,12 +61,12 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
   return (
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
       <label className={`${styles.formLabel} ${errors.name ? styles.errorLabel : ''}`}>
-        Votre nom
+        {t('name')}
         <input
           className={`${styles.formInput} ${errors.name ? styles.errorInput : ''}`}
           type="text"
           required
-          placeholder="Votre nom"
+          placeholder={t('namePlaceholder')}
           value={fields.name}
           onChange={(e) => handleChange('name', e.target.value)}
           name="name"
@@ -53,12 +74,12 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
       </label>
 
       <label className={`${styles.formLabel} ${errors.email ? styles.errorLabel : ''}`}>
-        Votre email
+        {t('email')}
         <input
           className={`${styles.formInput} ${errors.email ? styles.errorInput : ''}`}
           type="email"
           required
-          placeholder="votre@email.com"
+          placeholder={t('emailPlaceholder')}
           value={fields.email}
           onChange={(e) => handleChange('email', e.target.value)}
           name="email"
@@ -66,21 +87,23 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
       </label>
 
       <label className={`${styles.formLabel} ${errors.message ? styles.errorLabel : ''}`}>
-        Message
+        {t('message')}
         <textarea
           className={`${styles.formInput} ${errors.message ? styles.errorInput : ''}`}
           rows={5}
           required
-          placeholder="Votre message"
+          placeholder={t('messagePlaceholder')}
           value={fields.message}
           onChange={(e) => handleChange('message', e.target.value)}
           name="message"
         />
       </label>
 
-      <button type="submit" className={styles.cta}>
-        Envoyer le message
+      <button type="submit" className={styles.cta} disabled={loading}>
+        {loading ? t('loading') : t('cta')}
       </button>
+
+      {success && <p className={styles.successMessage}>{t('success')}</p>}
     </form>
   )
 }

@@ -271,11 +271,52 @@
   ]
   },"geo": {
     "title": "Où je travaille ?",
-    "description": "Je suis basé à <strong>Toulouse</strong>, mais je travaille avec des clients dans toute la France.<br />Appels visio, messages clairs, et échanges réguliers — que vous soyez à côté ou à 800km, ça marche aussi bien."
+    "description": "Je suis basé à <strong>Toulouse</strong>, mais je peux travailler avec des clients dans toute la France.<br />Appels visio, messages clairs, et échanges réguliers — que vous soyez à côté ou à 800km, ça marche aussi bien."
+  },
+  "contactForm": {
+    "name": "Votre nom",
+    "namePlaceholder": "Jean Dupont",
+    "email": "Votre email",
+    "emailPlaceholder": "jean@email.com",
+    "message": "Message",
+    "messagePlaceholder": "Votre message...",
+    "cta": "Envoyer le message",
+    "loading": "Envoi en cours...",
+    "success": "✅ Message envoyé avec succès !"
+  },
+  "quote": {
+    "lastName": "Nom",
+    "firstName": "Prénom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "budget": "Budget indicatif",
+    "projectType": "Quel type de projet ?",
+    "details": "Détails du projet",
+    "cta": "Demander un devis",
+    "loading": "Envoi en cours...",
+    "success": "✅ Demande envoyée avec succès !"
+  },
+  "contactPage": {
+  "title": "Contactez-moi",
+  "question": "Quel est votre besoin ?",
+  "options": {
+    "quote": "Demande de devis",
+    "contact": "Contact / Question générale"
+  },
+  "budget": {
+    "0": "500 € - 1 000 €",
+    "1": "1 000 € - 3 000 €",
+    "2": "Plus de 3 000 €",
+    "3": "Je ne sais pas"
+  },
+  "projectType": {
+    "0": "Création de site vitrine",
+    "1": "Logiciel métier",
+    "2": "Autre"
   }
   
   
-
+  }
 
 
 

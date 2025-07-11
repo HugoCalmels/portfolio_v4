@@ -273,10 +273,50 @@
 },"geo": {
   "title": "Where I work",
   "description": "I’m based in <strong>Toulouse</strong>, but I work with clients all over France.<br />Video calls, clear messages, and regular exchanges — whether you’re nearby or 500 miles away, it works just as well."
-}
+},
+"contactForm": {
+    "name": "Your name",
+    "namePlaceholder": "John Smith",
+    "email": "Your email",
+    "emailPlaceholder": "john@email.com",
+    "message": "Message",
+    "messagePlaceholder": "Your message...",
+    "cta": "Send message",
+    "loading": "Sending...",
+    "success": "✅ Message sent successfully!"
+  },
+  "quote": {
+    "lastName": "Last name",
+    "firstName": "First name",
+    "email": "Email",
+    "phone": "Phone",
+    "budget": "Estimated budget",
+    "projectType": "Type of project?",
+    "details": "Project details",
+    "cta": "Request a quote",
+    "loading": "Sending...",
+    "success": "✅ Quote request sent successfully!"
+  },"contactPage": {
+  "title": "Get in Touch",
+  "question": "What do you need?",
+  "options": {
+    "quote": "Request a quote",
+    "contact": "General contact / Question"
+  },
+  "budget": {
+    "0": "€500 - €1,000",
+    "1": "€1,000 - €3,000",
+    "2": "More than €3,000",
+    "3": "I’m not sure"
+  },
+  "projectType": {
+    "0": "Showcase website",
+    "1": "Business software",
+    "2": "Other"
+  }
 
 
-
+  }
 
 
 

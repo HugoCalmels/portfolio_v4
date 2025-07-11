@@ -66,3 +66,15 @@
 .errorLabel {
   color: #e06c75 !important;
 }
+
+
+.cta:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.successMessage {
+  margin-top: 1rem;
+  color: #007f00;
+  font-weight: 500;
+}
