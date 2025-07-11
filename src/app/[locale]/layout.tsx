@@ -1,11 +1,9 @@
 import { NextIntlClientProvider } from 'next-intl'
-import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Archivo_Black, Montserrat } from 'next/font/google'
 import '@/styles/globals.css'
 
-// Fonts
 const geistSans = Geist({
   subsets: ['latin'],
   variable: '--font-geist-sans',
@@ -28,20 +26,17 @@ const montserrat = Montserrat({
   variable: '--font-body',
 })
 
-// SEO global
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Hugo Calmels – Développeur Web Freelance à Toulouse',
   description: 'Sites rapides, propres, sur-mesure. Développement web & outils métier.',
 }
 
-type LocaleLayoutProps = {
-  children: React.ReactNode
-  params: { locale: string }
-}
+// Attention : Pas de typage explicite ici sur les props
+// Next.js injecte params, locale etc automatiquement
 
-export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
-  const { locale } = params
+export default async function LocaleLayout({ children, params }: any) {
   const fallbackLocale = 'fr'
+  const locale = params?.locale ?? fallbackLocale
   let messages
 
   try {
