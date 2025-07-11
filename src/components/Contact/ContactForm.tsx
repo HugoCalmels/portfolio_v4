@@ -19,7 +19,8 @@ export default function ContactForm() {
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL_PROD
 
-  const emailIsValid = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  const emailIsValid = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
   function validate() {
     const newErrors: Record<string, boolean> = {}
@@ -49,12 +50,12 @@ export default function ContactForm() {
         setSuccess(true)
         setFields({ name: '', email: '', message: '' })
       } else if (response.status === 429) {
-        setErrorMsg(t('errorTooManyRequests') || 'Trop de requêtes, réessaie dans un instant.')
+        setErrorMsg(t('errorTooManyRequests'))
       } else {
-        setErrorMsg(t('errorServer') || 'Une erreur serveur est survenue.')
+        setErrorMsg(t('errorServer'))
       }
-    } catch (err) {
-      setErrorMsg(t('errorNetwork') || 'Erreur réseau. Vérifie ta connexion.')
+    } catch {
+      setErrorMsg(t('errorNetwork'))
     } finally {
       setLoading(false)
     }

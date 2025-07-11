@@ -74,13 +74,15 @@
 }
 
 .successMessage {
+  color: #4caf50;
   margin-top: 1rem;
-  color: #007f00;
   font-weight: 500;
+
 }
+
 .errorMessage {
   color: #ff4d4f;
-  font-size: 0.95rem;
-  margin-top: 0.75rem;
+  margin-top: 1rem;
+  font-weight: 500;
 
 }
