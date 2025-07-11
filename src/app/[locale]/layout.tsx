@@ -31,14 +31,21 @@ export const metadata = {
   description: 'Sites rapides, propres, sur-mesure. Développement web & outils métier.',
 }
 
-export default async function LocaleLayout(
-  { children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }
-) {
-  const fallbackLocale = 'fr'
+// Définition stricte du type des params attendu
+type LocaleParams = {
+  locale: string
+}
 
-  // await directement params
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode
+  params: Promise<LocaleParams>
+}) {
+  const fallbackLocale = 'fr'
   const resolvedParams = await params
-  const locale = resolvedParams?.locale ?? fallbackLocale
+  const locale = resolvedParams.locale ?? fallbackLocale
   let messages
 
   try {
