@@ -34,13 +34,13 @@ export const metadata: Metadata = {
   description: 'Sites rapides, propres, sur-mesure. Développement web & outils métier.',
 }
 
-export default async function LocaleLayout({
-  children,
-  params: { locale },
-}: {
+type LocaleLayoutProps = {
   children: React.ReactNode
   params: { locale: string }
-}) {
+}
+
+export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
+  const { locale } = params
   const fallbackLocale = 'fr'
   let messages
 
