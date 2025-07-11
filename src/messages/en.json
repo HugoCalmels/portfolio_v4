@@ -283,7 +283,10 @@
     "messagePlaceholder": "Your message...",
     "cta": "Send message",
     "loading": "Sending...",
-    "success": "✅ Message sent successfully!"
+    "success": "✅ Message sent successfully!",
+    "errorTooManyRequests": "Too many requests. Please try again shortly.",
+"errorServer": "Server error. Please try again later.",
+"errorNetwork": "Network error. Please check your connection."
   },
   "quote": {
     "lastName": "Last name",

@@ -282,7 +282,10 @@
     "messagePlaceholder": "Votre message...",
     "cta": "Envoyer le message",
     "loading": "Envoi en cours...",
-    "success": "✅ Message envoyé avec succès !"
+    "success": "✅ Message envoyé avec succès !",
+    "errorTooManyRequests": "Trop de requêtes. Réessayez dans quelques instants.",
+    "errorServer": "Erreur serveur. Merci de réessayer plus tard.",
+    "errorNetwork": "Erreur réseau. Vérifie ta connexion."
   },
   "quote": {
     "lastName": "Nom",

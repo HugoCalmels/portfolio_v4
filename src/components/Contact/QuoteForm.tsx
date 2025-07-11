@@ -1,3 +1,4 @@
+// QuoteForm.tsx
 'use client'
 import React, { useState } from 'react'
 import { useTranslations } from 'next-intl'
@@ -31,6 +32,7 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions }: QuoteFo
   const [errors, setErrors] = useState<Record<string, boolean>>({})
   const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL_PROD || 'http://localhost:8080/api'
 
@@ -51,6 +53,7 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions }: QuoteFo
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setSuccess(false)
+    setErrorMessage('')
     if (!validate()) return
     setLoading(true)
 
@@ -58,11 +61,7 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions }: QuoteFo
       const response = await fetch(`${API_URL}/mail/quote`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...fields,
-          budget,
-          projectType,
-        }),
+        body: JSON.stringify({ ...fields, budget, projectType }),
       })
 
       if (response.ok) {
@@ -70,11 +69,14 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions }: QuoteFo
         setBudget('')
         setProjectType('')
         setSuccess(true)
+      } else if (response.status === 429) {
+        setErrorMessage("Trop de demandes, merci d’attendre un instant.")
       } else {
-        console.error('Erreur serveur')
+        setErrorMessage("Une erreur s’est produite. Réessaie plus tard.")
       }
     } catch (err) {
       console.error('Erreur réseau :', err)
+      setErrorMessage("Erreur réseau : impossible de contacter le serveur.")
     } finally {
       setLoading(false)
     }
@@ -174,6 +176,7 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions }: QuoteFo
       </button>
 
       {success && <p className={styles.successMessage}>{t('success')}</p>}
+      {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
     </form>
   )
 }

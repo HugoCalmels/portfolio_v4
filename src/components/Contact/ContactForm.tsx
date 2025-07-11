@@ -14,6 +14,7 @@ export default function ContactForm() {
   const [fields, setFields] = useState<ContactFields>({ name: '', email: '', message: '' })
   const [errors, setErrors] = useState<Record<string, boolean>>({})
   const [success, setSuccess] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
   const [loading, setLoading] = useState(false)
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL_PROD
@@ -32,7 +33,11 @@ export default function ContactForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!validate()) return
+
+    setSuccess(false)
+    setErrorMsg('')
     setLoading(true)
+
     try {
       const response = await fetch(`${API_URL}/mail`, {
         method: 'POST',
@@ -43,11 +48,13 @@ export default function ContactForm() {
       if (response.ok) {
         setSuccess(true)
         setFields({ name: '', email: '', message: '' })
+      } else if (response.status === 429) {
+        setErrorMsg(t('errorTooManyRequests') || 'Trop de requêtes, réessaie dans un instant.')
       } else {
-        console.error('Server error')
+        setErrorMsg(t('errorServer') || 'Une erreur serveur est survenue.')
       }
     } catch (err) {
-      console.error('Network error:', err)
+      setErrorMsg(t('errorNetwork') || 'Erreur réseau. Vérifie ta connexion.')
     } finally {
       setLoading(false)
     }
@@ -56,6 +63,7 @@ export default function ContactForm() {
   function handleChange(field: keyof ContactFields, value: string) {
     setFields((f) => ({ ...f, [field]: value }))
     setErrors((e) => ({ ...e, [field]: false }))
+    setErrorMsg('')
   }
 
   return (
@@ -104,6 +112,7 @@ export default function ContactForm() {
       </button>
 
       {success && <p className={styles.successMessage}>{t('success')}</p>}
+      {errorMsg && <p className={styles.errorMessage}>{errorMsg}</p>}
     </form>
   )
 }
