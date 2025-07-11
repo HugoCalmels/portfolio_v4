@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import styles from './Hero.module.css'
-import { FiArrowRight } from 'react-icons/fi'
 import { useTranslations } from 'next-intl'
 
 export default function Hero() {

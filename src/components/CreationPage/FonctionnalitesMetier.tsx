@@ -6,15 +6,11 @@ import {
   FaClipboardList,
   FaCalendarAlt,
   FaUserShield,
-  FaFilePdf,
   FaCloudUploadAlt,
   FaCreditCard,
-  FaEnvelope,
-  FaMapMarkerAlt,
   FaExchangeAlt,
   FaChartBar,
   FaLock,
-  FaTools,
   FaPuzzlePiece
 } from 'react-icons/fa'
 
