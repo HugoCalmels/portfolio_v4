@@ -31,12 +31,14 @@ export const metadata = {
   description: 'Sites rapides, propres, sur-mesure. Développement web & outils métier.',
 }
 
-// Attention : Pas de typage explicite ici sur les props
-// Next.js injecte params, locale etc automatiquement
-
-export default async function LocaleLayout({ children, params }: any) {
+export default async function LocaleLayout(
+  { children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }
+) {
   const fallbackLocale = 'fr'
-  const locale = params?.locale ?? fallbackLocale
+
+  // await directement params
+  const resolvedParams = await params
+  const locale = resolvedParams?.locale ?? fallbackLocale
   let messages
 
   try {
