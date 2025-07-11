@@ -1,0 +1,29 @@
+.section {
+  padding: 6rem 2rem;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.section h1,
+.section h2,
+.section h3,
+.section h4 {
+  color: var(--color-accent);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.section ul {
+  margin: 1rem 0 2rem;
+  padding-left: 1.5rem;
+}
+
+.section ul ul {
+  margin-top: 0.5rem;
+}

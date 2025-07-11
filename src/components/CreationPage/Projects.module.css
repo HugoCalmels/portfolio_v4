@@ -1,0 +1,175 @@
+.projectsSection {
+  padding: 3rem 1rem;
+}
+
+.heading {
+  text-align: center;
+  color: white;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.sliderWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #0b0d10;
+}
+
+.embla {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 16px;
+
+}
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+
+}
+
+.embla__container {
+  display: flex;
+  gap: 1rem;
+  border-radius: 16px;
+
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  max-width: 750px;
+  background-color: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+}
+
+
+.slideContent {
+  padding: 1rem 1.25rem 1.5rem;
+  
+}
+
+.slideContent h3 {
+  font-size: 1.25rem;
+  color: #00aaff;
+  margin-bottom: 0.5rem;
+}
+
+.slideContent p {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0.3rem 0;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #999;
+  font-style: italic;
+
+}
+
+
+
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #333;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot:hover {
+  background-color: #555;
+}
+
+.activeDot {
+  background-color: var(--accent);
+}
+.slideContent {
+  padding: 1.5rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: -.5rem;
+  background: linear-gradient(to bottom right, rgba(80, 184, 255, 0.04), var(--card-bg));
+}
+
+.slideContent h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+.slideContent p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  font-weight: 500;
+}
+
+.meta {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #999;
+  line-height: 1.5;
+}
+.cta {
+  position: relative;
+  display: inline-block;
+  padding:.66rem 1rem;
+  font-size: .9rem!important;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid var(--accent);
+  background: var(--accent);/* ✨ léger fond en base */
+  color: black;
+
+  border: none;
+  outline: none;
+ 
+margin-top: .75rem;
+}
+.ctaWrapper{
+ 
+}
+/* Hover = fond plein + texte noir */
+.cta:hover {
+  background-color: #3caee0;
+}
