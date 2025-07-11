@@ -1,0 +1,67 @@
+.tabsSelectFieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.tabsSelectFieldset > legend {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #ddd;
+  font-size: 1rem;
+}
+
+.tabsSelectContainer {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 1rem;
+}
+
+.largeFont {
+  font-size: 1.1rem !important;
+}
+
+.normalFont {
+  font-size: 0.9rem !important;
+}
+
+.tabsSelectBtn {
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  background-color: #22272e;
+  color: #bbb;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 9px;
+  font-family: inherit;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  flex: 1;
+  text-align: center;
+  user-select: none;
+  font-size: inherit;
+}
+
+.tabsSelectBtnActive {
+  background-color: var(--accent);
+  color: black;
+  border-color: var(--accent);
+}
+
+.tabsSelectBtn:hover,
+.tabsSelectBtn:focus-visible {
+  background-color: #3caee0;
+  border-color: #3caee0;
+  color: black;
+  outline: none;
+}
+
+/* Errors */
+
+.errorInput {
+  border-color: #e06c75 !important; /* soft red */
+}
+
+.errorLabel {
+  color: #e06c75 !important;
+}
