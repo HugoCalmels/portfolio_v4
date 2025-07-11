@@ -5,8 +5,6 @@ import { TabsSelect } from '@/components/Contact/TabsSelect'
 import ContactForm from '@/components/Contact/ContactForm'
 import QuoteForm from '@/components/Contact/QuoteForm'
 
-
-
 export default function ContactPage() {
   const [need, setNeed] = useState('contact')
 
@@ -43,16 +41,20 @@ export default function ContactPage() {
       />
 
       {need === 'contact' && (
-        <ContactForm onSubmit={(fields) => alert('Message envoyé !')} />
+        <ContactForm
+          onSubmit={() => {
+            alert('Message envoyé !')
+          }}
+        />
       )}
 
       {need === 'devis' && (
         <QuoteForm
           budgetOptions={budgetOptions}
           projectTypeOptions={projectTypeOptions}
-          onSubmit={(fields, budget, projectType) =>
+          onSubmit={() => {
             alert('Demande de devis envoyée !')
-          }
+          }}
         />
       )}
     </main>

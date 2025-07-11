@@ -46,7 +46,7 @@ export default async function LocaleLayout({
 
   try {
     messages = (await import(`@/messages/${locale}.json`)).default
-  } catch (_error) {
+  } catch {
     console.warn(`❌ Traductions manquantes pour "${locale}", fallback vers "${fallbackLocale}"`)
     messages = (await import(`@/messages/${fallbackLocale}.json`)).default
   }
