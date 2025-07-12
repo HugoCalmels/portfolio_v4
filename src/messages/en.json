@@ -321,8 +321,8 @@
 
   },
   "home": {
-    "title": "Hugo Calmels – Freelance Web Developer",
-    "intro": "I design useful, fast and well-structured websites. Whether it's for a business project or a freelance mission, I adapt to your needs.",
+    "title": "Website Development in Toulouse – Freelance Web Developer",
+    "intro": "Custom websites built in Toulouse. Business showcase, SEO, internal tools. Clean code, fast delivery, reliable freelance developer.",
     "creationTitle": "Website & App Creation",
     "creationText": "A clean, simple-to-manage site or app. I take care of content, design and code to deliver something solid and professional.",
     "creationLink": "See more →",
@@ -376,6 +376,11 @@
       "availability": "✅ Available for freelance work"
     },
     "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "message": "Oops, the page you’re looking for doesn’t exist or has been moved. Check the URL or return to the homepage.",
+    "backHome": "Back to homepage"
   }
 
 

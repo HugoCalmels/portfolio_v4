@@ -1,11 +1,12 @@
-'use client'
-import { useState, useEffect, useCallback } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
-import styles from './Projects.module.css'
-import { useTranslations } from 'next-intl'
+'use client';
+import { useState, useEffect, useCallback } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Image from 'next/image';
+import styles from './Projects.module.css';
+import { useTranslations } from 'next-intl';
 
 export default function Projects() {
-  const t = useTranslations('projects')
+  const t = useTranslations('projects');
 
   const projects = [
     {
@@ -29,25 +30,25 @@ export default function Projects() {
       context: t('list.2.context'),
       stack: t('list.2.stack'),
     },
-  ]
+  ];
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: 'start' })
-  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: 'start' });
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const onSelect = useCallback(() => {
-    if (!emblaApi) return
-    setSelectedIndex(emblaApi.selectedScrollSnap())
-  }, [emblaApi])
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
 
   useEffect(() => {
-    if (!emblaApi) return
-    onSelect()
-    emblaApi.on('select', onSelect)
-  }, [emblaApi, onSelect])
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+  }, [emblaApi, onSelect]);
 
   const scrollTo = (index: number) => {
-    if (emblaApi) emblaApi.scrollTo(index)
-  }
+    if (emblaApi) emblaApi.scrollTo(index);
+  };
 
   return (
     <section className={styles.projectsSection}>
@@ -59,7 +60,14 @@ export default function Projects() {
               {projects.map((project, i) => (
                 <div className={styles.embla__slide} key={i}>
                   <div className={styles.imageWrapper}>
-                    <img src={project.imageUrl} alt={project.title} />
+                    <Image
+                      src={project.imageUrl}
+                      alt={project.title}
+                      width={640}
+                      height={360}
+                      className={styles.image}
+                      priority={i === 0} // Charge d'abord la première image
+                    />
                   </div>
                   <div className={styles.slideContent}>
                     <h3>{project.title}</h3>
@@ -71,7 +79,9 @@ export default function Projects() {
                       <strong>{t('stackLabel')} :</strong> {project.stack}
                     </p>
                     <div className={styles.ctaWrapper}>
-                      <a href="#" className={styles.cta}>{t('cta')}</a>
+                      <a href="#" className={styles.cta}>
+                        {t('cta')}
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -92,5 +102,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }

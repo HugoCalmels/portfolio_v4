@@ -16,7 +16,7 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.bg}>
         <Image
-          src="/images/testa4.png"
+          src="/images/testa42.png"
           alt="Vue de Toulouse"
           fill
           style={{

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Début du sitemap XML, format standard pour Google et autres moteurs -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Page d'accueil - version FR -->
+  <url>
+    <loc>https://hugo-calmels.fr/fr/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Page d'accueil - version EN -->
+  <url>
+    <loc>https://hugo-calmels.fr/en/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Page /contact - FR -->
+  <url>
+    <loc>https://hugo-calmels.fr/fr/contact</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Page /contact - EN -->
+  <url>
+    <loc>https://hugo-calmels.fr/en/contact</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Page /creation-site-internet-toulouse - FR -->
+  <url>
+    <loc>https://hugo-calmels.fr/fr/creation-site-internet-toulouse</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Page /creation-site-internet-toulouse - EN -->
+  <url>
+    <loc>https://hugo-calmels.fr/en/creation-site-internet-toulouse</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Page /profil-it - FR -->
+  <url>
+    <loc>https://hugo-calmels.fr/fr/profil-it</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Page /profil-it - EN -->
+  <url>
+    <loc>https://hugo-calmels.fr/en/profil-it</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

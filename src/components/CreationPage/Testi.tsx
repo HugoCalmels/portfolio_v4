@@ -1,13 +1,14 @@
-'use client'
+'use client';
 
-import styles from './Testi.module.css'
-import { useTranslations } from 'next-intl'
+import Image from 'next/image';
+import styles from './Testi.module.css';
+import { useTranslations } from 'next-intl';
 
-const arthur = '/images/arthur-m.jpg'
-const mam = '/images/mam.jpg'
+const arthur = '/images/arthur-m.jpg';
+const mam = '/images/mam.jpg';
 
 export default function Testi() {
-  const t = useTranslations('testimonials')
+  const t = useTranslations('testimonials');
 
   const testimonials = [
     {
@@ -22,7 +23,7 @@ export default function Testi() {
       job: t('gaelle.job'),
       full: t('gaelle.full'),
     },
-  ]
+  ];
 
   return (
     <section className={styles.testiWrapper}>
@@ -32,7 +33,15 @@ export default function Testi() {
         {testimonials.map(({ img, name, job, full }) => (
           <div className={styles.testiCard} key={name}>
             <div className={styles.header}>
-              <img src={img} alt={name} />
+              <div className={styles.avatar}>
+                <Image
+                  src={img}
+                  alt={name}
+                  width={48}
+                  height={48}
+                  className={styles.avatarImg}
+                />
+              </div>
               <div>
                 <p>{name}</p>
                 <p>{job}</p>
@@ -43,5 +52,5 @@ export default function Testi() {
         ))}
       </div>
     </section>
-  )
+  );
 }

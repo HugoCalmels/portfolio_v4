@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 
+
 const Home = () => {
   const params = useParams()
   const locale = params?.locale || 'fr'
@@ -35,7 +36,7 @@ const Home = () => {
           <div className={styles.card}>
             <h2>{t('profileTitle')}</h2>
             <p>{t('profileText')}</p>
-            <Link href={`/${locale}/profile-it`}>
+            <Link href={`/${locale}/profil-it`}>
               {t('profileLink')}
             </Link>
           </div>

@@ -1,55 +1,54 @@
-'use client'
+'use client';
 
-import { useEffect, useState, useRef } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter, usePathname } from 'next/navigation'
-import { useLocale } from 'next-intl'
-import styles from './Navbar.module.css'
+import { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
+import { useLocale } from 'next-intl';
+import styles from './Navbar.module.css';
 
 export default function Navbar() {
-  const router = useRouter()
-  const pathname = usePathname()
-  const locale = useLocale()
+  const router = useRouter();
+  const pathname = usePathname();
+  const locale = useLocale();
 
-  const [lang, setLang] = useState<'fr' | 'en'>(locale as 'fr' | 'en')
-  const [open, setOpen] = useState(false)
-  const [showNavbar, setShowNavbar] = useState(true)
-  const [hasScrolled, setHasScrolled] = useState(false)
-  const lastScrollY = useRef(0)
+  const [lang, setLang] = useState<'fr' | 'en'>(locale as 'fr' | 'en');
+  const [open, setOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
+      const currentScrollY = window.scrollY;
 
       if (currentScrollY < 50) {
-        setShowNavbar(true)
+        setShowNavbar(true);
       } else if (currentScrollY > lastScrollY.current) {
-        // Scrolling down: hide navbar and close dropdown
-        setShowNavbar(false)
-        setOpen(false)  // <- fermeture dropdown ici
+        setShowNavbar(false);
+        setOpen(false);
       } else {
-        setShowNavbar(true)
+        setShowNavbar(true);
       }
 
-      setHasScrolled(currentScrollY > 10)
-      lastScrollY.current = currentScrollY
-    }
+      setHasScrolled(currentScrollY > 10);
+      lastScrollY.current = currentScrollY;
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleLangChange = (value: 'fr' | 'en') => {
-    setLang(value)
-    setOpen(false)
+    setLang(value);
+    setOpen(false);
 
-    const segments = pathname.split('/')
-    segments[1] = value // change the locale segment
-    const newPath = segments.join('/')
+    const segments = pathname.split('/');
+    segments[1] = value;
+    const newPath = segments.join('/');
 
-    router.push(newPath)
-  }
+    router.push(newPath);
+  };
 
   return (
     <header
@@ -71,11 +70,12 @@ export default function Navbar() {
 
         <div className={styles.languageSelector}>
           <button className={styles.toggle} onClick={() => setOpen(!open)}>
-            <img
+            <Image
               src={`https://flagcdn.com/${lang === 'fr' ? 'fr' : 'gb'}.svg`}
               alt={lang === 'fr' ? 'Français' : 'English'}
               width={20}
               height={15}
+              unoptimized // pour les images externes
             />
             <span>{lang.toUpperCase()}</span>
             <svg
@@ -96,11 +96,23 @@ export default function Navbar() {
           {open && (
             <div className={styles.menu}>
               <button onClick={() => handleLangChange('fr')}>
-                <img src="https://flagcdn.com/fr.svg" alt="FR" width={20} height={15} />
+                <Image
+                  src="https://flagcdn.com/fr.svg"
+                  alt="FR"
+                  width={20}
+                  height={15}
+                  unoptimized
+                />
                 <span>FR</span>
               </button>
               <button onClick={() => handleLangChange('en')}>
-                <img src="https://flagcdn.com/gb.svg" alt="EN" width={20} height={15} />
+                <Image
+                  src="https://flagcdn.com/gb.svg"
+                  alt="EN"
+                  width={20}
+                  height={15}
+                  unoptimized
+                />
                 <span>EN</span>
               </button>
             </div>
@@ -108,5 +120,5 @@ export default function Navbar() {
         </div>
       </div>
     </header>
-  )
+  );
 }

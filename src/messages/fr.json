@@ -321,8 +321,8 @@
   
   },
   "home": {
-    "title": "Hugo Calmels – Développeur Web Freelance",
-    "intro": "Je conçois des sites utiles, rapides et bien pensés. Que ce soit pour un projet pro ou une mission en régie, je travaille au service de vos idées.",
+    "title": "Création site internet Toulouse – Développeur Web Freelance",
+    "intro": "Sites web sur-mesure à Toulouse. Vitrine, SEO, outils métiers. Travail propre, rapide, freelance disponible. Parlons de votre projet.",
     "creationTitle": "Création de site internet",
     "creationText": "Un site ou une application qui présente bien, claire et simple à gérer. Je m’occupe du contenu, du design et du code pour un rendu pro.",
     "creationLink": "Voir les détails →",
@@ -375,7 +375,13 @@
       "availability": "✅ Disponible freelance"
     },
     "rights": "Tous droits réservés."
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "message": "Oups, la page que vous cherchez n’existe pas ou a été déplacée. Vérifiez l’URL ou revenez à la page d’accueil.",
+    "backHome": "Retour à l’accueil"
   }
+
 
 
 
