@@ -15,6 +15,7 @@ export default function Projects() {
       imageUrl: '/images/projects/blog.png',
       context: t('list.0.context'),
       stack: t('list.0.stack'),
+      link: 'https://gaelle-boucherit.com/', // 👈 lien pour projet 0
     },
     {
       title: t('list.1.title'),
@@ -22,6 +23,7 @@ export default function Projects() {
       imageUrl: '/images/projects/f17.png',
       context: t('list.1.context'),
       stack: t('list.1.stack'),
+      link: 'https://app.dota-arena.fr/home',
     },
     {
       title: t('list.2.title'),
@@ -29,6 +31,7 @@ export default function Projects() {
       imageUrl: '/images/projects/createPost.png',
       context: t('list.2.context'),
       stack: t('list.2.stack'),
+      link: 'https://clonebook-super.netlify.app/',
     },
   ];
 
@@ -66,7 +69,7 @@ export default function Projects() {
                       width={640}
                       height={360}
                       className={styles.image}
-                      priority={i === 0} // Charge d'abord la première image
+                      priority={i === 0}
                     />
                   </div>
                   <div className={styles.slideContent}>
@@ -79,7 +82,12 @@ export default function Projects() {
                       <strong>{t('stackLabel')} :</strong> {project.stack}
                     </p>
                     <div className={styles.ctaWrapper}>
-                      <a href="#" className={styles.cta}>
+                      <a
+                        href={project.link}
+                        className={styles.cta}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         {t('cta')}
                       </a>
                     </div>
