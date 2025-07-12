@@ -1,18 +1,45 @@
+'use client'
+
 import SeoHead from '@/components/SeoHead'
+import styles from './Home.module.css'
+import Link from 'next/link'
+import { useParams } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 
 const Home = () => {
+  const params = useParams()
+  const locale = params?.locale || 'fr'
+  const t = useTranslations('home')
+
   return (
     <>
       <SeoHead
-        title="Hugo Calmels – Développeur Web Freelance à Toulouse"
-        description="Portfolio, créations web, outils métier, et expertise technique – découvrez mon univers."
+        title={t('title')}
+        description="Développeur web basé à Toulouse. Sites vitrines, outils sur mesure, missions en freelance."
       />
-      <main>
-        <h1>Bienvenue 👋</h1>
-        <p>Je suis Hugo, dev freelance à Toulouse. Sites web, outils personnalisés, code propre.</p>
-        <ul>
+      <main className={styles.main}>
+        <section className={styles.intro}>
+          <h1>{t('title')}</h1>
+          <p>{t('intro')}</p>
+        </section>
 
-        </ul>
+        <section className={styles.cards}>
+          <div className={styles.card}>
+            <h2>{t('creationTitle')}</h2>
+            <p>{t('creationText')}</p>
+            <Link href={`/${locale}/creation-site-internet-toulouse`}>
+              {t('creationLink')}
+            </Link>
+          </div>
+
+          <div className={styles.card}>
+            <h2>{t('profileTitle')}</h2>
+            <p>{t('profileText')}</p>
+            <Link href={`/${locale}/profile-it`}>
+              {t('profileLink')}
+            </Link>
+          </div>
+        </section>
       </main>
     </>
   )

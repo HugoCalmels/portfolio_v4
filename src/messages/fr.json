@@ -319,6 +319,62 @@
   }
   
   
+  },
+  "home": {
+    "title": "Hugo Calmels – Développeur Web Freelance",
+    "intro": "Je conçois des sites utiles, rapides et bien pensés. Que ce soit pour un projet pro ou une mission en régie, je travaille au service de vos idées.",
+    "creationTitle": "Création de site internet",
+    "creationText": "Un site ou une application qui présente bien, claire et simple à gérer. Je m’occupe du contenu, du design et du code pour un rendu pro.",
+    "creationLink": "Voir les détails →",
+    "profileTitle": "Recruteurs & Missions",
+    "profileText": "Dispo en freelance pour des missions React, Angular ou Java/Spring Boot. Je suis autonome, rapide à onboarder, et à l’aise en remote comme en équipe.",
+    "profileLink": "Mon profil technique →"
+  },
+ "profile": {
+    "title": "Profil IT – Hugo Calmels",
+    "description": "Développeur fullstack freelance (Java, Spring, React, Angular).",
+    "subtitle": "Développeur Full Stack – Java / Spring / React / Angular",
+    "availability": "✅ Disponible pour mission freelance",
+    "presentationTitle": "Présentation",
+    "presentationText": "Développeur fullstack spécialisé en Java/Spring côté back, React/Angular côté front. Je conçois des sites et des applications de bout en bout : architecture, interface, API, intégration, déploiement.",
+    "backgroundTitle": "Parcours",
+    "backgroundList": {
+      "bootcamp": "6 mois intensifs sur React & Ruby on Rails. Bases solides front / back.",
+      "selfTaught": "2 ans sur des projets persos & collaboratifs (React / Ruby).",
+      "mentored": "1 an encadré sur un projet Java/Spring/Angular avec bonnes pratiques pro."
+    },
+    "stackTitle": "Stack technique",
+    "stackBack": "Java, Spring, PostgreSQL, Ruby on Rails",
+    "stackFront": "React, Angular, Redux, NgRx, JavaScript, Vite",
+    "stackTools": "Git, Netlify, Heroku, Figma, DBeaver, Postman, IntelliJ, VSCode",
+    "servicesTitle": "Domaines d’intervention",
+    "servicesList": [
+      "✔ Maquettes & prototypage (Figma, wireframes)",
+      "✔ Front-end responsive, accessibilité, UX, animation",
+      "✔ APIs REST, logique métier, gestion utilisateurs",
+      "✔ Intégration de services tiers (auth, mail, Stripe, etc.)",
+      "✔ CI/CD, hébergement (Heroku, VPS), SEO technique"
+    ]
+  },
+  "footer": {
+    "description": {
+      "line1": "Développeur web freelance à Toulouse.",
+      "line2": "Création de sites & applications utiles, rapides & bien pensés."
+    },
+    "pages": {
+      "title": "Pages",
+      "home": "Accueil",
+      "creation": "Création de site",
+      "contact": "Contact",
+      "profil": "Profil IT"
+    },
+    "contact": {
+      "title": "Contact",
+      "address1": "📍 13 rue Pégot",
+      "address2": "🌍 31500 Toulouse, France",
+      "availability": "✅ Disponible freelance"
+    },
+    "rights": "Tous droits réservés."
   }
 
 

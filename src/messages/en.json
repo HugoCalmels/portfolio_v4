@@ -319,7 +319,65 @@
   }
 
 
+  },
+  "home": {
+    "title": "Hugo Calmels – Freelance Web Developer",
+    "intro": "I design useful, fast and well-structured websites. Whether it's for a business project or a freelance mission, I adapt to your needs.",
+    "creationTitle": "Website & App Creation",
+    "creationText": "A clean, simple-to-manage site or app. I take care of content, design and code to deliver something solid and professional.",
+    "creationLink": "See more →",
+    "profileTitle": "Recruiters & Missions",
+    "profileText": "Available for freelance work in React, Angular or Java/Spring Boot. I'm autonomous, fast to onboard, and comfortable in remote teams.",
+    "profileLink": "My tech profile →"
+  },
+ "profile": {
+    "title": "IT Profile – Hugo Calmels",
+    "description": "Fullstack freelance developer (Java, Spring, React, Angular).",
+    "subtitle": "Full Stack Developer – Java / Spring / React / Angular",
+    "availability": "✅ Available for freelance missions",
+    "presentationTitle": "Overview",
+    "presentationText": "Fullstack developer specialized in Java/Spring on the backend, React/Angular on the frontend. I build complete websites and apps: architecture, UI, APIs, integration, deployment.",
+    "backgroundTitle": "Background",
+    "backgroundList": {
+      "bootcamp": "6-month intensive bootcamp on React & Ruby on Rails. Solid front/back foundations.",
+      "selfTaught": "2 years of personal & collaborative projects (React / Ruby).",
+      "mentored": "1 year mentored on a Java/Spring/Angular project with pro best practices."
+    },
+    "stackTitle": "Tech stack",
+    "stackBack": "Java, Spring, PostgreSQL, Ruby on Rails",
+    "stackFront": "React, Angular, Redux, NgRx, JavaScript, Vite",
+    "stackTools": "Git, Netlify, Heroku, Figma, DBeaver, Postman, IntelliJ, VSCode",
+    "servicesTitle": "What I work on",
+    "servicesList": [
+      "✔ Wireframes & prototypes (Figma)",
+      "✔ Responsive front-end, accessibility, UX, animations",
+      "✔ REST APIs, business logic, user management",
+      "✔ Third-party integrations (auth, mail, Stripe, etc.)",
+      "✔ CI/CD, hosting (Heroku, VPS), technical SEO"
+    ]
+  },
+
+  "footer": {
+    "description": {
+      "line1": "Freelance web developer based in Toulouse.",
+      "line2": "Creating useful, fast & well-thought-out websites and apps."
+    },
+    "pages": {
+      "title": "Pages",
+      "home": "Home",
+      "creation": "Website Creation",
+      "contact": "Contact",
+      "profil": "IT Profile"
+    },
+    "contact": {
+      "title": "Contact",
+      "address1": "📍 13 rue Pégot",
+      "address2": "🌍 31500 Toulouse, France",
+      "availability": "✅ Available for freelance work"
+    },
+    "rights": "All rights reserved."
   }
+
 
 
 

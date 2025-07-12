@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Archivo_Black, Montserrat } from 'next/font/google'
 import '@/styles/globals.css'
+import Footer from '@/components/Footer'
 
 const geistSans = Geist({
   subsets: ['latin'],
@@ -64,6 +65,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           <main>{children}</main>
+          <Footer/>
         </NextIntlClientProvider>
       </body>
     </html>
