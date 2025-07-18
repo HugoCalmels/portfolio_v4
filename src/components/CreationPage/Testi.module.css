@@ -79,6 +79,11 @@
   object-fit: cover;
 }
 
+.avatarImg{
+  filter: blur(.7px);
+  opacity: 0.85;
+}
+
 .header p {
   margin: 0;
   line-height: 1.3;

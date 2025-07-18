@@ -16,12 +16,12 @@
   "testimonials": {
   "title": "They trusted me",
   "arthur": {
-    "name": "Arthur Mollet",
+    "name": "Arthur M.",
     "job": "Senior developer",
     "full": "Hugo is like a commando: he can take on any task, even outside his domain, and deliver something clean, functional, and maintainable.\nHe is curious, adaptable, a source of ideas, and a pleasure to have on a team."
   },
   "gaelle": {
-    "name": "Gaëlle Boucherit",
+    "name": "Gaëlle B.",
     "job": "Artist",
     "full": "I needed a new website. Communication was clear and efficient, with real attention to my needs.\nToday, my site is elegant, fast, and the gallery is beautiful. Great suggestion for the homepage too!"
   }
@@ -320,7 +320,7 @@
 
 
   },
-  "home": {
+  "homeSeo": {
     "title": "Website Development in Toulouse – Freelance Web Developer",
     "intro": "Custom websites built in Toulouse. Business showcase, SEO, internal tools. Clean code, fast delivery, reliable freelance developer.",
     "creationTitle": "Website & App Creation",
@@ -381,6 +381,10 @@
     "title": "Page not found",
     "message": "Oops, the page you’re looking for doesn’t exist or has been moved. Check the URL or return to the homepage.",
     "backHome": "Back to homepage"
+  },
+  "creationSeo": {
+    "title": "Website creation in Toulouse – Hugo Calmels",
+    "description": "Web freelancer in Toulouse – Clean, fast, and SEO-optimized website creation."
   }
 
 

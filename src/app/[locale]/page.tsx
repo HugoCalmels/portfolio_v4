@@ -10,7 +10,7 @@ import { useTranslations } from 'next-intl'
 const Home = () => {
   const params = useParams()
   const locale = params?.locale || 'fr'
-  const t = useTranslations('home')
+  const t = useTranslations('homeSeo')
 
   return (
     <>

@@ -1,3 +1,5 @@
+'use client'
+
 import SeoHead from '@/components/SeoHead'
 import Hero from '@/components/CreationPage/Hero'
 import OffresSimples from '@/components/CreationPage/OffresSimples'
@@ -10,31 +12,29 @@ import Geo from '@/components/CreationPage/Geo'
 import Projects from '@/components/CreationPage/Projects'
 import ContactSection from '@/components/CreationPage/ContactSection'
 import HostingOptions from '@/components/CreationPage/HostingOptions'
-
-
+import { useTranslations } from 'next-intl'
 
 export default function CreationSiteToulouse() {
+  const t = useTranslations('creationSeo')
+
   return (
     <>
       <SeoHead
-        title="Création de site internet à Toulouse – Hugo Calmels"
-        description="Freelance web à Toulouse – Création de sites propres, rapides et optimisés SEO."
+        title={t('seo.title')}
+        description={t('seo.description')}
       />
       <main>
         <Hero />
         <Testi />
-        <PourquoiFaireUnSite/>
+        <PourquoiFaireUnSite />
         <OffresSimples />
         <FonctionnalitesMetier />
         <HostingOptions />
         <HowIWork />
         <Projects />
         <Faq />
-        <Geo/>
-        <ContactSection/>
-
-
-        {/* Ensuite : */}
+        <Geo />
+        <ContactSection />
 
         {/* <FaqSection /> */}
         {/* <LocalSection /> */}

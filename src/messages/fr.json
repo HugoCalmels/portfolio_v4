@@ -16,12 +16,12 @@
   "testimonials": {
   "title": "Ils m’ont fait confiance",
   "arthur": {
-    "name": "Arthur Mollet",
+    "name": "Arthur M.",
     "job": "Développeur senior",
     "full": "Hugo, c’est comme un commando : il peut prendre en main n’importe quelle tâche, même hors de son domaine, et livrer quelque chose de propre, fonctionnel et maintenable.\nIl est curieux, adaptable, force de proposition, et très agréable à intégrer dans une équipe."
   },
   "gaelle": {
-    "name": "Gaëlle Boucherit",
+    "name": "Gaëlle B.",
     "job": "Artiste",
     "full": "J'avais besoin d'un nouveau site. Les échanges ont été clairs et efficaces, avec une vraie écoute de mes besoins.\nAujourd’hui mon site est harmonieux, rapide, et la galerie est superbe. Très bonne idée aussi pour la page d’accueil !"
   }
@@ -320,7 +320,7 @@
   
   
   },
-  "home": {
+  "homeSeo": {
     "title": "Création site internet Toulouse – Développeur Web Freelance",
     "intro": "Sites web sur-mesure à Toulouse. Vitrine, SEO, outils métiers. Travail propre, rapide, freelance disponible. Parlons de votre projet.",
     "creationTitle": "Création de site internet",
@@ -380,7 +380,12 @@
     "title": "Page introuvable",
     "message": "Oups, la page que vous cherchez n’existe pas ou a été déplacée. Vérifiez l’URL ou revenez à la page d’accueil.",
     "backHome": "Retour à l’accueil"
+  },
+  "creationSeo": {
+    "title": "Création de site internet à Toulouse – Hugo Calmels",
+    "description": "Freelance web à Toulouse – Création de sites propres, rapides et optimisés SEO."
   }
+
 
 
 
