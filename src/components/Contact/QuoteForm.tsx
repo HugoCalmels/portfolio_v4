@@ -1,4 +1,3 @@
-// QuoteForm.tsx
 'use client'
 import React, { useState } from 'react'
 import { useTranslations } from 'next-intl'
@@ -70,13 +69,12 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions }: QuoteFo
         setProjectType('')
         setSuccess(true)
       } else if (response.status === 429) {
-        setErrorMessage("Trop de demandes, merci d’attendre un instant.")
+        setErrorMessage(t('errorTooManyRequests'))
       } else {
-        setErrorMessage("Une erreur s’est produite. Réessaie plus tard.")
+        setErrorMessage(t('errorServer'))
       }
-    } catch (err) {
-      console.error('Erreur réseau :', err)
-      setErrorMessage("Erreur réseau : impossible de contacter le serveur.")
+    } catch {
+      setErrorMessage(t('errorNetwork'))
     } finally {
       setLoading(false)
     }
@@ -94,9 +92,13 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions }: QuoteFo
         <input
           className={`${styles.formInput} ${errors.lastName ? styles.errorInput : ''}`}
           type="text"
+          name="lastName"
+          autoComplete="family-name"
+          placeholder={t('placeholders.lastName')}
           value={fields.lastName}
           onChange={(e) => handleChange('lastName', e.target.value)}
           required
+          aria-invalid={!!errors.lastName}
         />
       </label>
 
@@ -105,9 +107,13 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions }: QuoteFo
         <input
           className={`${styles.formInput} ${errors.firstName ? styles.errorInput : ''}`}
           type="text"
+          name="firstName"
+          autoComplete="given-name"
+          placeholder={t('placeholders.firstName')}
           value={fields.firstName}
           onChange={(e) => handleChange('firstName', e.target.value)}
           required
+          aria-invalid={!!errors.firstName}
         />
       </label>
 
@@ -116,9 +122,13 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions }: QuoteFo
         <input
           className={`${styles.formInput} ${errors.email ? styles.errorInput : ''}`}
           type="email"
+          name="email"
+          autoComplete="email"
+          placeholder={t('placeholders.email')}
           value={fields.email}
           onChange={(e) => handleChange('email', e.target.value)}
           required
+          aria-invalid={!!errors.email}
         />
       </label>
 
@@ -127,8 +137,13 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions }: QuoteFo
         <input
           className={styles.formInput}
           type="tel"
+          name="phone"
+          autoComplete="tel"
+          inputMode="tel"
+          placeholder={t('placeholders.phone')}
           value={fields.phone}
           onChange={(e) => handleChange('phone', e.target.value)}
+          aria-invalid={false}
         />
       </label>
 
@@ -165,9 +180,12 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions }: QuoteFo
         <textarea
           className={`${styles.formInput} ${errors.details ? styles.errorInput : ''}`}
           rows={5}
+          name="details"
+          placeholder={t('placeholders.details')}
           value={fields.details}
           onChange={(e) => handleChange('details', e.target.value)}
           required
+          aria-invalid={!!errors.details}
         />
       </label>
 

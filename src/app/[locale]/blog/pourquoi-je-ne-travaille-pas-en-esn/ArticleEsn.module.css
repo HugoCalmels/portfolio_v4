@@ -1,0 +1,128 @@
+.article {
+  padding: 5rem 2rem;
+  background-color: #0b0d10;
+  color: #ddd;
+  margin-top: 2rem;
+}
+
+.container,
+.wrapper {
+  max-width:1000px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.subheading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 3rem 0 1.5rem;
+  color: white;
+
+  margin-bottom: 2rem;
+}
+
+.subsubheading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  color: #ddd;
+}
+
+.paragraph {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.list {
+  list-style: none;
+  padding-left: 1.2rem;
+  margin: 0.25rem 0 1rem;
+  display: flex;
+  flex-direction: column; /* Force la colonne */
+  gap: 0.3rem;            /* Espacement régulier */
+
+}
+
+
+.list li {
+  position: relative;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  padding-left: 1rem;      /* espace pour le tiret */
+}
+
+.list li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: #888;
+}
+
+.pause {
+  margin: 3rem auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  max-width: 1000px;
+}
+
+@media (max-width: 960px) {
+  .wrapper {
+    padding: 0 1rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .subheading {
+    font-size: 1.5rem;
+  }
+
+  .subsubheading {
+    font-size: 1.2rem;
+  }
+
+  .paragraph,
+  .list li {
+    font-size: 1.05rem;
+  }
+}
+
+.tableSection {
+  margin-bottom: 2.5rem;
+}
+
+.tableContainer {
+  margin: 2.5rem auto;
+  overflow-x: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  max-width: 720px;
+
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.table th,
+.table td {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.8rem 1rem;
+  text-align: left;
+}
+
+.table th {
+  background-color: #15171c;
+  color: #fff;
+}

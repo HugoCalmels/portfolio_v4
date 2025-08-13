@@ -1,49 +1,63 @@
 'use client'
 
 import SeoHead from '@/components/SeoHead'
-import styles from './Home.module.css'
-import Link from 'next/link'
-import { useParams } from 'next/navigation'
+import Hero from '@/components/CreationPage/Hero'
+import OffresSimples from '@/components/CreationPage/OffresSimples'
+import Testi from '@/components/CreationPage/Testi'
+import PourquoiFaireUnSite from '@/components/CreationPage/PourquoiFaireUnSite'
+import FonctionnalitesMetier from '@/components/CreationPage/FonctionnalitesMetier'
+import HowIWork from '@/components/CreationPage/HowIWork'
+import Faq from '@/components/CreationPage/Faq'
+import Geo from '@/components/CreationPage/Geo'
+import Projects from '@/components/CreationPage/Projects'
+import ContactSection from '@/components/CreationPage/ContactSection'
+import HostingOptions from '@/components/CreationPage/HostingOptions'
 import { useTranslations } from 'next-intl'
+import CeQueJePropose from '@/components/CreationPage/v2/CeQueJePropose'
+import InclusDansChaqueSite from '@/components/CreationPage/v2/InclusDansChaqueSite'
+import MiniFaq from '@/components/CreationPage/v2/MiniFaq'
+import OffresSurMesure from '@/components/CreationPage/v2/megaSection/OffresSurMesure'
+import Airplanes from '@/components/AirPlanes'
 
-
-const Home = () => {
-  const params = useParams()
-  const locale = params?.locale || 'fr'
-  const t = useTranslations('homeSeo')
+export default function Home() {
+  const t = useTranslations('creationSeo')
 
   return (
     <>
       <SeoHead
-        title={t('title')}
-        description="Développeur web basé à Toulouse. Sites vitrines, outils sur mesure, missions en freelance."
+        title={t('seo.title')}
+        description={t('seo.description')}
       />
-      <main className={styles.main}>
-        <section className={styles.intro}>
-          <h1>{t('title')}</h1>
-          <p>{t('intro')}</p>
-        </section>
+      <main>
+        <Airplanes/>
+        <Hero />
+   
+        <CeQueJePropose />
 
-        <section className={styles.cards}>
-          <div className={styles.card}>
-            <h2>{t('creationTitle')}</h2>
-            <p>{t('creationText')}</p>
-            <Link href={`/${locale}/creation-site-internet-toulouse`}>
-              {t('creationLink')}
-            </Link>
-          </div>
+        {/*
+           <PourquoiFaireUnSite />
+               <Testi />
+                  <FonctionnalitesMetier />
+                          <HostingOptions />
+                                 <Faq />
+                                           <InclusDansChaqueSite/>
+                                                   <HowIWork />
+        */ }
+        <OffresSimples />
+        <OffresSurMesure/>
 
-          <div className={styles.card}>
-            <h2>{t('profileTitle')}</h2>
-            <p>{t('profileText')}</p>
-            <Link href={`/${locale}/profil-it`}>
-              {t('profileLink')}
-            </Link>
-          </div>
-        </section>
+
+   
+        <MiniFaq />
+        <Projects />
+        <Geo />
+        <Testi />
+        <ContactSection />
+
+        {/* <FaqSection /> */}
+        {/* <LocalSection /> */}
+        {/* <CtaSection /> */}
       </main>
     </>
   )
 }
-
-export default Home

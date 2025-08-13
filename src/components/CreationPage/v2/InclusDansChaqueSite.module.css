@@ -1,0 +1,51 @@
+.section {
+  padding: 4rem 1rem;
+  background-color: #0f172a;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 2rem;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background-color: #1e293b;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.row {
+  display: contents;
+}
+
+.feature {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+.check {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #22c55e;
+  text-align: center;
+  font-size: 1.1rem;
+  width: 3rem;
+}
+
+.row:last-child .feature,
+.row:last-child .check {
+  border-bottom: none;
+}

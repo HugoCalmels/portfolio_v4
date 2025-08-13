@@ -1,68 +1,101 @@
 'use client'
 
-import styles from './OffresSimples.module.css'
-import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import React from 'react'
 import { useParams } from 'next/navigation'
+import styles from './OffresSimples.module.css'
+import FadeIn from '@/components/FadeIn'
 
 export default function OffresSimples() {
-  const t = useTranslations('offers')
   const params = useParams()
-  const locale = params?.locale || 'fr' // adapte selon ta config
+  const locale = params?.locale || 'fr'
 
   return (
     <section className={styles.section} id="offres">
       <div className={styles.container}>
         <div className={styles.intro}>
-          <h2 className={styles.heading}>{t('title')}</h2>
-          <p className={styles.lead}>{t('intro')}</p>
+          <FadeIn>
+            <h2 className={styles.heading}>Offres de sites vitrine</h2>
+          </FadeIn>
+          <FadeIn>
+            <p className={styles.lead}>
+              Site vitrine simple, version plus complète ou optimisée pour le SEO local&nbsp;?
+              Voici trois formats clairs pour démarrer votre projet web.
+            </p>
+          </FadeIn>
         </div>
 
         <div className={styles.cards}>
-          {/* Site de base */}
-          <div className={styles.card}>
-            <h3 className={styles.cardTitle}>{t('basic.title')}</h3>
-            <p className={styles.cardText}>{t('basic.text')}</p>
-            <ul className={styles.cardList}>
-              <li>{t('basic.list.0')}</li>
-              <li>{t('basic.list.1')}</li>
-              <li>{t('basic.list.2')}</li>
-              <li>{t('basic.list.3')}</li>
-            </ul>
-            <div className={styles.price}>{t('basic.price')}</div>
-          </div>
+          <FadeIn>
+            <div className={styles.card}>
+              <h3 className={styles.cardTitle}>🟩 Site vitrine simple</h3>
+              <p className={styles.cardText}>
+              Présentez votre activité simplement, avec un site clair, rapide et sans superflu.
+              </p>
+              <ul className={styles.cardList}>
+                <li>1 à 2 pages essentielles</li>
+      
+                <li>Livraison rapide (5 à 10 jours)</li>
+              </ul>
+              <div className={styles.price}>À partir de 700 € TTC</div>
+            </div>
+          </FadeIn>
 
-          {/* Design sur mesure */}
-          <div className={styles.card}>
-            <h3 className={styles.cardTitle}>{t('design.title')}</h3>
-            <p className={styles.cardText}>{t('design.text')}</p>
-            <ul className={styles.cardList}>
-              <li>{t('design.list.0')}</li>
-              <li>{t('design.list.1')}</li>
-              <li>{t('design.list.2')}</li>
-            </ul>
-            <div className={styles.price}>{t('design.price')}</div>
-          </div>
+          <FadeIn>
+            <div className={styles.card}>
+              <h3 className={styles.cardTitle}>🟨 Site vitrine complet</h3>
+              <p className={styles.cardText}>
+                Un site plus riche, avec plusieurs pages, un design travaillé et un contenu plus abouti.
+              </p>
+              <ul className={styles.cardList}>
+                <li>3 à 6 pages</li>
+                <li>Aide à la rédaction plus poussée</li>
+                <li>Design soigné, professionnel</li>
+              </ul>
+              <div className={styles.price}>À partir de 1200 €</div>
+            </div>
+          </FadeIn>
 
-          {/* SEO */}
-          <div className={styles.card}>
-            <h3 className={styles.cardTitle}>{t('seo.title')}</h3>
-            <p className={styles.cardText}>{t('seo.text')}</p>
-            <ul className={styles.cardList}>
-              <li>{t('seo.list.0')}</li>
-              <li>{t('seo.list.1')}</li>
-              <li>{t('seo.list.2')}</li>
-            </ul>
-            <div className={styles.price}>{t('seo.price')}</div>
-          </div>
+          <FadeIn>
+            <div className={styles.card}>
+              <h3 className={styles.cardTitle}>🟦 Site optimisé SEO local</h3>
+              <p className={styles.cardText}>
+                Pour ressortir dans les résultats quand on cherche votre métier à Toulouse.
+              </p>
+              <ul className={styles.cardList}>
+                <li>4 à 8 pages ciblées</li>
+                <li>Structure pensée pour Google</li>
+                <li>Mots-clés locaux définis avec vous</li>
+         
+              </ul>
+              <div className={styles.price}>À partir de 1800 €</div>
+            </div>
+          </FadeIn>
         </div>
 
-        <div className={styles.conclusion}>
-          <p>{t('conclusion.text')}</p>
-          <Link href={`/${locale}/contact`} className={styles.cta}>
-            {t('conclusion.cta')}
-          </Link>
-        </div>
+        <FadeIn>
+          <div className={styles.ctaSection}>
+            <p className={styles.ctaLead}>Besoin d’un conseil pour choisir&nbsp;?</p>
+            <a href={`/${locale}/offres-site-vitrine`} className={styles.ctaMain}>
+              Voir le détail des offres →
+            </a>
+          </div>
+        </FadeIn>
+
+        <FadeIn>
+          <div className={styles.conclusion}>
+            <p>
+            <strong>Tous les formats incluent :</strong> design responsive, formulaire de contact, accompagnement sur les textes, SEO de base.
+            </p>
+          </div>
+        </FadeIn>
+
+        <FadeIn>
+          <div className={styles.subtleLink}>
+            <a href={`/${locale}/tarifs`}>
+              Besoin des prix en détail ? → Voir les tarifs
+            </a>
+          </div>
+        </FadeIn>
       </div>
     </section>
   )

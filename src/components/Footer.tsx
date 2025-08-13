@@ -3,25 +3,36 @@
 import Link from 'next/link'
 import styles from './Footer.module.css'
 import { useParams } from 'next/navigation'
-import { useTranslations } from 'next-intl'
-
+import { FaMapMarkerAlt, FaGlobeEurope, FaCheckCircle } from "react-icons/fa";
 const Footer = () => {
-  const t = useTranslations('footer')
   const params = useParams()
   const locale = params?.locale || 'fr'
-
   const year = new Date().getFullYear()
+
+  const pagesLeft = [
+    { label: 'Accueil', href: `/${locale}` },
+    { label: 'Offres de sites vitrine', href: `/${locale}/offres` },
+    { label: 'Solutions métier', href: `/${locale}/solutions-metier` },
+    { label: 'Tarifs', href: `/${locale}/tarifs` },
+  ]
+
+  const pagesRight = [
+    { label: 'Blog', href: `/${locale}/blog` },
+    { label: 'FAQ', href: `/${locale}/faq` },
+    { label: 'Contact / Devis', href: `/${locale}/contact` },
+    { label: 'Services web Toulouse', href: `/${locale}/creation-site-internet-toulouse` },
+  ]
 
   return (
     <footer className={styles.footer}>
       <div className={styles.columns}>
-        {/* Colonne 1 - Présentation */}
+        {/* Col 1 */}
         <div className={styles.column}>
           <h2 className={styles.title}>Hugo Calmels</h2>
           <p className={styles.description}>
-            {t('description.line1')}<br />
-            {t('description.line2')}
-          </p>
+  Développeur web indépendant à Toulouse.<br />
+  Création de sites vitrines, applications et logiciels web.
+</p>
           <a
             href="https://www.linkedin.com/in/hugo-calmels"
             target="_blank"
@@ -32,30 +43,42 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* Colonne 2 - Pages */}
+        {/* Col 2 — Pages en 2 colonnes */}
         <div className={styles.column}>
-          <h3 className={styles.subtitle}>{t('pages.title')}</h3>
-          <ul className={styles.list}>
-            <li><Link href={`/${locale}`}>{t('pages.home')}</Link></li>
-            <li><Link href={`/${locale}/creation-site-internet-toulouse`}>{t('pages.creation')}</Link></li>
-            <li><Link href={`/${locale}/contact`}>{t('pages.contact')}</Link></li>
-            <li><Link href={`/${locale}/profil-it`}>{t('pages.profil')}</Link></li>
-          </ul>
+          <h3 className={styles.subtitle}>Pages</h3>
+          <div className={styles.pageColumns}>
+            <ul className={styles.list}>
+              {pagesLeft.map(p => (
+                <li key={p.href}><Link href={p.href}>{p.label}</Link></li>
+              ))}
+            </ul>
+            <ul className={styles.list}>
+              {pagesRight.map(p => (
+                <li key={p.href}><Link href={p.href}>{p.label}</Link></li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        {/* Colonne 3 - Contact infos */}
+        {/* Col 3 */}
         <div className={styles.column}>
-          <h3 className={styles.subtitle}>{t('contact.title')}</h3>
-          <ul className={styles.list}>
-            <li>{t('contact.address1')}</li>
-            <li>{t('contact.address2')}</li>
-            <li>{t('contact.availability')}</li>
-          </ul>
+          <h3 className={styles.subtitle}>Contact</h3>
+          <ul className={styles.listIcon}>
+  <li>
+    <FaMapMarkerAlt className={styles.icon} /> 13 rue Pégot
+  </li>
+  <li>
+    <FaGlobeEurope className={styles.icon} /> 31500 Toulouse, France
+  </li>
+  <li>
+    <FaCheckCircle className={styles.icon} /> Disponible rapidement
+  </li>
+</ul>
         </div>
       </div>
 
       <div className={styles.bottom}>
-        <span>© {year} Hugo Calmels. {t('rights')}</span>
+        <span>© {year} Hugo Calmels. Tous droits réservés.</span>
       </div>
     </footer>
   )

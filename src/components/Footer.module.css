@@ -1,30 +1,29 @@
 .footer {
-  margin-top: 4rem;
+
   padding: 3rem 1.5rem 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   background-color: #0b0d10;
   color: #aaa;
   font-size: 0.92rem;
-  padding-top:2.5rem;
+  padding-top: 2.5rem;
+
 }
 
 .columns {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 3.5rem;
-  max-width: 1080px;
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  gap: 3rem;
+  max-width: 1800px;
   margin: 0 auto 2rem;
-  flex-wrap: wrap;
+  padding-inline: clamp(1rem, 4vw, 3rem);
+  width: 100%;
 }
 
 .column {
-  display: flex;
-  flex-direction: column;
-  min-width: 200px;
-  max-width: 320px;
   flex: 1;
+  min-width: 280px;
+  max-width: 100%;
+
 }
 
 .title {
@@ -81,31 +80,62 @@
   text-decoration: underline;
 }
 
-.bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1080px;
-  margin: 0 auto;
-  font-size: 0.8rem;
-  color: #666;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding-top: 1rem;
-  flex-wrap: wrap;
+.icon {
+  color: var(--accent);
+  flex-shrink: 0;
+  font-size: 1.05rem;
+  width:1.1rem;
+  height:1.1rem;
 }
 
-.made {
-  font-style: italic;
-  font-size: 0.75rem;
-  opacity: 0.7;
+.pageColumns {
+  display: flex;
+  gap: 2rem;
 }
+
 .bottom {
-  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1800px;
+  margin: 0 auto;
+  font-size: 0.85rem;
+  color: #999;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding-top: 1.5rem;
   text-align: center;
-  font-size: 0.85rem;
-  color: #999;
+  flex-wrap: wrap;
+}
+.column:nth-of-type(2) {
+  margin:auto;
+}
+
+
+
+.listIcon {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.4rem;
+
+}
+
+.listIcon li {
+  display: block;
   display:flex;
-  justify-content: center;
+  align-items:center;
+  gap:0.5rem;
+  margin-bottom:0.2rem;
+}
+
+.listIcon a {
+  color: var(--accent, #66ccff);
+  text-decoration: none;
+}
+
+.listIcon a:hover {
+  text-decoration: underline;
 }

@@ -10,7 +10,7 @@
 }
 
 .sliderWrapper {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   overflow: hidden;
   background-color: #0b0d10;
@@ -38,7 +38,7 @@
 
 .embla__slide {
   flex: 0 0 100%;
-  max-width: 750px;
+  max-width:900px;
   background-color: #111;
   border-radius: 16px;
   overflow: hidden;
@@ -46,7 +46,8 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
-  
+
+ 
 }
 
 .imageWrapper {
@@ -68,7 +69,8 @@
 
 .slideContent {
   padding: 1rem 1.25rem 1.5rem;
-  
+
+
 }
 
 .slideContent h3 {

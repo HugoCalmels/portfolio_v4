@@ -1,29 +1,32 @@
 .testiWrapper {
-  margin-top: -1rem;
-  margin-bottom: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
   position: relative;
   z-index: 10;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+
 }
 
 .testiLabel {
-  position: absolute;
-  top: -2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+
+
   font-size: 1.1rem;
   font-weight: 600;
   color: white;
   opacity: 0.9;
   z-index: 20;
   white-space: nowrap;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: white;
+  margin-bottom: .5rem;
+  text-align: center;
 }
 
-.testiLabel::after {
-  content: " ↓";
-  animation: pulseDown 2s infinite ease-in-out;
-}
+
 
 @keyframes pulseDown {
   0%, 100% {
@@ -37,6 +40,7 @@
 }
 
 .testimonials {
+
   display: flex;
   flex-wrap: wrap;
   gap: 2.5rem;
@@ -51,12 +55,8 @@
   max-width: 600px;
   padding: 2rem;
   border-radius: 18px;
-  background: linear-gradient(to bottom right, rgba(80, 184, 255, 0.04), var(--card-bg));
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow:
-    0 0 0 1px rgba(80, 184, 255, 0.15),
-    0 0 15px rgba(80, 184, 255, 0.07);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   color: white;
   font-size: 1rem;
   line-height: 1.75;

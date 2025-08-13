@@ -1,0 +1,29 @@
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  color: white;
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.linkHoverUnderline {
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+}
+
+.linkHoverUnderline:hover {
+  text-decoration: underline;
+}

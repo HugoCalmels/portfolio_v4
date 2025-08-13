@@ -1,0 +1,120 @@
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  color: #e4e4e7;
+  margin-top:2rem;
+  min-height: 60vh;
+  /* retire le stretch qui crée du “vide” */
+  /* min-height: 100vh;  <-- à supprimer */
+}
+
+.intro { margin-bottom: 1.5rem; text-align: left; }
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+/* NEW: chips (petits pills) */
+.metaChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .5rem;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.metaChips li {
+  font-size: .85rem;
+  color: #cbd5e1;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: .35rem .6rem;
+  border-radius: 999px;
+}
+
+.lead {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #cbd5e1;
+  margin: 0 0 1rem 0;
+}
+
+/* NEW: zones ligne subtile */
+.zones {
+  margin: .25rem 0 1.25rem;
+  font-size: .95rem;
+  color: #94a3b8;
+}
+
+/* Liens */
+.list {
+  list-style: none;
+  margin: 0.25rem 0 1.5rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+.list li {
+  position: relative;
+  font-size: 1rem;
+  color: #cbd5e1;
+  padding-left: 1rem;
+}
+.list li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: #6b7280;
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+.link:hover { color: #74c0fc; }
+
+/* CTA */
+.cta { margin-top: 2.25rem; text-align: center; }
+.cta h3 { font-size: 1.35rem; margin-bottom: 1rem; color: #fff; }
+
+.buttonPrimary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent);
+  color: #000;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+.buttonPrimary:hover { background-color: #74c0fc; }
+
+.note {
+  font-size: 0.95rem;
+  color: #888;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+.cta{
+  margin-top:4rem;
+}
+
+.linksLabel {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-bottom: 0.7rem;
+  font-weight: 500;
+  margin-top: .5rem;
+}

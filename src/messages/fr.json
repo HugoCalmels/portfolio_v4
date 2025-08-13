@@ -215,21 +215,21 @@
   "list": [
     {
       "title": "Blog d’artiste",
-      "description": "Site portfolio pour présenter les œuvres d’une artiste peintre.",
-      "context": "Projet réalisé pour une artiste indépendante",
-      "stack": "Next.js, Tailwind, CMS Headless"
+      "description": "Site portfolio pour présenter les peintures et actualités d’une artiste.",
+      "context": "Réalisé pour une artiste indépendante.",
+      "stack": "React.js"
     },
     {
       "title": "Logiciel web",
-      "description": "Outil web pour organiser des parties personnalisées.",
-      "context": "Projet open source développé avec un mentor",
-      "stack": "React, Spring Boot, Auth OpenID"
+      "description": "Application en ligne pour créer et organiser des parties personnalisées.",
+      "context": "Projet d’apprentissage pour progresser en Java et Angular.",
+      "stack": "Java, SpringBoot, Angular.js"
     },
     {
       "title": "Clone de Facebook",
-      "description": "Plateforme sociale développée comme vitrine technique.",
-      "context": "Projet personnel bac à sable",
-      "stack": "Next.js, PostgreSQL, Stripe"
+      "description": "Plateforme sociale avec fil d’actualité, profils et messagerie.",
+      "context": "Projet d'entraînement aux frameworks React et Rails.",
+      "stack": "React.js, Ruby on Rails"
     }
   ]
 },"faq": {
@@ -292,12 +292,22 @@
     "firstName": "Prénom",
     "email": "Email",
     "phone": "Téléphone",
-    "budget": "Budget indicatif",
-    "projectType": "Quel type de projet ?",
     "details": "Détails du projet",
-    "cta": "Demander un devis",
+    "budget": "Budget",
+    "projectType": "Type de projet",
+    "cta": "Envoyer le message",
     "loading": "Envoi en cours...",
-    "success": "✅ Demande envoyée avec succès !"
+    "success": "✅ Message envoyé avec succès !",
+    "errorTooManyRequests": "Trop de requêtes. Réessayez dans quelques instants.",
+    "errorServer": "Erreur serveur. Merci de réessayer plus tard.",
+    "errorNetwork": "Erreur réseau. Vérifie ta connexion.",
+    "placeholders": {
+      "lastName": "Jean",
+      "firstName": "Dupont",
+      "email": "jean@email.com",
+      "phone": "06 12 34 56 78",
+      "details": "Décrivez votre besoin, vos objectifs, les pages/fonctionnalités envisagées…"
+    }
   },
   "contactPage": {
   "title": "Contactez-moi",

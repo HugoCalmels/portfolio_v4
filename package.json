@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.23.9",
     "next": "15.3.5",
     "next-intl": "^4.3.4",
     "react": "^19.0.0",

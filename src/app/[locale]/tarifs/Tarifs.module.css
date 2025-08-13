@@ -1,0 +1,222 @@
+.page {
+  padding: 4rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  color: white;
+
+  line-height: 1.6;
+  margin-top:2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: #ccc;
+  max-width: 700px;
+  margin-top: 0.5rem;
+
+}
+
+.introWrapper{
+
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+
+.subheading {
+  font-size: 1.5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.33rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+}
+
+.miniCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  flex: 1 1 250px;
+  min-width: 250px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+
+.miniCard h3 {
+  font-size: 1.15rem;
+  color: #fff;
+  margin: 0;
+}
+
+.miniDesc {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+
+.price {
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  margin-top: auto;
+  padding-top: .75rem;
+}
+
+.ctaSection {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+}
+
+.ctaSection h3 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.9rem 1.6rem;
+  background-color: var(--accent, #66ccff);
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s ease-in-out;
+}
+
+.cta:hover {
+  background-color: #4dbbe3;
+}
+.secondary {
+  font-size: 1rem;
+  color: #aaa;
+  margin-top: 1rem;
+  line-height: 1.6;
+
+}
+
+.secondary a {
+  color: var(--accent, #66ccff);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.secondary a:hover {
+  color: #a8e4ff;
+}
+
+.finalCta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 3rem;
+  text-align: center;
+  
+}
+
+.finalText {
+  font-size: 1.05rem;
+  color: #ddd;
+  font-weight: 500;
+}
+
+.finalButton {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  background-color: var(--accent, #66ccff);
+  color: #000;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.finalButton:hover {
+  background-color: #4dbbe3;
+}
+
+
+.notice p {
+  margin: 0;
+}
+
+.notice a {
+  color: var(--accent, #4dabf7);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.notice a:hover {
+  text-decoration: underline;
+}
+.notice {
+  border-left: 4px solid var(--accent);
+  padding: .5rem 1rem;
+  margin: 2rem 0 0rem;
+}
+
+.notice h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.notice p {
+  font-size: 0.95rem;
+  color: #cccccc;
+  line-height: 1.5;
+}
+
+
+.icon {
+  color: var(--accent);
+  font-size: 1.3rem; /* Taille adaptée pour inline dans h3 */
+  margin-right: 0.4rem;
+  vertical-align: middle; /* Aligne mieux l'icône avec le texte */
+  height:23px;
+  width:23px;
+}
+
+.miniCard h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem; /* espace entre icône et titre */
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
