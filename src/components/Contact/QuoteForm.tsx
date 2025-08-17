@@ -87,35 +87,37 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions }: QuoteFo
 
   return (
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
-      <label className={`${styles.formLabel} ${errors.lastName ? styles.errorLabel : ''}`}>
-        {t('lastName')}
-        <input
-          className={`${styles.formInput} ${errors.lastName ? styles.errorInput : ''}`}
-          type="text"
-          name="lastName"
-          autoComplete="family-name"
-          placeholder={t('placeholders.lastName')}
-          value={fields.lastName}
-          onChange={(e) => handleChange('lastName', e.target.value)}
-          required
-          aria-invalid={!!errors.lastName}
-        />
-      </label>
+      <div className={styles.row}>
+  <label className={`${styles.formLabel} ${errors.lastName ? styles.errorLabel : ''}`}>
+    {t('lastName')}
+    <input
+      className={`${styles.formInput} ${errors.lastName ? styles.errorInput : ''}`}
+      type="text"
+      name="lastName"
+      autoComplete="family-name"
+      placeholder={t('placeholders.lastName')}
+      value={fields.lastName}
+      onChange={(e) => handleChange('lastName', e.target.value)}
+      required
+      aria-invalid={!!errors.lastName}
+    />
+  </label>
 
-      <label className={`${styles.formLabel} ${errors.firstName ? styles.errorLabel : ''}`}>
-        {t('firstName')}
-        <input
-          className={`${styles.formInput} ${errors.firstName ? styles.errorInput : ''}`}
-          type="text"
-          name="firstName"
-          autoComplete="given-name"
-          placeholder={t('placeholders.firstName')}
-          value={fields.firstName}
-          onChange={(e) => handleChange('firstName', e.target.value)}
-          required
-          aria-invalid={!!errors.firstName}
-        />
-      </label>
+  <label className={`${styles.formLabel} ${errors.firstName ? styles.errorLabel : ''}`}>
+    {t('firstName')}
+    <input
+      className={`${styles.formInput} ${errors.firstName ? styles.errorInput : ''}`}
+      type="text"
+      name="firstName"
+      autoComplete="given-name"
+      placeholder={t('placeholders.firstName')}
+      value={fields.firstName}
+      onChange={(e) => handleChange('firstName', e.target.value)}
+      required
+      aria-invalid={!!errors.firstName}
+    />
+  </label>
+</div>
 
       <label className={`${styles.formLabel} ${errors.email ? styles.errorLabel : ''}`}>
         {t('email')}
@@ -181,7 +183,7 @@ export default function QuoteForm({ budgetOptions, projectTypeOptions }: QuoteFo
           className={`${styles.formInput} ${errors.details ? styles.errorInput : ''}`}
           rows={5}
           name="details"
-          placeholder={t('placeholders.details')}
+          placeholder="Décrivez votre besoin (pages, objectifs, fonctionnalités)… Lien vers cahier des charges si vous en avez un."
           value={fields.details}
           onChange={(e) => handleChange('details', e.target.value)}
           required

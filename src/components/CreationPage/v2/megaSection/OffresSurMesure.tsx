@@ -28,41 +28,45 @@ export default function OffresSurMesure() {
         </div>
 
         <div className={styles.cards}>
-          <FadeIn>
-            <div className={styles.card}>
-            <h3 className={styles.cardTitle}>
-  <FiTool className={styles.cardIconInline} size={20} />
-  <span>Fonction métier</span>
-</h3>
-              <p className={styles.cardText}>
-                Une interface interne ou un espace client sur mesure, à ajouter à votre site pour répondre à vos besoins métiers spécifiques.
-              </p>
-              <ul className={styles.cardList}>
-                <li>Interface sécurisée</li>
-                <li>Conçue pour votre activité</li>
-                <li>Code léger, maintenable</li>
-              </ul>
-              <div className={styles.price}>Sur devis</div>
-            </div>
-          </FadeIn>
+        <FadeIn>
+  <div className={styles.card}>
+    <h3 className={styles.cardTitle}>
+      <FiTool className={styles.cardIconInline} size={20} />
+      <span>Fonction métier</span>
+    </h3>
+    <p className={styles.cardText}>
+  Une fonctionnalité pensée uniquement pour compléter votre site vitrine : module spécifique, intégré proprement et conçu pour évoluer sans surcharge.
+</p>
+
+    <ul className={styles.cardList}>
+      <li>Développement 100 % ciblé</li>
+      <li>Intégration fluide et légère</li>
+      <li>Modules évolutifs et maintenables</li>
+    </ul>
+    <div className={styles.price}>Sur devis</div>
+  </div>
+</FadeIn>
+
+
 
           <FadeIn>
-            <div className={styles.card}>
-            <h3 className={styles.cardTitle}>
-  <FiZap className={styles.cardIconInline} size={20} />
-  <span>Logiciel web personnalisé</span>
-</h3>
-              <p className={styles.cardText}>
-                Un outil métier complet, développé pour vos besoins spécifiques : application web indépendante, rapide et sans dépendance à une plateforme.
-              </p>
-              <ul className={styles.cardList}>
-                <li>Développement 100 % sur mesure</li>
-                <li>Pas de dépendance SaaS</li>
-                <li>Liberté d’évolution future</li>
-              </ul>
-              <div className={styles.price}>Sur devis</div>
-            </div>
-          </FadeIn>
+  <div className={styles.card}>
+    <h3 className={styles.cardTitle}>
+      <FiZap className={styles.cardIconInline} size={20} />
+      <span>Logiciel web sur mesure</span>
+    </h3>
+    <p className={styles.cardText}>
+      Un outil métier pensé uniquement pour votre façon de travailler : application web autonome, rapide, et sans dépendance à une plateforme — idéal pour remplacer les Excel et process bricolés.
+    </p>
+    <ul className={styles.cardList}>
+      <li>Développement 100 % adapté à vos besoins</li>
+      <li>Aucune licence ni abonnement imposé</li>
+      <li>Évolutif : fonctions ajoutées selon vos besoins</li>
+    </ul>
+    <div className={styles.price}>Sur devis</div>
+  </div>
+</FadeIn>
+
         </div>
 
         <FadeIn>

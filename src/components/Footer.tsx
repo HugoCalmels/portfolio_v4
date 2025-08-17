@@ -11,7 +11,7 @@ const Footer = () => {
 
   const pagesLeft = [
     { label: 'Accueil', href: `/${locale}` },
-    { label: 'Offres de sites vitrine', href: `/${locale}/offres` },
+    { label: 'Offres de sites vitrine', href: `/${locale}/offres-site-vitrine` },
     { label: 'Solutions métier', href: `/${locale}/solutions-metier` },
     { label: 'Tarifs', href: `/${locale}/tarifs` },
   ]

@@ -159,7 +159,7 @@ Je suis en train de mettre en place des outils comme la prise de rendez-vous en 
 
         <div className={styles.cta}>
   <p>Une autre question&nbsp;?</p>
-  <Link href={`/${locale}/contact`} className={styles.buttonPrimary}>
+  <Link href={`/${locale}/contact`} className={styles.ctaBtn}>
     Me contacter
   </Link>
 </div>

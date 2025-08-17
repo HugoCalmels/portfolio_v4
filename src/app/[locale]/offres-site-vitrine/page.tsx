@@ -19,9 +19,9 @@ export default function Formules() {
             <thead>
               <tr>
                 <th>Critère</th>
-                <th>Simple</th>
-                <th>Complet</th>
-                <th>SEO local</th>
+                <th>Site web Simple</th>
+                <th>Site web Complet</th>
+                <th>Site web SEO local</th>
               </tr>
             </thead>
             <tbody>
@@ -34,7 +34,7 @@ export default function Formules() {
               <tr>
                 <td>Contenu & aide</td>
                 <td>Formulation essentielle</td>
-                <td>Structuration & rédaction</td>
+                <td>Contenus mieux structurés</td>
                 <td>Mots-clés, structure SEO</td>
               </tr>
               <tr>
@@ -133,7 +133,7 @@ export default function Formules() {
         <ul>
           <li>3 à 6 pages (accueil, services, contact…)</li>
           <li>Design soigné, contrasté, professionnel</li>
-          <li>Structuration du contenu et aide à la rédaction</li>
+          <li>Structuration du contenu avancée</li>
           <li>SEO propre : balisage, hiérarchie, titres</li>
           <li>Pensé pour évoluer si besoin</li>
         </ul>
@@ -163,7 +163,7 @@ export default function Formules() {
 
       <div className={styles.cta}>
       <h3>Prêt à lancer votre projet ?</h3>
-      <a href={`/${locale}/contact`} className={styles.buttonPrimary}>
+      <a href={`/${locale}/contact`} className={styles.ctaBtn}>
         Me contacter
       </a>
       <p className={styles.note}>

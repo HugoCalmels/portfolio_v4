@@ -126,6 +126,7 @@
   transition: background 0.3s ease;
   font-size: 0.95rem;
   margin-top: 1rem;
+  font-family: 'Montserrat', sans-serif;;
 }
 
 .ctaMain:hover {

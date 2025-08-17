@@ -76,7 +76,7 @@ export default function BlogPage() {
         {/* CTA */}
         <div className={styles.ctaSection}>
           <p className={styles.ctaPrompt}>Vous avez un projet de site internet à Toulouse ?</p>
-          <Link href="/contact" className={styles.btnAccent}>
+          <Link href="/contact" className={styles.cta}>
             Me contacter →
           </Link>
         </div>

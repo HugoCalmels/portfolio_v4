@@ -1,18 +1,27 @@
 'use client'
 import React, { useState } from 'react'
-import { useTranslations } from 'next-intl'
 import styles from './ContactForm.module.css'
 
 interface ContactFields {
-  name: string
+  lastName: string
+  firstName: string
   email: string
   message: string
 }
 
 export default function ContactForm() {
-  const t = useTranslations('contactForm')
-  const [fields, setFields] = useState<ContactFields>({ name: '', email: '', message: '' })
-  const [errors, setErrors] = useState<Record<string, boolean>>({})
+  const [fields, setFields] = useState<ContactFields>({
+    lastName: '',
+    firstName: '',
+    email: '',
+    message: '',
+  })
+  const [errors, setErrors] = useState<Record<keyof ContactFields, boolean>>({
+    lastName: false,
+    firstName: false,
+    email: false,
+    message: false,
+  })
   const [success, setSuccess] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
   const [loading, setLoading] = useState(false)
@@ -22,21 +31,29 @@ export default function ContactForm() {
   const emailIsValid = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
-  function validate() {
-    const newErrors: Record<string, boolean> = {}
-    if (!fields.name.trim()) newErrors.name = true
-    if (!emailIsValid(fields.email.trim())) newErrors.email = true
-    if (!fields.message.trim()) newErrors.message = true
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
+  function validateField(field: keyof ContactFields, value: string): boolean {
+    const v = value.trim()
+    if (field === 'email') return emailIsValid(v)
+    return v.length > 0
+  }
+
+  function validateAll(): boolean {
+    const next: Record<keyof ContactFields, boolean> = {
+      lastName: !validateField('lastName', fields.lastName),
+      firstName: !validateField('firstName', fields.firstName),
+      email: !validateField('email', fields.email),
+      message: !validateField('message', fields.message),
+    }
+    setErrors(next)
+    return !Object.values(next).some(Boolean)
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (!validate()) return
-
     setSuccess(false)
     setErrorMsg('')
+
+    if (!validateAll()) return
     setLoading(true)
 
     try {
@@ -48,71 +65,94 @@ export default function ContactForm() {
 
       if (response.ok) {
         setSuccess(true)
-        setFields({ name: '', email: '', message: '' })
+        setFields({ lastName: '', firstName: '', email: '', message: '' })
+        setErrors({ lastName: false, firstName: false, email: false, message: false })
       } else if (response.status === 429) {
-        setErrorMsg(t('errorTooManyRequests'))
+        setErrorMsg('Trop de requêtes. Réessayez dans quelques instants.')
       } else {
-        setErrorMsg(t('errorServer'))
+        setErrorMsg('Erreur serveur. Merci de réessayer plus tard.')
       }
     } catch {
-      setErrorMsg(t('errorNetwork'))
+      setErrorMsg('Erreur réseau. Vérifiez votre connexion.')
     } finally {
       setLoading(false)
     }
   }
 
   function handleChange(field: keyof ContactFields, value: string) {
-    setFields((f) => ({ ...f, [field]: value }))
-    setErrors((e) => ({ ...e, [field]: false }))
+    setFields((prev) => ({ ...prev, [field]: value }))
+    setErrors((prev) => ({ ...prev, [field]: !validateField(field, value) }))
     setErrorMsg('')
   }
 
   return (
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
-      <label className={`${styles.formLabel} ${errors.name ? styles.errorLabel : ''}`}>
-        {t('name')}
-        <input
-          className={`${styles.formInput} ${errors.name ? styles.errorInput : ''}`}
-          type="text"
-          required
-          placeholder={t('namePlaceholder')}
-          value={fields.name}
-          onChange={(e) => handleChange('name', e.target.value)}
-          name="name"
-        />
-      </label>
+      <div className={styles.row}>
+        <label className={`${styles.formLabel} ${errors.lastName ? styles.errorLabel : ''}`}>
+          Nom
+          <input
+            className={`${styles.formInput} ${errors.lastName ? styles.errorInput : ''}`}
+            type="text"
+            name="lastName"
+            autoComplete="family-name"
+            placeholder="Dupont"
+            value={fields.lastName}
+            onChange={(e) => handleChange('lastName', e.target.value)}
+            required
+            aria-invalid={!!errors.lastName}
+          />
+        </label>
+
+        <label className={`${styles.formLabel} ${errors.firstName ? styles.errorLabel : ''}`}>
+          Prénom
+          <input
+            className={`${styles.formInput} ${errors.firstName ? styles.errorInput : ''}`}
+            type="text"
+            name="firstName"
+            autoComplete="given-name"
+            placeholder="Jean"
+            value={fields.firstName}
+            onChange={(e) => handleChange('firstName', e.target.value)}
+            required
+            aria-invalid={!!errors.firstName}
+          />
+        </label>
+      </div>
 
       <label className={`${styles.formLabel} ${errors.email ? styles.errorLabel : ''}`}>
-        {t('email')}
+        Email
         <input
           className={`${styles.formInput} ${errors.email ? styles.errorInput : ''}`}
           type="email"
-          required
-          placeholder={t('emailPlaceholder')}
+          name="email"
+          autoComplete="email"
+          placeholder="jean@exemple.com"
           value={fields.email}
           onChange={(e) => handleChange('email', e.target.value)}
-          name="email"
+          required
+          aria-invalid={!!errors.email}
         />
       </label>
 
       <label className={`${styles.formLabel} ${errors.message ? styles.errorLabel : ''}`}>
-        {t('message')}
+        Message
         <textarea
           className={`${styles.formInput} ${errors.message ? styles.errorInput : ''}`}
           rows={5}
-          required
-          placeholder={t('messagePlaceholder')}
+          name="message"
+          placeholder="Parlez-moi de votre projet…"
           value={fields.message}
           onChange={(e) => handleChange('message', e.target.value)}
-          name="message"
+          required
+          aria-invalid={!!errors.message}
         />
       </label>
 
       <button type="submit" className={styles.cta} disabled={loading}>
-        {loading ? t('loading') : t('cta')}
+        {loading ? 'Envoi en cours…' : 'Envoyer le message'}
       </button>
 
-      {success && <p className={styles.successMessage}>{t('success')}</p>}
+      {success && <p className={styles.successMessage}>✅ Message envoyé avec succès !</p>}
       {errorMsg && <p className={styles.errorMessage}>{errorMsg}</p>}
     </form>
   )

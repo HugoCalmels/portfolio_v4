@@ -1,0 +1,48 @@
+.inspCard{
+  position:absolute;
+  left:5rem;
+  bottom:5rem;
+  width:340px;
+  max-width:90vw;
+  padding:1.1rem 1.3rem;
+  color:#fff;
+  background:rgba(0,0,0,.5);
+  backdrop-filter:blur(6px);
+  border-radius:1rem;
+  box-shadow:0 4px 12px rgba(0,0,0,.2);
+  z-index:10;
+}
+.inspCard h3{
+  font-size:1rem;
+  font-weight:600;
+  margin:0 0 .7rem 0;
+  text-align:left;
+}
+.inspCard ul{
+  list-style:none;
+  margin:0 0 .9rem 0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:.45rem;
+  opacity:.95;
+}
+.inlineTrigger{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.45rem .75rem;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.08);
+  color:var(--accent);
+  font-weight:600;
+}
+.inlineTrigger:hover{
+  background:rgba(255,255,255,.14);
+}
+
+/* cache la carte sur mobile, on garde le chip/lien */
+@media (max-width:1024px){
+  .inspCard{ display:none; }
+}

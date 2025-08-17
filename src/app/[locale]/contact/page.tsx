@@ -49,6 +49,19 @@ export default function ContactPage() {
           projectTypeOptions={projectTypeOptions}
         />
       )}
+
+<section className={styles.legal}>
+    <h2>Mentions légales</h2>
+    <p>Éditeur du site : Hugo Calmels — Auto-entrepreneur (SIRET 989 199 385 00018), basé à Toulouse.</p>
+    <p>Contact : calmels.hugo.pro@gmail.com</p>
+    <p>Hébergeur : Hostinger (www.hostinger.fr)</p>
+    <p>Directeur de la publication : Hugo Calmels.</p>
+
+    <h2>Vie privée</h2>
+    <p>Les données envoyées via les formulaires (nom, email, message) sont utilisées uniquement pour répondre à votre demande. 
+    Elles ne sont pas partagées à des tiers et sont conservées au maximum 12 mois. 
+    Vous pouvez demander leur suppression par email.</p>
+  </section>
     </main>
   )
 }

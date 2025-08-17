@@ -104,20 +104,20 @@
   color: #fff;
   margin-bottom: 1rem;
 }
-
 .cta {
   display: inline-block;
-  padding: 0.9rem 1.6rem;
-  background-color: var(--accent, #66ccff);
-  color: black;
-  text-decoration: none;
-  border-radius: 8px;
+  padding: .8rem 1.4rem;
   font-weight: 600;
-  transition: background 0.2s ease-in-out;
+  border-radius: 0.75rem;
+  background: var(--accent, #22c55e);
+  color: black;
+  transition: background 0.3s ease;
+  font-size: 1.1rem;
+margin-bottom:1rem;
 }
 
 .cta:hover {
-  background-color: #4dbbe3;
+  background: #3caee0;
 }
 .secondary {
   font-size: 1rem;

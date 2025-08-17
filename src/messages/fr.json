@@ -274,12 +274,12 @@
     "description": "Je suis basé à <strong>Toulouse</strong>, mais je peux travailler avec des clients dans toute la France.<br />Appels visio, messages clairs, et échanges réguliers — que vous soyez à côté ou à 800km, ça marche aussi bien."
   },
   "contactForm": {
-    "name": "Votre nom",
+    "name": "Nom",
     "namePlaceholder": "Jean Dupont",
-    "email": "Votre email",
+    "email": "Email",
     "emailPlaceholder": "jean@email.com",
     "message": "Message",
-    "messagePlaceholder": "Votre message...",
+    "messagePlaceholder": "message...",
     "cta": "Envoyer le message",
     "loading": "Envoi en cours...",
     "success": "✅ Message envoyé avec succès !",
@@ -302,9 +302,9 @@
     "errorServer": "Erreur serveur. Merci de réessayer plus tard.",
     "errorNetwork": "Erreur réseau. Vérifie ta connexion.",
     "placeholders": {
-      "lastName": "Jean",
-      "firstName": "Dupont",
-      "email": "jean@email.com",
+      "lastName": "Dupont",
+      "firstName": "Jean",
+      "email": "jean@exemple.com",
       "phone": "06 12 34 56 78",
       "details": "Décrivez votre besoin, vos objectifs, les pages/fonctionnalités envisagées…"
     }
@@ -316,12 +316,12 @@
     "quote": "Demande de devis",
     "contact": "Contact / Question générale"
   },
-  "budget": {
-    "0": "500 € - 1 000 €",
-    "1": "1 000 € - 3 000 €",
-    "2": "Plus de 3 000 €",
-    "3": "Je ne sais pas"
-  },
+"budget": {
+  "0": "700 € - 1 500 €",
+  "1": "1 500 € - 3 000 €",
+  "2": "Plus de 3 000 €",
+  "3": "Je ne sais pas"
+},
   "projectType": {
     "0": "Création de site vitrine",
     "1": "Logiciel métier",

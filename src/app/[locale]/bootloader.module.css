@@ -1,0 +1,37 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+  /* plus de fond, fini le bandeau noir */
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2147483647;
+  opacity: 1;
+  transition: opacity 240ms ease; /* un poil plus rapide */
+  pointer-events: none; /* ne bloque jamais l'interaction */
+
+}
+
+.hide { opacity: 0; }
+
+/* Micro point (optionnel). Supprime ce bloc + le <div className={styles.dot}/> si tu veux 0 UI */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--bootloader-accent, #111);
+  opacity: .25;
+  animation: bootPulse 1s infinite;
+}
+
+@keyframes bootPulse {
+  0% { opacity: .25 }
+  50% { opacity: .9 }
+  100% { opacity: .25 }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot { animation: none; opacity: .6 }
+  .wrapper { transition: none }
+}

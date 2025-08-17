@@ -2,7 +2,7 @@
   font-weight: 600;
   font-size: 1rem;
   color: #ddd;
-  margin-bottom: 12px;
+
 }
 
 .formInput {
@@ -18,7 +18,9 @@
   transition: border-color 0.2s ease;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 1rem;
+margin-bottom: 1rem;
+
+
 }
 
 .formInput::placeholder {
@@ -35,28 +37,26 @@
   border-color: var(--accent, #66ccff);
   color: #eee;
   background-color: #171a20;
+  
 }
 
 .cta {
-  position: relative;
   display: inline-block;
-  padding: 0.75rem 1.25rem;
-  font-size: 1.1rem !important;
+  padding: .8rem 1.4rem;
   font-weight: 600;
-  font-family: inherit;
-  border-radius: 9px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: 2px solid var(--accent);
-  background: var(--accent);
+  border-radius: 0.6rem;
+  background: var(--accent, #22c55e);
   color: black;
-  margin-top: 1.25rem;
+  transition: background 0.3s ease;
+  font-size: 1.1rem;
+margin-top:.75rem;
+cursor:pointer;
+
 }
 
 .cta:hover {
-  background-color: #3caee0;
+  background: #3caee0;
 }
-
 /* Errors */
 
 .errorInput {
@@ -85,4 +85,14 @@
   margin-top: 1rem;
   font-weight: 500;
 
+}
+.row {
+  display: flex;
+  gap: 1rem; /* espace entre les deux inputs */
+
+  justify-content: center;
+}
+
+.row .formLabel {
+  flex: 1; /* chaque champ prend 50% */
 }

@@ -48,10 +48,10 @@ export default function OffresSimples() {
               </p>
               <ul className={styles.cardList}>
                 <li>3 à 6 pages</li>
-                <li>Aide à la rédaction plus poussée</li>
+                <li>Contenus mieux structurés</li>
                 <li>Design soigné, professionnel</li>
               </ul>
-              <div className={styles.price}>À partir de 1200 €</div>
+              <div className={styles.price}>À partir de 1200 € TTC</div>
             </div>
           </FadeIn>
 
@@ -67,7 +67,7 @@ export default function OffresSimples() {
                 <li>Mots-clés locaux définis avec vous</li>
          
               </ul>
-              <div className={styles.price}>À partir de 1800 €</div>
+              <div className={styles.price}>À partir de 1800 € TTC</div>
             </div>
           </FadeIn>
         </div>

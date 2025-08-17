@@ -28,29 +28,20 @@
 }
 
 .cta {
-  position: relative;
   display: inline-block;
-  padding: 1.2rem 1.8rem;
-  font-size: 1.1rem!important;
+  padding: 1rem 1.75rem;
   font-weight: 600;
-  font-family: inherit;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-  outline: none;
-  background: var(--accent);/* ✨ léger fond en base */
+  border-radius: 0.75rem;
+  background: var(--accent, #22c55e);
   color: black;
+  transition: background 0.3s ease;
+  font-size: 1.1rem;
 
-  text-transform: uppercase;
-  box-shadow: 0 0 6px rgba(102, 204, 255, 0.4);
 }
 
-/* Hover = fond plein + texte noir */
 .cta:hover {
-  background-color: #3caee0;
+  background: #3caee0;
 }
-
 
 @media (max-width: 768px) {
   .title {

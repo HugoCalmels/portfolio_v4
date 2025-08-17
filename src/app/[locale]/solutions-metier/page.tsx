@@ -155,7 +155,7 @@ export default function Solutions() {
   <p className={styles.finalText}>
     Une idée, un besoin, ou juste envie de poser vos questions&nbsp;?
   </p>
-  <Link href={`/${locale}/contact`} className={styles.finalButton}>
+  <Link href={`/${locale}/contact`} className={styles.cta}>
     Discutons ensemble →
   </Link>
 </div>
