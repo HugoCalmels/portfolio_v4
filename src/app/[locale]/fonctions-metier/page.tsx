@@ -81,7 +81,8 @@ export default function FonctionMetier() {
             <li><strong>Évolutif</strong> — on prévoit des bases saines pour ajouter facilement de nouvelles fonctionnalités.</li>
             <li><strong>Connexion à des services tiers</strong> — APIs externes ou webhooks sur mesure.</li>
             <li><strong>Hébergement adapté</strong> — backend, base cloud, sécurisation : tout est cadré.</li>
-            <li><strong>Sur devis uniquement</strong> — chaque projet est unique, je vous aide à cadrer l'effort nécessaire.</li>
+            <li><strong>Sur devis uniquement</strong> — chaque projet est unique, je vous aide à cadrer l&apos;effort nécessaire.</li>
+
           </ul>
         </div>
 

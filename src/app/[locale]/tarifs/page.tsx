@@ -8,7 +8,7 @@ import { useParams } from 'next/navigation'
 import { FiTool } from 'react-icons/fi'
 import { MdHealthAndSafety } from 'react-icons/md'
 import { 
-  FiGlobe, FiServer, FiDatabase, FiEdit, FiFileText
+  FiGlobe, FiServer, FiDatabase, FiFileText
 } from 'react-icons/fi'
 import { FaRocket, FaCogs, FaSearchDollar } from 'react-icons/fa'
 import { HiOutlineShieldCheck, HiOutlineDocumentAdd } from 'react-icons/hi'

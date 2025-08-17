@@ -14,12 +14,9 @@ type Faq = {
 export default function FaqPage() {
   const [openIndex, setOpenIndex] = useState<null | number>(null)
   const params = useParams()
-  const locale = (params as any)?.locale || 'fr'
+ const locale = params?.locale || 'fr'
 
-  const home = `/${locale}`
   const offres = `/${locale}/offres`
-  const contact = `/${locale}/contact`
-  const realisations = `/${locale}#realisations` // ancre sur ta money page (ajuste si besoin)
 
   const faqs: Faq[] = [
     // --- Mini FAQ en tête (repris tel quel) ---

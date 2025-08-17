@@ -110,7 +110,7 @@ En échange, mon interface est simple, claire et adaptée à vos besoins, sans l
             </thead>
             <tbody>
               <tr><td>Pages incluses</td><td>1–2</td><td>1–2</td><td>1–2</td></tr>
-              <tr><td>Design</td><td>Thème premium prêt à l'emploi</td><td>Thème gratuit ou premium basique</td><td>Design rapide et sur‑mesure</td></tr>
+              <tr><td>Design</td><td>Thème premium prêt à l&apos;emploi</td><td>Thème gratuit ou premium basique</td><td>Design rapide et sur‑mesure</td></tr>
               <tr><td>SEO</td><td>Plugin SEO (Yoast / RankMath)</td><td>Plugin SEO basique</td><td>Structure SEO native</td></tr>
               <tr><td>Contenu</td><td>Client (option rédaction)</td><td>Client, aide ponctuelle</td><td>Je crée à partir de vos infos</td></tr>
               <tr><td>Performance</td><td>Correcte si bien optimisé</td><td>Variable</td><td>Rapide, sans plugin</td></tr>

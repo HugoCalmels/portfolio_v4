@@ -24,7 +24,7 @@ export default function CreationSiteInternetToulouse() {
         <meta name="description" content={description} />
         <link rel="canonical" href={canonical} />
         <meta name="robots" content="index,follow" />
-        {/* @ts-ignore */}
+      
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

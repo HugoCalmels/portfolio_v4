@@ -11,11 +11,6 @@ import {
   FaChartBar,
   FaFilePdf,
   FaExchangeAlt,
-  FaUserShield,
-  FaLock,
-  FaWarehouse,
-  FaNetworkWired,
-  FaPuzzlePiece
 } from 'react-icons/fa'
 import { FiPackage } from 'react-icons/fi'
 import { HiOutlineLightBulb } from 'react-icons/hi'

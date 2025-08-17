@@ -43,7 +43,7 @@ export default function BlogPage() {
               et pourquoi j’ai choisi de créer mes propres résultats.
             </p>
             <Link href={`/${locale}/blog/pourquoi-je-ne-travaille-pas-en-esn`} className={styles.readMore}>
-              Lire l'article
+              { "Lire l'article" }
             </Link>
           </div>
 
@@ -68,7 +68,7 @@ export default function BlogPage() {
   économique sur le long terme, tout en étant plus durable.
 </p>
             <Link href={`/${locale}/blog/comparatif-wordpress-site-code`} className={styles.readMore}>
-              Lire l'article
+              { "Lire l'article" }
             </Link>
           </div>
         </div>
