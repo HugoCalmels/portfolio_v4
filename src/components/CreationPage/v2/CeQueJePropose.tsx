@@ -5,9 +5,14 @@ import FadeIn from '@/components/FadeIn'
 import Section2 from './megaSection/Section2'
 import { useParams } from 'next/navigation'
 
+type RouteParams = {
+  locale?: string | string[]
+}
+
 export default function CeQueJePropose() {
-  const params = useParams()
-  const locale = (params as any)?.locale || 'fr'
+  const params = useParams<RouteParams>()
+  const rawLocale = params?.locale
+  const locale = Array.isArray(rawLocale) ? rawLocale[0] : rawLocale ?? 'fr'
 
   return (
     <section className={styles.container}>
@@ -24,7 +29,7 @@ export default function CeQueJePropose() {
             </p>
           </FadeIn>
 
-          <FadeIn>
+        <FadeIn>
             <p>
               Je suis développeur logiciel web de formation, mais le marché ne m’a pas laissé de place.
               <br />
