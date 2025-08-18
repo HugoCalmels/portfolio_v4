@@ -222,13 +222,13 @@
     {
       "title": "Logiciel web",
       "description": "Application en ligne pour créer et organiser des parties personnalisées.",
-      "context": "Projet d’apprentissage pour progresser en Java et Angular.",
+      "context": "Projet d’apprentissage.",
       "stack": "Java, SpringBoot, Angular.js"
     },
     {
       "title": "Clone de Facebook",
-      "description": "Plateforme sociale avec fil d’actualité, profils et messagerie.",
-      "context": "Projet d'entraînement aux frameworks React et Rails.",
+      "description": "Plateforme sociale avec fil d’actualité, profils, liste d'amis, notifications.",
+      "context": "Projet d’apprentissage.",
       "stack": "React.js, Ruby on Rails"
     }
   ]
