@@ -3,53 +3,48 @@
 import styles from './CeQueJePropose.module.css'
 import FadeIn from '@/components/FadeIn'
 import Section2 from './megaSection/Section2'
-// import Section3 from './megaSection/Section3'
 import { useParams } from 'next/navigation'
 
 export default function CeQueJePropose() {
   const params = useParams()
-  const locale = params?.locale || 'fr'
+  const locale = (params as any)?.locale || 'fr'
 
   return (
     <section className={styles.container}>
       <div className={styles.intro}>
         <FadeIn>
-          <h2 className={styles.title}>Mon parcours, ma façon de faire</h2>
+          <h2 className={styles.title}>Mon parcours</h2>
         </FadeIn>
 
         <div className={styles.paragraphs}>
           <FadeIn>
             <p>
-              Je propose la <strong>création de site internet à Toulouse</strong> — des sites <strong>simples</strong>, <strong>fiables</strong> et adaptés aux pros.
+              Je propose la <strong>création de sites internet à Toulouse</strong> — des sites{' '}
+              <strong>simples</strong>, <strong>fiables</strong> et adaptés aux pros.
             </p>
           </FadeIn>
 
           <FadeIn>
             <p>
-              À la base je suis développeur logiciel web, mais l’industrie ne voulait pas de moi.<br />
-              👉 <a className={styles.linkHoverUnderline} href={`/${locale}/blog/pourquoi-je-ne-travaille-pas-en-esn`}>J’explique pourquoi ici.</a>
+              Je suis développeur logiciel web de formation, mais le marché ne m’a pas laissé de place.
+              <br />
+              <a
+                className={styles.linkHoverUnderline}
+                href={`/${locale}/blog/pourquoi-je-ne-travaille-pas-en-esn`}
+              >
+                👉 J’explique pourquoi ici.
+              </a>
             </p>
           </FadeIn>
 
           <FadeIn>
             <p>
-              Alors j’ai décidé de tenter ma chance, en indépendant.  
-              Pas de réseau, pas de pub, pas de budget — juste ce site, <strong>mes compétences</strong>, et <strong>l’envie de faire mes preuves</strong>.
-            </p>
-          </FadeIn>
-
-          <FadeIn>
-            <p>
-              Je suis confiant dans ce que je propose. J’ai appris à <strong>concevoir</strong>, structurer, coder — à créer un site de A à Z, du contenu à l’interface.  
-              &nbsp;<strong>Site vitrine</strong>, interface métier, app web complète — je construis selon le <strong>besoin réel</strong>, sans superflu.
-            </p>
-          </FadeIn>
-
-          <FadeIn>
-            <p>
-              Je travaille seul, mais je touche à tout : structuration, interface, logique métier, optimisation, contenus…<br />
-              Quand je construis un site, je pense autant à <strong>son message</strong> qu’à sa <strong>solidité technique</strong>. Je réfléchis, j’écris, je code, j’organise.<br />
-              Ce n’est pas “un peu de tout”, c’est <strong>tout ce qu’il faut</strong> pour un site qui tient la route.
+              Alors plutôt que d’attendre, j’ai décidé d’avancer par moi-même.
+              <br />
+              Je crée aujourd’hui des <strong>sites vitrines</strong> et des <strong>logiciels web</strong>, 
+              pensés de bout en bout&nbsp;: contenu, design, interface, logique métier.
+              C’est une façon de mettre mes compétences au service de projets concrets, 
+              tout en continuant à nourrir mon parcours de développeur.
             </p>
           </FadeIn>
         </div>
