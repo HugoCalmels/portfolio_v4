@@ -19,8 +19,9 @@
   z-index: 1;
 
   padding: 0 1rem;
-  margin: 200px auto 0;
+  margin: 17.5vh auto 0;
   color: white;
+ 
 }
 
 /* === Title & Subtitle === */
@@ -33,6 +34,8 @@
 
   margin-bottom: 1.5rem;
   font-family: var(--font-title);
+
+  margin-top: 0;
  
 }
 
