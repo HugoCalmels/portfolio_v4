@@ -75,7 +75,7 @@ export default function Hero() {
           fill
           placeholder="blur"
           blurDataURL="/images/testa42-small-blur.jpg"
-          style={{ objectFit: 'cover', filter: 'brightness(0.75) blur(1.5px)' }}
+          style={{ objectFit: 'cover', filter: 'brightness(1.05) blur(1.5px)' }}
           priority
         />
       </div>

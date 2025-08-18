@@ -47,7 +47,10 @@
 
 .table th,
 .table td {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border: 1px solid #5c6f80;
+
+
   padding: 0.8rem 1rem;
   text-align: left;
 }
@@ -87,7 +90,8 @@
 .offer {
   margin-bottom: 3.5rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid #2c2c30;
+  border-bottom: 1px solid #5c6f80;
+
 }
 
 .offer:last-of-type {
