@@ -1,38 +1,56 @@
 .container {
-  max-width: 800px;
-  margin: 60px auto 80px;
-  padding: 0 16px;
-  color: #eee;
-
-  margin-top: calc(60px + 6rem);
-
-    margin-bottom: 9rem;
-  
-
+  max-width: 1120px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 56px 20px 72px;
 }
 
-.title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 24px;
+/* Intro */
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.kicker {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.h1 {
+  margin: 0;
   color: #fff;
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.12;
 }
+
+.lead {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: clamp(16px, 2.2vw, 18px);
+  line-height: 1.6;
+}
+
+/* Zone contenu */
+.wrapper {
+  max-width: 1000px;
+}
+
 /* Bloc mentions légales / vie privée */
 .legal {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  max-width: 100%;
+  color: rgba(255, 255, 255, 0.72);
   font-size: 0.95rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.72);
-  max-width: 100%; /* évite les lignes trop longues */
 }
 
 .legal h2 {
-  margin: 2rem 0 1rem;
+  color: #e8e8e8;
   font-size: 1.05rem;
   font-weight: 700;
-  color: #e8e8e8;
   letter-spacing: 0.3px;
 }
 
@@ -40,7 +58,27 @@
   margin: 0 0 0.85rem;
 }
 
-/* Si tu veux rapprocher les paragraphes après un titre */
+/* rapproche légèrement le 1er paragraphe après un h2 */
 .legal h2 + p {
   margin-top: 0.25rem;
+}
+
+/* --- Classes supprimées car non utilisées dans le TSX ---
+.title
+.returnLink
+.returnLink a
+.largeFont (définie/consommée dans TabsSelect.module.css, pas ici)
+----------------------------------------------------------- */
+
+/* Responsive léger (paddings uniquement) */
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 16px 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 28px 14px 44px;
+  }
 }

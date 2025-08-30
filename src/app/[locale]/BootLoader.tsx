@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useRef } from 'react'
 import styles from './bootloader.module.css'
+import Loading from '@/components/common/Loading'
 
 export default function BootLoader() {
   const ref = useRef<HTMLDivElement>(null)
@@ -47,8 +48,9 @@ export default function BootLoader() {
       aria-hidden="true"
       className={styles.wrapper}
     >
+      <Loading />
       {/* Optionnel : micro dot. Tu peux le supprimer si tu veux 0 UI */}
-      <div className={styles.dot} />
+
     </div>
   )
 }

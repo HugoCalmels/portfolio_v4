@@ -6,10 +6,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2147483647;
+  z-index: 998;
   opacity: 1;
   transition: opacity 240ms ease; /* un poil plus rapide */
   pointer-events: none; /* ne bloque jamais l'interaction */
+ 
+
 
 }
 

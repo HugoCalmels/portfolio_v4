@@ -1,95 +1,32 @@
-// app/creation-site-internet-toulouse/page.tsx
-import Head from "next/head";
-import Link from "next/link";
-import styles from "./page.module.css";
+'use client';
 
-export default function CreationSiteInternetToulouse() {
-  const title = "Création site internet Toulouse – sites & solutions sur mesure";
-  const description =
-    "Création de site internet à Toulouse. Basé à Toulouse, je conçois des sites et applications web sur mesure. Travail à distance ou intervention sur site (déplacements facturés au tarif horaire).";
-  const canonical = "https://tondomaine.fr/creation-site-internet-toulouse";
+import { useTranslations } from 'next-intl';
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "Création de site internet à Toulouse",
-    url: canonical,
-    areaServed: "Toulouse",
-  };
+import SeoHead from '@/components/common/SeoHead';
+import OffresSimples from '@/components/pages/creation-sites-internet/OffresSimples';
+import Projects from '@/components/pages/creation-sites-internet/Projects';
+import Testi from '@/components/pages/creation-sites-internet/Testi';
+import MiniFaq from '@/components/common/MiniFaq';
+import ContactSection from '@/components/common/ContactSection';
+import Then from '@/components/pages/creation-sites-internet/Then';
+
+export default function Home() {
+  const t = useTranslations('creationSeo');
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="canonical" href={canonical} />
-        <meta name="robots" content="index,follow" />
-      
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </Head>
-
-      <section className={styles.wrapper}>
-        <header className={styles.intro}>
-          <h1 className={styles.heading}>Création de site internet à Toulouse</h1>
-
-          <ul className={styles.metaChips} aria-label="Informations clés">
-            <li>Basé à Toulouse</li>
-            <li>À distance & sur site</li>
-            <li>Devis rapide</li>
-          </ul>
-
-          <p className={styles.lead}>
-            Basé à Toulouse, je conçois et développe des sites vitrines, e-commerce et applications web sur mesure.
-          </p>
-          <p className={styles.lead}>
-            La plupart des projets se font efficacement à distance, mais je peux intervenir dans vos locaux lorsque
-            c’est pertinent&nbsp;: par exemple pour un site vitrine hautement qualitatif ou un logiciel métier
-            nécessitant une compréhension fine sur place.
-          </p>
-          <p className={styles.lead}>
-            Comme la majorité des indépendants, les déplacements sont facturés au temps passé, temps de trajet inclus
-            (au tarif horaire habituel). 
-          </p>
-        </header>
-
-        <p className={styles.zones}>
-          Intervention : Toulouse, Occitanie et déplacements longue distance si nécessaires.
-        </p>
-
-        <nav aria-label="Pages utiles">
-  <p className={styles.linksLabel}>Pour en savoir plus&nbsp;:</p>
-  <ul className={styles.list}>
-    <li>
-      <Link href="/offres" className={styles.link}>
-        Mes offres de création de sites
-      </Link>
-    </li>
-    <li>
-      <Link href="/solutions-metier" className={styles.link}>
-        Solutions métier sur mesure
-      </Link>
-    </li>
-    <li>
-      <Link href="/tarifs" className={styles.link}>
-        Mes tarifs
-      </Link>
-    </li>
-  </ul>
-</nav>
-
-        <div className={styles.cta}>
-          <h3>Prêt à lancer votre projet ?</h3>
-          <Link href="/contact" className={styles.buttonPrimary}>
-            Me contacter
-          </Link>
-          <p className={styles.note}>
-            Réponse rapide, devis gratuit et sans engagement.
-          </p>
-        </div>
-      </section>
+           <SeoHead
+        title="Création de site internet à Toulouse – Sites vitrines & e-commerce"
+        description="Conception de sites pros à Toulouse : vitrine, e-commerce et SEO local. Design moderne, performance et accompagnement après mise en ligne."
+      />
+      <main>
+        <OffresSimples />
+        <Then />
+        <Projects />
+        <Testi />
+        <MiniFaq />
+        <ContactSection />
+      </main>
     </>
   );
 }

@@ -314,17 +314,17 @@
   "question": "Quel est votre besoin ?",
   "options": {
     "quote": "Demande de devis",
-    "contact": "Contact / Question générale"
+    "contact": "Question générale"
   },
 "budget": {
-  "0": "700 € - 1 500 €",
-  "1": "1 500 € - 3 000 €",
-  "2": "Plus de 3 000 €",
+  "0": "900€ - 2000 €",
+  "1": "2000 € - 5 000 €",
+  "2": "Plus de 5 000 €",
   "3": "Je ne sais pas"
 },
   "projectType": {
-    "0": "Création de site vitrine",
-    "1": "Logiciel métier",
+    "0": "Création de site",
+    "1": "Développement web",
     "2": "Autre"
   }
   

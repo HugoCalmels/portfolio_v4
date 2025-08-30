@@ -2,11 +2,11 @@ import { NextIntlClientProvider } from 'next-intl';
 import type { AbstractIntlMessages } from 'next-intl';
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/layout/Navbar';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Archivo_Black, Montserrat } from 'next/font/google';
 import '@/styles/globals.css';
-import Footer from '@/components/Footer';
+import Footer from '@/components/layout/Footer';
 import BootLoader from './BootLoader';
 
 const geistSans = Geist({

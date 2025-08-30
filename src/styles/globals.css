@@ -1,12 +1,21 @@
 @import './theme.css';
 
-body {
+*,
+*::before,
+*::after { box-sizing: border-box; }   
+
+html, body {
   background-color: var(--color-bg);
   color: var(--color-text);
+    font-family:var(--font-body);
   margin: 0;
-  font-family:var(--font-body);
-
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;                        /* si jamais body est enfant d’un flex */
+  overflow-x: clip;   
 }
+
 
 a {
   color: inherit;
@@ -17,11 +26,10 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  gap: 1rem;
 }
 
 main {
+
 
   margin: 0 auto;
 }
