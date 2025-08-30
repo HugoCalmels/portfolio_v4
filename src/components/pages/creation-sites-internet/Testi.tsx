@@ -5,7 +5,7 @@ import styles from './Testi.module.css';
 import { useTranslations } from 'next-intl';
 import FadeIn from '@/components/common/FadeIn';
 
-const arthur = '/images/arthur-m.jpg';
+const arthur = '/images/fake-arthur.webp';
 const mam = '/images/mam.jpg';
 
 export default function Testi() {
@@ -39,8 +39,8 @@ export default function Testi() {
                 <Image
                   src={img}
                   alt={name}
-                  width={48}
-                  height={48}
+                  width={112}
+                  height={112}
                   className={styles.avatarImg}
                 />
               </div>
