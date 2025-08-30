@@ -1,6 +1,5 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 
 import SeoHead from '@/components/common/SeoHead';
 import OffresSimples from '@/components/pages/creation-sites-internet/OffresSimples';
@@ -11,8 +10,6 @@ import ContactSection from '@/components/common/ContactSection';
 import Then from '@/components/pages/creation-sites-internet/Then';
 
 export default function Home() {
-  const t = useTranslations('creationSeo');
-
   return (
     <>
            <SeoHead

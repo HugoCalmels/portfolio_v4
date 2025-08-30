@@ -3,12 +3,10 @@
 import SeoHead from '@/components/common/SeoHead'
 import Hero from '@/components/pages/home/Hero'
 import ContactSection from '@/components/common/ContactSection'
-import { useTranslations } from 'next-intl'
 import Airplanes from '@/components/pages/home/AirPlanes'
 import AccueilCards from '@/components/pages/home/AcceuilCards'
 
 export default function Home() {
-  const t = useTranslations('creationSeo')
 
   return (
     <>
