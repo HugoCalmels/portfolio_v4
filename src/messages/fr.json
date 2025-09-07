@@ -215,21 +215,21 @@
   "list": [
     {
       "title": "Blog d’artiste",
-      "description": "Site portfolio pour présenter les œuvres d’une artiste peintre.",
-      "context": "Projet réalisé pour une artiste indépendante",
-      "stack": "Next.js, Tailwind, CMS Headless"
+      "description": "Site portfolio pour présenter les peintures et actualités d’une artiste.",
+      "context": "Réalisé pour une artiste indépendante.",
+      "stack": "React.js"
     },
     {
       "title": "Logiciel web",
-      "description": "Outil web pour organiser des parties personnalisées.",
-      "context": "Projet open source développé avec un mentor",
-      "stack": "React, Spring Boot, Auth OpenID"
+      "description": "Application en ligne pour créer et organiser des parties personnalisées.",
+      "context": "Projet d’apprentissage.",
+      "stack": "Java, SpringBoot, Angular.js"
     },
     {
       "title": "Clone de Facebook",
-      "description": "Plateforme sociale développée comme vitrine technique.",
-      "context": "Projet personnel bac à sable",
-      "stack": "Next.js, PostgreSQL, Stripe"
+      "description": "Plateforme sociale avec fil d’actualité, profils, liste d'amis, notifications.",
+      "context": "Projet d’apprentissage.",
+      "stack": "React.js, Ruby on Rails"
     }
   ]
 },"faq": {
@@ -274,12 +274,12 @@
     "description": "Je suis basé à <strong>Toulouse</strong>, mais je peux travailler avec des clients dans toute la France.<br />Appels visio, messages clairs, et échanges réguliers — que vous soyez à côté ou à 800km, ça marche aussi bien."
   },
   "contactForm": {
-    "name": "Votre nom",
+    "name": "Nom",
     "namePlaceholder": "Jean Dupont",
-    "email": "Votre email",
+    "email": "Email",
     "emailPlaceholder": "jean@email.com",
     "message": "Message",
-    "messagePlaceholder": "Votre message...",
+    "messagePlaceholder": "message...",
     "cta": "Envoyer le message",
     "loading": "Envoi en cours...",
     "success": "✅ Message envoyé avec succès !",
@@ -292,29 +292,39 @@
     "firstName": "Prénom",
     "email": "Email",
     "phone": "Téléphone",
-    "budget": "Budget indicatif",
-    "projectType": "Quel type de projet ?",
     "details": "Détails du projet",
-    "cta": "Demander un devis",
+    "budget": "Budget",
+    "projectType": "Type de projet",
+    "cta": "Envoyer le message",
     "loading": "Envoi en cours...",
-    "success": "✅ Demande envoyée avec succès !"
+    "success": "✅ Message envoyé avec succès !",
+    "errorTooManyRequests": "Trop de requêtes. Réessayez dans quelques instants.",
+    "errorServer": "Erreur serveur. Merci de réessayer plus tard.",
+    "errorNetwork": "Erreur réseau. Vérifie ta connexion.",
+    "placeholders": {
+      "lastName": "Dupont",
+      "firstName": "Jean",
+      "email": "jean@exemple.com",
+      "phone": "06 12 34 56 78",
+      "details": "Décrivez votre besoin, vos objectifs, les pages/fonctionnalités envisagées…"
+    }
   },
   "contactPage": {
   "title": "Contactez-moi",
   "question": "Quel est votre besoin ?",
   "options": {
     "quote": "Demande de devis",
-    "contact": "Contact / Question générale"
+    "contact": "Question générale"
   },
-  "budget": {
-    "0": "500 € - 1 000 €",
-    "1": "1 000 € - 3 000 €",
-    "2": "Plus de 3 000 €",
-    "3": "Je ne sais pas"
-  },
+"budget": {
+  "0": "900€ - 2000 €",
+  "1": "2000 € - 5 000 €",
+  "2": "Plus de 5 000 €",
+  "3": "Je ne sais pas"
+},
   "projectType": {
-    "0": "Création de site vitrine",
-    "1": "Logiciel métier",
+    "0": "Création de site",
+    "1": "Développement web",
     "2": "Autre"
   }
   

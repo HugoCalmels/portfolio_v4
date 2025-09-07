@@ -216,21 +216,21 @@
   "list": [
     {
       "title": "Artist blog",
-      "description": "Portfolio site to showcase an artist's paintings.",
-      "context": "Project completed for an independent artist",
-      "stack": "Next.js, Tailwind, Headless CMS"
+      "description": "Portfolio website to present an artist's paintings and news.",
+      "context": "Built for an independent artist.",
+      "stack": "React.js"
     },
     {
       "title": "Web application",
-      "description": "Web tool to organize custom game sessions.",
-      "context": "Open source project developed with a mentor",
-      "stack": "React, Spring Boot, OpenID Auth"
+      "description": "Online app to create and organize custom game sessions.",
+      "context": "Learning project to improve skills in Java and Angular.",
+      "stack": "Java, SpringBoot, Angular.js"
     },
     {
       "title": "Facebook clone",
-      "description": "Social platform developed as a technical showcase.",
-      "context": "Personal sandbox project",
-      "stack": "Next.js, PostgreSQL, Stripe"
+      "description": "Social platform with news feed, profiles, and messaging.",
+      "context": "Training project using React and Rails frameworks.",
+      "stack": "React.js, Ruby on Rails"
     }
   ]
 },"faq": {
@@ -306,12 +306,12 @@
     "quote": "Request a quote",
     "contact": "General contact / Question"
   },
-  "budget": {
-    "0": "€500 - €1,000",
-    "1": "€1,000 - €3,000",
-    "2": "More than €3,000",
-    "3": "I’m not sure"
-  },
+"budget": {
+  "0": "À partir de 700 €",
+  "1": "1 000 € – 3 000 €",
+  "2": "Plus de 3 000 €",
+  "3": "Je ne sais pas encore"
+},
   "projectType": {
     "0": "Showcase website",
     "1": "Business software",

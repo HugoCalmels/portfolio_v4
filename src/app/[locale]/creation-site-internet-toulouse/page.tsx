@@ -1,45 +1,29 @@
-'use client'
+'use client';
 
-import SeoHead from '@/components/SeoHead'
-import Hero from '@/components/CreationPage/Hero'
-import OffresSimples from '@/components/CreationPage/OffresSimples'
-import Testi from '@/components/CreationPage/Testi'
-import PourquoiFaireUnSite from '@/components/CreationPage/PourquoiFaireUnSite'
-import FonctionnalitesMetier from '@/components/CreationPage/FonctionnalitesMetier'
-import HowIWork from '@/components/CreationPage/HowIWork'
-import Faq from '@/components/CreationPage/Faq'
-import Geo from '@/components/CreationPage/Geo'
-import Projects from '@/components/CreationPage/Projects'
-import ContactSection from '@/components/CreationPage/ContactSection'
-import HostingOptions from '@/components/CreationPage/HostingOptions'
-import { useTranslations } from 'next-intl'
 
-export default function CreationSiteToulouse() {
-  const t = useTranslations('creationSeo')
+import SeoHead from '@/components/common/SeoHead';
+import OffresSimples from '@/components/pages/creation-sites-internet/OffresSimples';
+import Projects from '@/components/pages/creation-sites-internet/Projects';
+import Testi from '@/components/pages/creation-sites-internet/Testi';
+import MiniFaq from '@/components/common/MiniFaq';
+import ContactSection from '@/components/common/ContactSection';
+import Then from '@/components/pages/creation-sites-internet/Then';
 
+export default function Home() {
   return (
     <>
-      <SeoHead
-        title={t('seo.title')}
-        description={t('seo.description')}
+           <SeoHead
+        title="Création de site internet à Toulouse – Sites vitrines & e-commerce"
+        description="Conception de sites pros à Toulouse : vitrine, e-commerce et SEO local. Design moderne, performance et accompagnement après mise en ligne."
       />
       <main>
-        <Hero />
-        <Testi />
-        <PourquoiFaireUnSite />
         <OffresSimples />
-        <FonctionnalitesMetier />
-        <HostingOptions />
-        <HowIWork />
+        <Then />
         <Projects />
-        <Faq />
-        <Geo />
+        <Testi />
+        <MiniFaq />
         <ContactSection />
-
-        {/* <FaqSection /> */}
-        {/* <LocalSection /> */}
-        {/* <CtaSection /> */}
       </main>
     </>
-  )
+  );
 }

@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.23.9",
     "next": "15.3.5",
     "next-intl": "^4.3.4",
+    "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",

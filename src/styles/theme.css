@@ -1,5 +1,5 @@
 :root {
-  --color-bg: #0b0d10;           /* fond global très profond, froid */
+  --color-bg: #0d0f12;           /* fond global très profond, froid */
   --color-surface: #111317;      /* pour les containers / cards */
   --color-text: #f2f2f2;         /* texte principal très clair mais pas blanc pur */
   --color-text-muted: #a1a1aa;   /* texte secondaire, sous-titres, paragraphes */

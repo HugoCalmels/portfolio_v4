@@ -1,0 +1,58 @@
+.after {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 clamp(12px, 4vw, 16px);
+  color: #fff;
+  padding-left:1.2rem;
+  padding-right:1.2rem;
+}
+
+/* Titres de section */
+.title {
+  font-size: clamp(1rem, 2.4vw, 1.1rem);
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #e8edf5;
+}
+.title:not(:first-of-type){
+  margin-top: clamp(1rem, 3.2vw, 1.25rem);
+}
+
+/* Ligne avec icône + texte */
+.text {
+  margin: .45rem 0;
+  font-size: clamp(.9rem, 2.2vw, .95rem);
+  line-height: 1.6;
+  color: #cbd5e1;
+
+  display: flex;
+  align-items: flex-start;   /* 👈 aligne l’icône en haut */
+  gap: .55rem;
+  flex-wrap: wrap;    
+  display:inline;       /* 👈 permet de passer à la ligne proprement en mobile */
+
+}
+
+/* Lien en fin de phrase : reste compact et lisible */
+.link {
+  font-size: inherit;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;       /* 👈 évite “détails →” en 2 lignes */
+}
+
+/* Icône à gauche */
+.icon {
+  flex: 0 0 auto;
+  font-size: clamp(.95rem, 2.2vw, 1rem);
+  margin-top: .1rem;         /* léger calage avec la 1ère ligne */
+  color: var(--accent);
+  margin-right: .5rem;
+  margin-bottom:-2px;
+}
+
+/* Petits écrans : resserrer un peu le rythme */
+@media (max-width: 480px){
+  .text { line-height: 1.5; gap: .45rem; }
+}

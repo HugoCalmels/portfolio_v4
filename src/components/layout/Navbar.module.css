@@ -1,0 +1,214 @@
+/* === Bar Layout === */
+.navbar {
+  height: 60px;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  transition: transform .3s ease, background-color .3s ease, backdrop-filter .3s ease;
+  will-change: transform;
+ 
+}
+
+.visible { transform: translateY(0%); }
+.hidden  { transform: translateY(-100%); }
+
+.scrolledBg {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* === Inner === */
+.inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 clamp(12px, 3vw, 24px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* === Brand === */
+.brand {
+  font-family: var(--font-title);
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+  font-weight: 500;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  cursor: pointer;
+  transition: transform .2s ease;
+  min-height: 42px;
+  text-decoration: none;
+}
+.brand:hover { transform: scale(1.033); }
+
+.logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+/* === Right side === */
+.right {
+  display: flex;
+  align-items: center;
+  gap: clamp(.5rem, 2vw, 1rem);
+}
+
+/* Chip with the two dropdowns */
+.actionGroup {
+  display: flex;
+  align-items: center;
+  gap: clamp(.4rem, 1.6vw, 1rem);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+/* === Dropdowns === */
+.dropdownContainer { position: relative; }
+
+.dropdownButton {
+  background: transparent;
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: clamp(.85rem, 1.6vw, .95rem);
+  font-weight: 500;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background .2s ease;
+  border-radius: 6px; /* hover glitch fix */
+}
+.dropdownButton:hover { background: rgba(255, 255, 255, 0.1); }
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: -12px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 8px;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.5);
+  z-index: 15;
+
+}
+
+.dropdownItem {
+  background: none;
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(.85rem, 1.6vw, .95rem);
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color .25s ease, color .25s ease, transform .2s ease;
+   white-space: nowrap;   /* 👈 empêche le retour à la ligne */
+}
+.dropdownItem:hover {
+  background-color: rgba(255,255,255,.08);
+  color: #00bfff;
+}
+
+.langMenu { min-width: 75px; right: 0; }
+
+
+.menuSeparator {
+  border: none;
+  height: 1px;
+  background-color: #333;
+  margin: 6px 0;
+}
+
+.highlightLink {
+  color: #00bfff;
+  font-weight: 600;
+}
+
+/* === Responsive tweaks (sans burger) === */
+
+/* ≤ 1024px : resserrer la puce d’actions et la taille de police */
+@media (max-width: 1024px) {
+  .navbar { height: 58px; }
+  .logo { width: 30px; height: 30px; }
+  .actionGroup { padding: 4px 10px; }
+}
+
+/* ≤ 768px : garder la nav lisible, réduire les gaps/tailles, menus collés au bord si besoin */
+@media (max-width: 768px) {
+  .inner { padding: 0 12px; }
+  .brand { gap: .4rem; font-size: 1.2rem; } /* force un petit cran */
+  .right { gap: .6rem; }
+  .actionGroup { padding: 4px 8px; gap: .6rem; }
+  .dropdownButton { font-size: .9rem; padding: 5px 8px; gap: 4px; }
+  .dropdownMenu {
+  right: 0;
+  top: calc(100% + 8px);
+}
+
+  /* le menu langue reste compact */
+.langMenu {
+  min-width: unset;            /* annule toute min-width héritée */
+  width: max-content;          /* largeur = contenu */
+  white-space: nowrap;         /* pas de retour à la ligne */
+  max-width: calc(100vw - 24px); /* sécurité anti débordement */
+
+}
+}
+
+/* ≤ 560px : compacter un peu plus tout en gardant “Menu” visible */
+@media (max-width: 560px) {
+  .navbar { height: 56px; }
+  .logo { width: 26px; height: 26px; }
+  .brand { font-size: 1.05rem; gap: .35rem; }
+  .actionGroup { padding: 3px 6px; gap: .5rem; }
+  .dropdownButton { font-size: .86rem; padding: 4px 6px; }
+
+  
+}
+
+/* ≤ 420px : dernier cran de compaction */
+@media (max-width: 420px) {
+  .navbar { height: 56px; }
+  .inner { padding: 0 10px; }
+  .brand { font-size: 1rem; }
+  .dropdownButton { padding: 4px 6px; }
+}
+/* Lang menu = largeur du contenu, partout */
+.langMenu{
+  min-width: 0 !important;     /* neutralise le 160px */
+  width: max-content;           /* largeur = contenu */
+  inline-size: max-content;     /* même intention (log. écriture) */
+  white-space: nowrap;          /* pas de retour à la ligne */
+  right: 0;                     /* ancré à droite du bouton */
+}
+
+/* Padding plus serré dans le menu langue (optionnel) */
+.langMenu .dropdownItem{
+  padding: 6px 8px;
+}
+
+/* Mobile : NE pas élargir le menu langue en vw,
+   seul le menu principal doit s’élargir */
+@media (max-width: 768px){
+   /* ok pour le gros menu */
+  .langMenu{
+    min-width: 0 !important;
+    width: max-content;
+    inline-size: max-content;
+    max-width: calc(100vw - 24px);    /* sécurité anti débordement */
+  }
+}

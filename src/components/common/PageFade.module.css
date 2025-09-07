@@ -1,0 +1,5 @@
+.init { opacity: 0; }
+.ready { opacity: 1; transition: opacity .35s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .init, .ready { transition: none }
+}
