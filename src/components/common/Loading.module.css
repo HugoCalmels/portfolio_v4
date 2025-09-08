@@ -1,32 +1,29 @@
 .wrapper{
   display:inline-grid;
   place-items:center;
-  color: var(--accent);          /* ta couleur */
-  font-size: var(--size, 48px);  /* 1em = taille du SVG */
+  color: var(--accent, #6ec1ff);
+  width: var(--size, 48px);
+  height: var(--size, 48px);
   user-select:none;
   pointer-events:none;
 }
 
-.svg{ width:1em; height:1em; overflow:visible; }
-
-.spin{
-  transform-origin: 50% 50%;
-  animation: spin .9s linear infinite; /* une seule anim */
-}
-
-.arc{
-  fill:none;
-  stroke: currentColor;
-  stroke-width: var(--thickness, 5);
-  stroke-linecap: round;
-  /* longueur visible vs trou (en %) grâce à pathLength=100 */
-  stroke-dasharray: calc(100 - var(--gap, 22)) var(--gap, 22);
-  stroke-dashoffset: 0;
+/* Anneau en conic-gradient, masqué pour garder l’épaisseur */
+.spinner{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 0turn, currentColor 0 70%, transparent 70% 100%);
+  -webkit-mask:
+    radial-gradient(farthest-side, transparent calc(100% - var(--thickness, 6px)), #000 0);
+          mask: radial-gradient(farthest-side, transparent calc(100% - var(--thickness, 6px)), #000 0);
+  animation: spin .9s linear infinite;
 }
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* accessibilité */
+/* A11y */
 .srOnly{
   position:absolute !important;
   width:1px; height:1px; padding:0; margin:-1px;
@@ -34,5 +31,5 @@
 }
 
 @media (prefers-reduced-motion: reduce){
-  .spin{ animation:none; }
+  .spinner{ animation: none; }
 }

@@ -1,50 +1,31 @@
 'use client';
-
 import type { CSSProperties } from 'react';
 import styles from './Loading.module.css';
 
 type Props = {
-  /** ex: 48 ou '3rem' */
-  size?: number | string;
-  /** ex: 5 */
-  thickness?: number;
-  /** % de “trou” (0–100). ex: 22 */
-  gap?: number;
+  size?: number | string;      // ex: 48 ou "3rem"
+  thickness?: number;          // ex: 6 (px)
   label?: string;
-};
+}
 
-// Types pour les variables CSS personnalisées
-type SpinnerVars = Record<'--size' | '--thickness' | '--gap', string>;
+type Vars = Record<'--size'|'--thickness', string>;
 
 export default function Loading({
   size = 48,
-  thickness = 10,
-  gap = 22,
+  thickness = 6,
   label = 'Chargement…',
 }: Props) {
   const cssSize = typeof size === 'number' ? `${size}px` : size;
 
-  const style: CSSProperties & SpinnerVars = {
+  const style: CSSProperties & Vars = {
     '--size': cssSize,
-    '--thickness': String(thickness),
-    '--gap': String(gap),
+    '--thickness': `${thickness}px`,
   };
 
   return (
-    <div
-      role="status"
-      aria-live="polite"
-      aria-busy="true"
-      aria-label={label}
-      className={styles.wrapper}
-      style={style}
-    >
-      <svg className={styles.svg} viewBox="0 0 100 100" aria-hidden="true">
-        <g className={styles.spin}>
-          {/* arc fixe, on fait juste tourner le groupe */}
-          <circle className={styles.arc} cx="50" cy="50" r="42" pathLength={100} />
-        </g>
-      </svg>
+    <div role="status" aria-live="polite" aria-busy="true" aria-label={label}
+         className={styles.wrapper} style={style}>
+      <span className={styles.spinner} aria-hidden="true" />
       <span className={styles.srOnly}>{label}</span>
     </div>
   );

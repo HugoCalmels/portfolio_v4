@@ -147,25 +147,27 @@ export default function Airplanes() {
     }, duration * 1000 + 1000)
   }
 
-  useEffect(() => {
-    const firstDelay = 8000 + Math.random() * 6000 // 5–9s pour le premier
-    const timeout = setTimeout(() => {
-      spawnPlane()
+useEffect(() => {
+  const firstDelay = 10 * 60 * 1000 // 10 min
+
+  const timeout = setTimeout(() => {
+    spawnPlane()
+    scheduleNext()
+  }, firstDelay)
+
+  const scheduleNext = () => {
+    const delay = 5 * 60 * 1000 // 5 min
+    setTimeout(() => {
+      if (planesRef.current.length < 2) {
+        spawnPlane()
+      }
       scheduleNext()
-    }, firstDelay)
-  
-    const scheduleNext = () => {
-      const delay = 25000 + Math.random() * 15000 // 16–28s entre chaque
-      setTimeout(() => {
-        if (planesRef.current.length < 2) {
-          spawnPlane()
-        }
-        scheduleNext()
-      }, delay)
-    }
-  
-    return () => clearTimeout(timeout)
-  }, [])
+    }, delay)
+  }
+
+  return () => clearTimeout(timeout)
+}, [])
+
   
 
   return (
