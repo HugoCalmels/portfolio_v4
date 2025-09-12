@@ -10,7 +10,7 @@ type Props = {
   postGapMs?: number
 }
 
-export default function BootLoader({ minShowMs = 200, postGapMs = 120 }: Props) {
+export default function BootLoader({ minShowMs = 300, postGapMs = 200 }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const finishedRef = useRef(false)
   const timers = useRef<number[]>([])
