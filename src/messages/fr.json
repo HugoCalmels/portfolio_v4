@@ -317,9 +317,9 @@
     "contact": "Question générale"
   },
 "budget": {
-  "0": "900€ - 2000 €",
-  "1": "2000 € - 5 000 €",
-  "2": "Plus de 5 000 €",
+  "0": "500€ - 1000 €",
+  "1": "1000 € - 3000 €",
+  "2": "Plus de 3000 €",
   "3": "Je ne sais pas"
 },
   "projectType": {

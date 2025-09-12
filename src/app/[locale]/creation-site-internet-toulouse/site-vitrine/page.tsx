@@ -4,14 +4,14 @@ import styles from './SiteVitrineToulouse.module.css';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { HiOutlineShieldCheck } from 'react-icons/hi';
-import { MdOutlineDesignServices, MdOutlineTextSnippet } from 'react-icons/md';
-import { FiCheckCircle, FiFileText, FiPhoneCall } from 'react-icons/fi';
-import { FaRocket, FaChevronDown } from 'react-icons/fa';
+import { MdOutlineDesignServices} from 'react-icons/md';
+import { FiCheckCircle} from 'react-icons/fi';
+import { FaChevronDown } from 'react-icons/fa';
 import { useState } from 'react';
 import Script from 'next/script';
 import FadeIn from '@/components/common/FadeIn';
 import SeoHead from '@/components/common/SeoHead';
-import { MdOutlineBuildCircle } from "react-icons/md";
+
 import { MdEdit, MdAutoFixHigh, MdTune, MdCode, MdSecurity,MdSpeed, MdTrendingUp } from "react-icons/md";
 
 export default function SiteVitrine() {

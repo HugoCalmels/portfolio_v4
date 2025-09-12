@@ -1,14 +1,14 @@
 'use client';
 
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
+
+
 import FadeIn from '@/components/common/FadeIn';
 import styles from './Then.module.css';
-import { FaLock, FaBolt, FaFileAlt, FaPencilRuler, FaCheckCircle, FaLightbulb } from 'react-icons/fa';
+import { FaLock,  FaFileAlt } from 'react-icons/fa';
 
 export default function Then() {
-  const params = useParams();
-  const locale = (params as any)?.locale || 'fr';
+
+
 
   return (
     <section className={styles.after} aria-labelledby="after-title">
