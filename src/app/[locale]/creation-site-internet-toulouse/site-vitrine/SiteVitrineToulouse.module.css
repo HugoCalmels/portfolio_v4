@@ -32,6 +32,10 @@
 .h2 { font-size: clamp(20px, 3.2vw, 28px); margin: 0; display: inline-flex; align-items: center; gap: 10px; }
 .h3 { font-size: 18px; margin: 0; display: inline-flex; align-items: center; gap: 10px; }
 
+.titleHeadder{
+  font-size: 18px; margin: 0; display: inline-flex; align-items: center; gap: 10px; margin-bottom:.5rem;margin-top: .5rem;
+}
+
 /* Links (local class, pas de global 'a') */
 .link {
   color: var(--accent);
@@ -54,7 +58,7 @@
   flex-direction: row;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 6px;
+  margin-top: 2rem;
 }
 .btnPrimary {
   background: var(--accent);
@@ -66,7 +70,13 @@
 }
 
 /* Blocks */
-.block { display: flex; flex-direction: column; gap: 16px; }
+.block { display: flex; flex-direction: column; gap: 16px; margin-bottom:2rem}
+
+.cards{
+  display:flex;
+  flex: row;
+  gap:2rem;
+}
 
 /* Cards — couleurs alignées sur ton design */
 .card {
@@ -77,6 +87,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-width: 300px;
+
 }
 .cardTight { gap: 8px; }
 

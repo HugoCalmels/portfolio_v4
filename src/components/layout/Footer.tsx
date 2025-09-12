@@ -16,7 +16,7 @@ const Footer = () => {
   ]
 
   const pagesRight = [
-    { label: 'Frais récurrents', href: `/${locale}/frais-recurrents` },
+
     { label: 'Blog', href: `/${locale}/blog` },
     { label: 'Contact / Devis', href: `/${locale}/contact` },
   ]

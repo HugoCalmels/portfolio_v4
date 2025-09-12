@@ -189,3 +189,9 @@
 @media (max-width: 640px) {
   .includedInline { gap: .4rem 1rem; flex-direction: column; }
 }
+.duration {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #bbb;        /* gris clair sur fond sombre */
+  font-style: italic; /* optionnel, style “note” */
+}

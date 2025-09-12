@@ -11,6 +11,8 @@ import { useState } from 'react';
 import Script from 'next/script';
 import FadeIn from '@/components/common/FadeIn';
 import SeoHead from '@/components/common/SeoHead';
+import { MdOutlineBuildCircle } from "react-icons/md";
+import { MdEdit, MdAutoFixHigh, MdTune, MdCode, MdSecurity,MdSpeed, MdTrendingUp } from "react-icons/md";
 
 export default function SiteVitrine() {
   const params = useParams<{ locale?: string }>();
@@ -62,7 +64,7 @@ C’est plus rapide, sécurisé et parfaitement adapté à vos besoins.
       'Besoin d’un site internet simple et efficace à Toulouse ? Je crée des sites vitrines modernes, rapides et faciles à utiliser, dès 900 € TTC.',
     areaServed: { '@type': 'City', name: 'Toulouse' },
     provider: { '@type': 'LocalBusiness', name: 'Hugo Calmels' },
-    offers: { '@type': 'Offer', price: '900.00', priceCurrency: 'EUR' },
+    offers: { '@type': 'Offer', price: '500.00', priceCurrency: 'EUR' },
   };
 
   return (
@@ -81,8 +83,9 @@ C’est plus rapide, sécurisé et parfaitement adapté à vos besoins.
             <p className={styles.kicker}>🟩 Site vitrine Toulouse</p>
             <h1 className={styles.h1}>Votre site vitrine clé en main</h1>
             <p className={styles.lead}>
-              Vous cherchez un site simple, clair et professionnel pour être trouvé à Toulouse&nbsp;? Je crée pour vous
-              un site vitrine moderne, sécurisé et facile à prendre en main, dès <strong>900&nbsp;€ TTC</strong>.
+              Vous cherchez un site simple, clair et professionnel pour être trouvé ? Je crée pour vous
+              un site vitrine moderne, sécurisé et facile à prendre en main, dès <strong>500&nbsp;€ TTC</strong>.<br/>
+    
             </p>
 
             {/* CTA double vers contact + retour moneypage */}
@@ -106,7 +109,7 @@ C’est plus rapide, sécurisé et parfaitement adapté à vos besoins.
                 </h3>
                 <div className={styles.priceRow}>
                   <span className={styles.priceFrom}>À partir de</span>
-                  <span className={styles.price}>900&nbsp;€</span>
+                  <span className={styles.price}>500&nbsp;€</span>
                   <span className={styles.priceTtc}>TTC</span>
                 </div>
               </div>
@@ -121,7 +124,7 @@ C’est plus rapide, sécurisé et parfaitement adapté à vos besoins.
                 <li>HTTPS & sécurité inclus</li>
                 <li>Base SEO pour être trouvé sur Google</li>
               </ul>
-              <p className={styles.note}>Hébergement & suivi technique dès 100&nbsp;€/an</p>
+
               <div className={styles.ctaRow}>
                 <Link href={`/${locale}/contact`} className={styles.btnPrimary}>
                   Discutons de votre projet →
@@ -131,121 +134,165 @@ C’est plus rapide, sécurisé et parfaitement adapté à vos besoins.
           </section>
         </FadeIn>
 
-        <FadeIn>
-          {/* Bénéfices clairs */}
-          <section className={styles.block} aria-labelledby="benefits">
-            <h2 id="benefits" className={styles.h2}>
-              <FaRocket className={styles.icon} aria-hidden /> Pourquoi un site vitrine ?
-            </h2>
+  
 
-            <div className={styles.grid3}>
-              <article className={styles.card}>
-                <h3 className={styles.h3}>
-                  <FiFileText className={styles.icon} aria-hidden /> Être clair et professionnel
-                </h3>
-                <p className={styles.desc}>
-                  Votre activité est présentée simplement avec des pages essentielles, rassurant vos prospects dès la
-                  première visite.
-                </p>
-              </article>
 
-              <article className={styles.card}>
-                <h3 className={styles.h3}>
-                  <FiPhoneCall className={styles.icon} aria-hidden /> Être contacté facilement
-                </h3>
-                <p className={styles.desc}>
-                  Formulaire, appel en un clic, Google Maps&nbsp;: tout est pensé pour que vos clients vous trouvent
-                  sans effort.
-                </p>
-              </article>
+     <FadeIn>
+  <section className={styles.block} aria-labelledby="process">
+    <h2 id="process" className={styles.h2}>
+      <MdOutlineDesignServices className={styles.icon} aria-hidden /> Comment ça se passe (J1 → J5)
+    </h2>
 
-              <article className={styles.card}>
-                <h3 className={styles.h3}>
-                  <HiOutlineShieldCheck className={styles.icon} aria-hidden /> Être tranquille techniquement
-                </h3>
-                <p className={styles.desc}>
-                  Sécurité, rapidité et référencement de base sont déjà intégrés, sans surcoût ni complexité.
-                </p>
-              </article>
-            </div>
-          </section>
-        </FadeIn>
+    <ol className={styles.processList}>
+      <li className={styles.processStep}>
+        <span className={styles.stepNumber}>J1</span>
+        <div className={styles.stepContent}>
+          <strong>Brief & contenus</strong>
+          <p>On définit les pages et les objectifs. Vous me transmettez textes/visuels (ou je peux les produire).</p>
+        </div>
+      </li>
 
-        <FadeIn>
-          <section className={styles.block} aria-labelledby="content">
-            <h2 id="content" className={styles.h2}>
-              <MdOutlineTextSnippet className={styles.icon} aria-hidden /> Création de contenu incluse
-            </h2>
-            <p>
-              Pas de panique si vous n’avez ni textes ni images : je m’occupe aussi de la partie contenu. L’objectif est
-              simple : que votre site vitrine soit prêt à convaincre vos visiteurs, sans que vous ayez à tout écrire ou
-              chercher vous-même.
-            </p>
-            <ul className={styles.list}>
-              <li>
-                <strong>Textes adaptés au web</strong> — j’écris des contenus clairs et engageants pour présenter vos
-                services.
-              </li>
-              <li>
-                <strong>Images</strong> — je peux utiliser vos visuels, générer des images avec l’IA, ou sélectionner
-                des photos libres de droits.
-              </li>
-              <li>
-                <strong>Contenu existant</strong> — si vous avez déjà des textes ou images, je les mets en valeur dans
-                un design moderne.
-              </li>
-            </ul>
-            <p>
-              Beaucoup de créateurs de sites demandent que vous fournissiez déjà vos textes et visuels. Ici, je propose
-              une approche <em>clé en main</em> pour que vous n’ayez pas ce blocage dès le départ.
-            </p>
-          </section>
-        </FadeIn>
+      <li className={styles.processStep}>
+        <span className={styles.stepNumber}>J2</span>
+        <div className={styles.stepContent}>
+          <strong>Structure & aperçu visuel</strong>
+          <p>Je conçois un <em>plan simplifié des pages</em> (wireframe rapide) pour valider navigation et sections.</p>
+        </div>
+      </li>
 
-        <FadeIn>
-          {/* Process simplifié — version liste numérotée */}
-          <section className={styles.block} aria-labelledby="process">
-            <h2 id="process" className={styles.h2}>
-              <MdOutlineDesignServices className={styles.icon} aria-hidden /> Comment ça marche
-            </h2>
+      <li className={styles.processStep}>
+        <span className={styles.stepNumber}>J3</span>
+        <div className={styles.stepContent}>
+          <strong>Intégration des pages</strong>
+          <p>Mise en place du design responsive, contenus, formulaire de contact, bases SEO.</p>
+        </div>
+      </li>
 
-            <ol className={styles.processList}>
-              <li className={styles.processStep}>
-                <span className={styles.stepNumber}>1</span>
-                <div className={styles.stepContent}>
-                  <strong>On échange</strong>
-                  <p>Vos besoins, vos pages, vos objectifs.</p>
-                </div>
-              </li>
+      <li className={styles.processStep}>
+        <span className={styles.stepNumber}>J4</span>
+        <div className={styles.stepContent}>
+          <strong>Finitions & retours</strong>
+          <p>Tests, performance, accessibilité. Vous testez sur un lien de prévisualisation et envoyez vos retours (1 cycle).</p>
+        </div>
+      </li>
 
-              <li className={styles.processStep}>
-                <span className={styles.stepNumber}>2</span>
-                <div className={styles.stepContent}>
-                  <strong>Maquette</strong>
-                  <p>
-                    Vous validez le design avant développement <em>(optionnel, sur demande)</em>.
-                  </p>
-                </div>
-              </li>
+      <li className={styles.processStep}>
+        <span className={styles.stepNumber}>J5</span>
+        <div className={styles.stepContent}>
+          <strong>Mise en ligne</strong>
+          <p>Déploiement avec HTTPS, remise des accès et mini-prise en main.</p>
+        </div>
+      </li>
+    </ol>
 
-              <li className={styles.processStep}>
-                <span className={styles.stepNumber}>3</span>
-                <div className={styles.stepContent}>
-                  <strong>Création</strong>
-                  <p>Le site est développé avec vos contenus.</p>
-                </div>
-              </li>
+    <div className={styles.note}>
+      <strong>Disponibilité :</strong> je prévois un <em>créneau d’échange quotidien (≈30 min)</em> pour valider, ajuster et répondre à vos questions.
+    </div>
+  </section>
+</FadeIn>
+<FadeIn>
+  <section className={styles.block} aria-labelledby="changes">
+    <h2 id="changes" className={styles.h2}>
+      <MdEdit className={styles.icon} aria-hidden /> Modifications & évolutions
+    </h2>
 
-              <li className={styles.processStep}>
-                <span className={styles.stepNumber}>4</span>
-                <div className={styles.stepContent}>
-                  <strong>Mise en ligne</strong>
-                  <p>Votre site est prêt et vous pouvez l’utiliser.</p>
-                </div>
-              </li>
-            </ol>
-          </section>
-        </FadeIn>
+    <p className={styles.lead}>
+      Par défaut, <strong>il n’y a pas de tableau de bord d’édition</strong> (pas de CMS, pas de WordPress)
+      après la mise en ligne, deux solutions simples selon vos besoins :
+    </p>
+
+    <div className={styles.cards}>
+      <article className={styles.card}>
+        <h3 className={styles.titleHeadder}>
+          <MdAutoFixHigh aria-hidden className={styles.icon} />
+          Retouches ponctuelles
+        </h3>
+        <ul className={styles.bulletList}>
+          <li>Textes, visuels, liens…</li>
+          <li>Intervention rapide — <strong>30 € / h</strong></li>
+          <li>Parfait si vous modifiez <em>occasionnellement</em></li>
+        </ul>
+      </article>
+
+      <article className={styles.card}>
+        <h3 className={styles.titleHeadder}>
+          <MdTune aria-hidden className={styles.icon} />
+          Mini interface de gestion
+        </h3>
+        <ul className={styles.bulletList}>
+          <li>Modifier vous-même du contenu ciblé</li>
+          <li>À partir de <strong>500 €</strong> (selon besoin)</li>
+          <li>Utile si vous changez <em>régulièrement</em></li>
+        </ul>
+      </article>
+    </div>
+
+    <p className={styles.lead} style={{ marginTop: "1rem" }}>
+   <strong>30 jours de retouches incluses</strong> après la mise en ligne (ajustements mineurs).<br/>
+     Ensuite : retouches ponctuelles ou mini interface — à vous de choisir.
+    </p>
+  </section>
+</FadeIn>
+
+<FadeIn>
+  <section className={styles.block} aria-labelledby="stack">
+    <h2 id="stack" className={styles.h2}>
+      <MdCode className={styles.icon} aria-hidden /> Sous le capot (technos modernes)
+    </h2>
+
+    <p className={styles.lead}>
+      Le site est développé avec <strong>React / Next.js</strong> — des standards actuels du web pro.
+      Résultat : une base <em>solide, rapide et durable</em>, prête à évoluer selon vos priorités.
+    </p>
+
+    <div className={styles.cards}>
+      <article className={styles.card}>
+        <h3 className={styles.titleHeadder}>
+          <MdSpeed aria-hidden className={styles.icon} />
+          Performance
+        </h3>
+        <ul className={styles.bulletList}>
+          <li>Pages légères et rapides</li>
+          <li>Bonnes pratiques CWV intégrées</li>
+          <li>Images optimisées</li>
+        </ul>
+      </article>
+
+      <article className={styles.card}>
+        <h3 className={styles.titleHeadder}>
+          <MdSecurity aria-hidden className={styles.icon} />
+          Sécurité & fiabilité
+        </h3>
+        <ul className={styles.bulletList}>
+          <li>Stack sans plugins lourds</li>
+          <li>HTTPS et headers propres</li>
+          <li>Moins de maintenance</li>
+        </ul>
+      </article>
+
+      <article className={styles.card}>
+        <h3 className={styles.titleHeadder}>
+          <MdTrendingUp aria-hidden className={styles.icon} />
+          Évolutivité
+        </h3>
+        <ul className={styles.bulletList}>
+          <li>Ajouts SEO / pages</li>
+          <li>Modules e-commerce simples</li>
+          <li>Fonctionnalités métier au besoin</li>
+        </ul>
+      </article>
+    </div>
+
+    <div className={styles.note}>
+      Vous commencez avec un site vitrine simple ; la même base peut grandir (SEO, vente, outils internes) quand c’est pertinent.
+    </div>
+  </section>
+</FadeIn>
+
+
+
+
+
 
         <FadeIn>
           <section className={styles.miniFaq} id="mini-faq">
@@ -280,9 +327,7 @@ C’est plus rapide, sécurisé et parfaitement adapté à vos besoins.
               Prêt à créer votre site vitrine à Toulouse&nbsp;?
             </h2>
             <p className={styles.finalText}>
-              Expliquez-moi vos besoins en 2 minutes et obtenez un devis clair et sans surprise. Vous pouvez aussi
-              consulter les <Link href={`/${locale}/frais-recurrents`} className={styles.link}>coûts récurrents</Link>{' '}
-              pour hébergement et suivi technique.
+              Expliquez-moi vos besoins en 2 minutes et obtenez un devis clair et sans surprise. 
             </p>
             <div className={styles.ctaRow}>
               <Link href={`/${locale}/contact`} className={styles.btnPrimary}>

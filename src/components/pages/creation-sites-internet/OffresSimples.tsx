@@ -35,12 +35,12 @@ export default function OffresSimples() {
                 </p>
               </header>
 
-              <div className={styles.price}>À partir de 900 € TTC</div>
+              <div className={styles.price}>À partir de 500 € TTC</div>
 
               <ul className={styles.bulletList}>
                 <li>1 à 5 pages essentielles</li>
-                <li>Design moderne et responsive</li>
-                <li>Formulaire de contact inclus</li>
+                <li>À votre image</li>
+                <li>Livré sous 5 jours</li>
               </ul>
 
               <a href={`/${locale}/creation-site-internet-toulouse/site-vitrine`} className={styles.ctaMain}>
@@ -58,12 +58,12 @@ export default function OffresSimples() {
                 </p>
               </header>
 
-              <div className={styles.price}>À partir de 1900 € TTC</div>
+              <div className={styles.price}>À partir de 1200 € TTC</div>
 
               <ul className={styles.bulletList}>
                 <li>Catalogue produits</li>
                 <li>Paiement sécurisé (Stripe)</li>
-                <li>Pages personnalisables</li>
+                <li>Gestion simple du stock</li>
               </ul>
 
               <a href={`/${locale}/creation-site-internet-toulouse/site-e-commerce`} className={styles.ctaMain}>
@@ -81,13 +81,12 @@ export default function OffresSimples() {
                 </p>
               </header>
 
-              <div className={styles.price}>À partir de 2200 € TTC</div>
-
-              <ul className={styles.bulletList}>
-                <li>Structure optimisée pour Google</li>
-                <li>Pages ciblées sur vos mots-clés</li>
-                <li>Conseils Google Business</li>
-              </ul>
+              <div className={styles.price}>Sur devis</div>
+<ul className={styles.bulletList}>
+  <li>Pages ciblées mots-clés locaux</li>
+  <li>Structure optimisée Google</li>
+  <li>Conseils Google Business</li>
+</ul>
 
               <a href={`/${locale}/creation-site-internet-toulouse/site-seo-local`} className={styles.ctaMain}>
                 Voir l’offre SEO local →

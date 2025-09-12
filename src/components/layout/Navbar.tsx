@@ -72,7 +72,6 @@ export default function Navbar() {
     { label: 'Accueil', href: `/${lang}` },
     { label: 'Création de site', href: `/${lang}/creation-site-internet-toulouse` },
     { label: 'Développement web', href: `/${lang}/developpement-web-toulouse` },
-    { label: 'Frais récurrents', href: `/${lang}/frais-recurrents` },
 
     { label: 'Blog', href: `/${lang}/blog` },
 

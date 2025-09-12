@@ -1,0 +1,246 @@
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 56px 20px 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  margin-top:2rem;
+  
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.heading {
+ font-size: clamp(28px, 5vw, 44px); line-height: 1.12; margin: 0;
+
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: #ccc;
+
+  margin-top:1rem;
+
+font-size: clamp(16px, 2.2vw, 18px); line-height: 1.6; max-width: 900px;
+}
+
+.introWrapper{
+
+    display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+
+ 
+
+}
+.note { color: rgba(255,255,255,.74); font-size: 0.95rem; margin: 0;font-style: italic; }
+.subheading {
+  font-size: 1.5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.33rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+}
+
+.miniCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #5c6f80;
+  box-shadow:
+  0 1px 3px rgba(0,0,0,0.25),
+  0 2px 6px rgba(92,111,128,0.1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  flex: 1 1 250px;
+  min-width: 250px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+
+.miniCard h3 {
+  font-size: 1.15rem;
+  color: #fff;
+  margin: 0;
+}
+
+.miniDesc {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+
+.price {
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  margin-top: auto;
+  padding-top: .75rem;
+}
+
+.ctaSection {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+}
+
+.ctaSection h3 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.cta {
+  display: inline-block;
+  padding: .8rem 1.4rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  background: var(--accent, #22c55e);
+  color: black;
+  transition: background 0.3s ease;
+  font-size: 1.1rem;
+margin-bottom:1rem;
+}
+
+.cta:hover {
+  background: #3caee0;
+}
+.secondary {
+  font-size: 1rem;
+  color: #aaa;
+  margin-top: 1rem;
+  line-height: 1.6;
+
+}
+
+.secondary a {
+  color: var(--accent, #66ccff);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.secondary a:hover {
+  color: #a8e4ff;
+}
+
+.finalCta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 3rem;
+  text-align: center;
+  
+}
+
+.finalText {
+  font-size: 1.05rem;
+  color: #ddd;
+  font-weight: 500;
+}
+
+.finalButton {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  background-color: var(--accent, #66ccff);
+  color: #000;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.finalButton:hover {
+  background-color: #4dbbe3;
+}
+
+
+.notice p {
+  margin: 0;
+}
+
+.notice a {
+  color: var(--accent, #4dabf7);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.notice a:hover {
+  text-decoration: underline;
+}
+.notice {
+  border-left: 4px solid var(--accent);
+  padding: .5rem 1rem;
+  margin: 2rem 0 0rem;
+}
+
+.notice h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.notice p {
+  font-size: 0.95rem;
+  color: #cccccc;
+  line-height: 1.5;
+}
+
+
+.icon {
+  color: var(--accent);
+  font-size: 1.3rem; /* Taille adaptée pour inline dans h3 */
+  margin-right: 0.4rem;
+  vertical-align: middle; /* Aligne mieux l'icône avec le texte */
+  height:23px;
+  width:23px;
+}
+
+.miniCard h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem; /* espace entre icône et titre */
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.returnLink {
+margin:0;
+
+  font-size: 0.95rem;
+
+
+}
+
+.returnLink a {
+  color: var(--accent);
+  text-decoration: underline;
+  font-weight: 500;
+
+}
+.kicker { color: var(--accent); font-weight: 600; letter-spacing: .02em; }
