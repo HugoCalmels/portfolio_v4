@@ -118,8 +118,8 @@ C’est plus rapide, sécurisé et parfaitement adapté à vos besoins.
                 L’essentiel pour présenter votre activité en ligne et être contacté rapidement.
               </p>
               <ul className={styles.bulletList}>
-                <li>1 à 5 pages essentielles (Accueil, Services, Contact…)</li>
-                <li>Design moderne et responsive (ordinateur & mobile)</li>
+                <li>1 à 3 pages essentielles</li>
+                <li>Design moderne et responsive</li>
                 <li>Formulaire de contact et clic-to-call</li>
                 <li>HTTPS & sécurité inclus</li>
                 <li>Base SEO pour être trouvé sur Google</li>

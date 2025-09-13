@@ -38,7 +38,7 @@ export default function OffresSimples() {
               <div className={styles.price}>À partir de 500 € TTC</div>
 
               <ul className={styles.bulletList}>
-                <li>1 à 5 pages essentielles</li>
+                <li>1 à 3 pages essentielles</li>
                 <li>À votre image</li>
                 <li>Livré sous 5 jours</li>
               </ul>
