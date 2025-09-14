@@ -10,31 +10,39 @@ import { Archivo_Black, Montserrat } from 'next/font/google';
 import '@/styles/globals.css';
 import BootLoader from './BootLoader';
 
-// --- locales bornées + imports statiques
+// ---- Locales supportées
 const SUPPORTED = ['fr', 'en'] as const;
 type Locale = (typeof SUPPORTED)[number];
 
+// ---- Messages JSON (imports statiques -> SSG-friendly)
 import frMessages from '@/messages/fr.json';
 import enMessages from '@/messages/en.json';
 
-// Si vos JSON contiennent des arrays/objets non “string-leaf”, on les tape en any
-const MESSAGES: Record<Locale, any> = {
+// ---- Types JSON permissifs (sans "any")
+type JsonPrimitive = string | number | boolean | null;
+type JsonValue = JsonPrimitive | { [key: string]: JsonValue } | JsonValue[];
+type LooseMessages = { [key: string]: JsonValue };
+
+// Mappe les messages sans any, avec "satisfies" pour sécuriser
+const MESSAGES = {
   fr: frMessages,
   en: enMessages,
-};
+} satisfies Record<Locale, LooseMessages>;
 
-// --- Forcer le segment en statique
+// ---- Forcer le segment en statique
 export const dynamic = 'force-static';
 export const dynamicParams = false;
 export function generateStaticParams() {
   return SUPPORTED.map((locale) => ({ locale }));
 }
 
+// ---- Metadata statique
 export const metadata: Metadata = {
   title: 'Hugo Calmels – Développeur Web Freelance à Toulouse',
   description: 'Sites rapides, propres, sur-mesure. Développement web & outils métier.',
 };
 
+// ---- Fonts
 const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' });
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' });
 const archivo = Archivo_Black({ weight: '400', subsets: ['latin'], variable: '--font-title' });
@@ -44,17 +52,19 @@ const montserrat = Montserrat({
   variable: '--font-body',
 });
 
-export default function LocaleLayout({
+// ---- Layout (params est une Promise -> on attend avant d'accéder à locale)
+export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const locale = (params?.locale as Locale) || 'fr';
+  const { locale: rawLocale } = await params;
+  const locale = (rawLocale as Locale) || 'fr';
   if (!SUPPORTED.includes(locale)) notFound();
 
-  // Relax typing only at the boundary for next-intl
+  // Cast unique au boundary pour NextIntl
   const messages = MESSAGES[locale] as unknown as AbstractIntlMessages;
 
   return (

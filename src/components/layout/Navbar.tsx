@@ -1,11 +1,10 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState, useCallback, useTransition } from 'react';
+import { useEffect, useMemo, useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
-import { FaChevronDown } from 'react-icons/fa';
 import styles from './Navbar.module.css';
 
 type NavLink = { label: string; href: string; highlight?: boolean };
@@ -14,25 +13,31 @@ type NavItem = NavLink | Separator;
 
 const isLink = (item: NavItem): item is NavLink => 'href' in item;
 
-// util: remplace le 1er segment (locale) d'un pathname
+// Chevron inline (évite react-icons)
+const ChevronDown = () => (
+  <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden focusable="false">
+    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="2" />
+  </svg>
+);
+
+// Remplace le 1er segment (locale) du pathname
 const withLocale = (pathname: string, locale: 'fr' | 'en') => {
-  const segments = pathname.split('/');
-  // s'assure d'avoir une base /xx
-  if (!segments[1]) segments[1] = locale;
-  else segments[1] = locale;
-  return segments.join('/') || `/${locale}`;
+  const parts = pathname.split('/');
+  // parts[0] === '' (leading slash)
+  parts[1] = locale;
+  const joined = parts.join('/');
+  return joined.startsWith('/') ? joined : `/${joined}`;
 };
 
 export default function Navbar() {
-  const router = useRouter();
   const pathname = usePathname() || '/fr';
   const locale = (useLocale?.() as 'fr' | 'en') || 'fr';
 
-  // garde un état local (pour l’affichage du flag) mais se resynchronise dès que l’URL/locale change
+  // État d’affichage uniquement (flag) → se resync quand la locale change
   const [lang, setLang] = useState<'fr' | 'en'>(locale);
   useEffect(() => {
     if (lang !== locale) setLang(locale);
-  }, [locale]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [locale, lang]);
 
   const [openDropdown, setOpenDropdown] = useState<'lang' | 'main' | null>(null);
   const [showNavbar, setShowNavbar] = useState(true);
@@ -43,35 +48,30 @@ export default function Navbar() {
   const langRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLDivElement>(null);
 
-  const [, startTransition] = useTransition();
-
-  // ----- SCROLL: lissé + passif
+  // ----- SCROLL: lissé + passif (fix: comparer à l’ancienne valeur avant maj)
   useEffect(() => {
     const onScroll = () => {
-      const currentY = window.scrollY;
-      lastScrollY.current = currentY;
+      if (ticking.current) return;
+      ticking.current = true;
 
-      if (!ticking.current) {
-        ticking.current = true;
-        requestAnimationFrame(() => {
-          // réduit les setState au strict nécessaire
-          setShowNavbar((prev) => {
-            const next = currentY < 50 || currentY < (lastScrollY.current ?? 0);
-            return prev !== next ? next : prev;
-          });
-          setHasScrolled((prev) => {
-            const next = currentY > 10;
-            return prev !== next ? next : prev;
-          });
-          // on ne ferme pas systématiquement les menus pour éviter les re-renders pendant le scroll
-          ticking.current = false;
-        });
-      }
+      requestAnimationFrame(() => {
+        const prevY = lastScrollY.current;
+        const currentY = window.scrollY;
+        lastScrollY.current = currentY;
+
+        const nextShow = currentY < 50 || currentY < prevY;
+        if (showNavbar !== nextShow) setShowNavbar(nextShow);
+
+        const nextHasScrolled = currentY > 10;
+        if (hasScrolled !== nextHasScrolled) setHasScrolled(nextHasScrolled);
+
+        ticking.current = false;
+      });
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [showNavbar, hasScrolled]);
 
   // ----- CLICK OUTSIDE
   useEffect(() => {
@@ -85,37 +85,19 @@ export default function Navbar() {
         setOpenDropdown(null);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [openDropdown]);
 
-  // ----- ACTIONS
   const toggleDropdown = useCallback((type: 'lang' | 'main') => {
-    setOpenDropdown((prev) => (prev === type ? null : type));
+    setOpenDropdown(prev => (prev === type ? null : type));
   }, []);
 
-  const handleLangSelect = useCallback(
-    (value: 'fr' | 'en') => {
-      // Pas de double render : on met à jour l'état pour l’UI et on laisse Next gérer la nav via Link
-      setLang(value);
-      setOpenDropdown(null);
-    },
-    []
-  );
+  const handleLangSelect = useCallback((value: 'fr' | 'en') => {
+    setLang(value);
+    setOpenDropdown(null);
+  }, []);
 
-  // Si tu veux forcer router.push (par ex. interactions clavier), fais-le sans bloquer l’UI
-  const navigateSoft = useCallback(
-    (href: string) => {
-      startTransition(() => {
-        router.push(href);
-      });
-      setOpenDropdown(null);
-    },
-    [router]
-  );
-
-  // ----- LINKS
   const navLinks: NavItem[] = useMemo(
     () => [
       { label: 'Accueil', href: `/${lang}` },
@@ -127,33 +109,15 @@ export default function Navbar() {
     [lang]
   );
 
-  // Préfetch des pages principales (facultatif, Next le fait souvent tout seul quand visible)
-  useEffect(() => {
-    if ('prefetch' in router) {
-      navLinks.forEach((item) => {
-        if (isLink(item)) {
-          try {
-            // @ts-ignore - app router sait gérer
-            router.prefetch?.(item.href);
-          } catch {}
-        }
-      });
-    }
-    // on veut seulement exécuter quand la liste change
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [navLinks]);
-
-  const nextFr = withLocale(pathname, 'fr');
-  const nextEn = withLocale(pathname, 'en');
+  const nextFr = useMemo(() => withLocale(pathname, 'fr'), [pathname]);
+  const nextEn = useMemo(() => withLocale(pathname, 'en'), [pathname]);
 
   return (
     <header
-      className={`${styles.navbar} ${showNavbar ? styles.visible : styles.hidden} ${
-        hasScrolled ? styles.scrolledBg : ''
-      }`}
+      className={`${styles.navbar} ${showNavbar ? styles.visible : styles.hidden} ${hasScrolled ? styles.scrolledBg : ''}`}
     >
       <div className={styles.inner}>
-        <Link href={`/${lang}`} className={styles.brand} prefetch onClick={() => setOpenDropdown(null)}>
+        <Link href={`/${lang}`} className={styles.brand} onClick={() => setOpenDropdown(null)}>
           <Image src="/images/jpp-logo.png" alt="Logo" width={25} height={25} className={styles.logo} />
           <span>HUGO CALMELS</span>
         </Link>
@@ -169,35 +133,33 @@ export default function Navbar() {
                 aria-haspopup="menu"
               >
                 <Image
+                  unoptimized
                   src={`https://flagcdn.com/${lang === 'fr' ? 'fr' : 'gb'}.svg`}
                   alt={lang}
                   width={20}
                   height={15}
                 />
                 <span>{lang.toUpperCase()}</span>
-                <FaChevronDown size={10} />
+                <ChevronDown />
               </button>
               {openDropdown === 'lang' && (
                 <div className={`${styles.dropdownMenu} ${styles.langMenu}`} role="menu">
-                  {/* On passe par Link pour bénéficier du prefetch et d’une nav plus fluide */}
                   <Link
                     href={nextFr}
-                    prefetch
                     className={styles.dropdownItem}
                     onClick={() => handleLangSelect('fr')}
                     role="menuitem"
                   >
-                    <Image src="https://flagcdn.com/fr.svg" alt="FR" width={20} height={15} />
+                    <Image unoptimized src="https://flagcdn.com/fr.svg" alt="FR" width={20} height={15} />
                     <span>FR</span>
                   </Link>
                   <Link
                     href={nextEn}
-                    prefetch
                     className={styles.dropdownItem}
                     onClick={() => handleLangSelect('en')}
                     role="menuitem"
                   >
-                    <Image src="https://flagcdn.com/gb.svg" alt="EN" width={20} height={15} />
+                    <Image unoptimized src="https://flagcdn.com/gb.svg" alt="EN" width={20} height={15} />
                     <span>EN</span>
                   </Link>
                 </div>
@@ -213,7 +175,7 @@ export default function Navbar() {
                 aria-haspopup="menu"
               >
                 <span>Menu</span>
-                <FaChevronDown size={10} />
+                <ChevronDown />
               </button>
               {openDropdown === 'main' && (
                 <div className={`${styles.dropdownMenu} ${styles.mainMenu}`} role="menu">
@@ -222,7 +184,6 @@ export default function Navbar() {
                       <Link
                         key={item.label}
                         href={item.href}
-                        prefetch
                         onClick={() => setOpenDropdown(null)}
                         className={`${styles.dropdownItem} ${item.highlight ? styles.highlightLink : ''}`}
                         role="menuitem"
