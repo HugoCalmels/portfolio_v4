@@ -81,9 +81,7 @@ export default function SiteSeoLocal() {
                   <FiCheckCircle className={styles.icon} /> Ce que vous obtenez
                 </h3>
                 <div className={styles.priceRow}>
-                  <span className={styles.priceFrom}>À partir de</span>
-                  <span className={styles.price}>2 200 €</span>
-                  <span className={styles.priceTtc}>TTC</span>
+                  <span className={styles.priceFrom}>Sur devis</span>
                 </div>
               </div>
 
@@ -106,10 +104,12 @@ export default function SiteSeoLocal() {
                 <li>Campagnes Google Ads</li>
                 <li>Backlinks payants</li>
               </ul>
+<p className={styles.note}>
+  Cette offre n&apos;est pas encore disponible. <br />
+  Je ne suis pas encore expert pour vous classer rapidement sur Google sur des requêtes compétitives.<br />
+  Je suis encore en train de faire des tests.
+</p>
 
-              <p className={styles.note}>
-                Transparence totale : vous savez exactement ce qui est inclus et ce qui ne l’est pas.
-              </p>
 
               <div className={styles.ctaRow}>
                 <Link href={`/${locale}/contact`} className={styles.btnPrimary}>

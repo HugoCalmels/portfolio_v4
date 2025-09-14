@@ -221,7 +221,7 @@ C’est plus rapide, sécurisé et parfaitement adapté à vos besoins.
         </h3>
         <ul className={styles.bulletList}>
           <li>Modifier vous-même du contenu ciblé</li>
-          <li>À partir de <strong>500 €</strong> (selon besoin)</li>
+          <li>À partir de <strong>400 €</strong> (selon besoin)</li>
           <li>Utile si vous changez <em>régulièrement</em></li>
         </ul>
       </article>

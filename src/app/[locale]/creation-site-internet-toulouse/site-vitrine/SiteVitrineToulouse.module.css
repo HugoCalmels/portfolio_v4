@@ -405,4 +405,5 @@ margin:0;
   .miniFaq .answer    { font-size: 0.88rem; }
 
   .returnLink { font-size: 0.9rem; }
+    .card {width: 100%;  min-width: auto;}
 }
