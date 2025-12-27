@@ -1,0 +1,125 @@
+.section {
+  width: 100%;
+padding-bottom:  clamp(3rem, 8vh, 4.5rem);
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blockTitle {
+  margin: 0 0 0.9rem;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.techIntro {
+  margin: 0 0 1.6rem;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #e5e7eb;
+  max-width: 720px;
+}
+
+/* Grid */
+
+.techGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+/* Cards */
+
+.techCard {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 18px;
+  padding: 1.5rem 1.7rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+/* Header avec logo + titre */
+
+.techHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.techIconReact,
+.techIconSpring {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.techIconSvg {
+  width: 28px;
+  height: 28px;
+}
+
+.techTitle {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 600;
+}
+
+/* Texte */
+
+.text {
+  margin: 0.2rem 0 0.6rem;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #e5e7eb;
+}
+
+.textMuted {
+  margin: 0.2rem 0 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #9ca3af;
+}
+
+/* Liste */
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0.4rem;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #e5e7eb;
+}
+
+.list li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  color: var(--accent);
+}
+
+/* Responsive */
+
+@media (max-width: 960px) {
+  .techGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .inner {
+    padding: 0 1.5rem;
+  }
+}

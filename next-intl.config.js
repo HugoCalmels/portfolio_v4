@@ -1,5 +1,7 @@
 /** @type {import('next-intl/plugin').NextIntlConfig} */
-module.exports = {
+const config = {
   locales: ['fr', 'en'],
   defaultLocale: 'fr'
 };
+
+export default config;

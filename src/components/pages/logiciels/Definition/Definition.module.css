@@ -1,0 +1,66 @@
+.section {
+  width: 100%;
+  padding-bottom: clamp(3rem, 8vh, 4.5rem);
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Titre */
+.sectionTitle {
+  margin: 0 0 1.1rem;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Texte */
+.text {
+  margin: 0 0 0.7rem;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #e5e7eb;
+  max-width: 760px;
+}
+
+/* Liste style "–" comme ton screen SEO */
+.simpleList {
+  margin: 0.6rem 0 0.9rem;
+  padding: 0;
+  list-style: none;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #e5e7eb;
+  max-width: 760px;
+}
+
+.simpleList li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.simpleList li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: var(--accent);
+}
+
+/* Note */
+.note {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #9ca3af;
+  max-width: 760px;
+}
+
+@media (max-width: 640px) {
+  .inner {
+    padding: 0 1.5rem;
+  }
+}

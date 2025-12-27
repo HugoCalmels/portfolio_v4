@@ -1,0 +1,175 @@
+.faq {
+  width: 100%;
+  padding-top: clamp(3rem, 8vh, 4.5rem);
+  padding-bottom: clamp(3.5rem, 9vh, 5.5rem);
+  margin-bottom: 2rem;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 2.5rem;
+}
+
+.kicker {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #9ca3af;
+  margin-bottom: 0.6rem;
+}
+
+.title {
+  margin: 0 0 0.6rem;
+  font-size: clamp(26px, 2.6vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #d1d5db;
+  max-width: 620px;
+}
+
+/* List */
+
+.list {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Card */
+
+.card {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  overflow: hidden;
+}
+
+/* Question row */
+
+.question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+  background: transparent;
+  border: 0;
+  color: #e5e7eb;
+  cursor: pointer;
+  text-align: left;
+}
+
+.question:focus-visible {
+  outline: 2px solid rgba(148, 163, 184, 0.55);
+  outline-offset: -2px;
+}
+
+.qText {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* Chevron */
+
+.chevron {
+  color: #9ca3af;
+  flex: 0 0 auto;
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+  color: #e5e7eb;
+}
+
+/* ✅ FIX: l’animation "grid rows" laisse parfois fuiter du texte sur mobile.
+   On verrouille la hauteur + on masque l’overflow au niveau du WRAP. */
+.answerWrap {
+  overflow: hidden;              /* <- essentiel */
+  max-height: 0;                 /* <- fermé par défaut */
+  opacity: 0;                    /* <- évite le “ghost text” */
+  transition: max-height 240ms ease, opacity 160ms ease;
+}
+
+/* ✅ ouvert */
+.open {
+  max-height: 1200px;            /* assez grand pour contenir la réponse */
+  opacity: 1;
+}
+
+/* ✅ fermé */
+.closed {
+  max-height: 0;
+  opacity: 0;
+}
+
+/* Answer */
+
+.answer {
+  overflow: hidden;
+  padding: 0 1.25rem 1.15rem;
+  color: #e5e7eb;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.ul {
+  margin: 0.6rem 0 0;
+  padding-left: 1.15rem;
+  color: #e5e7eb;
+}
+
+.ul li {
+  margin: 0.25rem 0;
+}
+
+.inlineLinks {
+  display: inline-block;
+  margin-top: 0.65rem;
+  color: #d1d5db;
+}
+
+.link {
+  color: #7dd3fc;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive padding like your sections */
+
+@media (max-width: 640px) {
+  .inner {
+    padding: 0 1.25rem;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .question {
+    padding: 1.05rem 1.05rem;
+  }
+
+  .answer {
+    padding: 0 1.05rem 1.05rem;
+  }
+}

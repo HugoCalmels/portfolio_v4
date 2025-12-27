@@ -1,0 +1,22 @@
+.list {
+  margin: 0.4rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #e5e7eb;
+}
+
+.list li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  color: var(--accent);
+}

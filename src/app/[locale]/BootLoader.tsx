@@ -1,102 +1,100 @@
-'use client'
-import { useEffect, useRef } from 'react'
-import styles from './bootloader.module.css'
-import Loading from '@/components/common/Loading'
+// app/[locale]/layout.tsx
 
-type Props = {
-  /** Temps d’affichage minimal avant le fade-out */
-  minShowMs?: number
-  /** Petit délai après la transition avant finish() */
-  postGapMs?: number
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import Navbar from '@/components/layout/Navbar/Navbar';
+import Footer from '@/components/layout/Footer/Footer';
+import { Archivo_Black, Montserrat } from 'next/font/google';
+import '@/styles/globals.css';
+
+// ---- Locales supportées
+const SUPPORTED = ['fr', 'en'] as const;
+type Locale = (typeof SUPPORTED)[number];
+
+// ---- Messages JSON (imports statiques -> SSG-friendly)
+
+
+
+
+
+// ---- Forcer le segment en statique
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return SUPPORTED.map((locale) => ({ locale }));
 }
 
-export default function BootLoader({ minShowMs = 400, postGapMs = 300 }: Props) {
-  const ref = useRef<HTMLDivElement>(null)
-  const finishedRef = useRef(false)
-  const timers = useRef<number[]>([])
+/**
+ * ---- Metadata global (défaut)
+ * Les pages pourront surcharger title/description avec `export const metadata`
+ */
+export const metadata: Metadata = {
+  metadataBase: new URL('https://hugo-calmels.fr'),
 
-  const clearTimers = () => {
-    timers.current.forEach(id => clearTimeout(id))
-    timers.current = []
-  }
+  title: {
+    default: 'Hugo Calmels — Développeur web',
+    template: '%s — Hugo Calmels',
+  },
 
-  const finish = () => {
-    if (finishedRef.current) return
-    finishedRef.current = true
-    clearTimers()
+  description:
+    'Sites et logiciels web sur-mesure : simples, rapides, fiables. Une base propre, sans CMS lourd.',
 
-    // 1) Masquer définitivement l’overlay
-    if (ref.current) ref.current.style.display = 'none'
+  robots: {
+    index: true,
+    follow: true,
+  },
 
-    // 2) Publier le flag global et l’évènement
-    try {
-      document.documentElement.dataset.boot = 'done'
-      window.dispatchEvent(new Event('boot:done'))
-    } catch {}
-  }
+  openGraph: {
+    type: 'website',
+    siteName: 'Hugo Calmels',
+    url: 'https://hugo-calmels.fr',
+    images: ['/images/og.png'],
+  },
 
-  useEffect(() => {
-    const prefersReduced =
-      typeof window !== 'undefined' &&
-      window.matchMedia &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  twitter: {
+    card: 'summary_large_image',
+  },
+};
 
-    // 1) Attendre minShowMs avant de déclencher le fade-out (sauf reduced motion)
-    const startHide = () => {
-      ref.current?.classList.add(styles.hide)
-    }
+// ---- Fonts (✅ uniquement celles utilisées, + display swap)
+const archivo = Archivo_Black({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-title',
+  display: 'swap',
+});
 
-    const startDelay = prefersReduced ? 0 : minShowMs
-    timers.current.push(window.setTimeout(startHide, startDelay))
+const montserrat = Montserrat({
+  weight: ['400', '500', '700'],
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+});
 
-    // 2) Fallback absolu au cas où la transition n’arrive jamais
-    //    On essaie d’estimer la durée de transition CSS pour caler le fallback.
-    const getTransitionMs = () => {
-      const el = ref.current
-      if (!el) return 600
-      const cs = getComputedStyle(el)
-      // transitionDuration peut être "0.3s, 0.3s" -> on garde le max
-      const durations = cs.transitionDuration
-        .split(',')
-        .map(s => s.trim())
-        .map(s => (s.endsWith('ms') ? parseFloat(s) : parseFloat(s) * 1000))
-      const delays = cs.transitionDelay
-        .split(',')
-        .map(s => s.trim())
-        .map(s => (s.endsWith('ms') ? parseFloat(s) : parseFloat(s) * 1000))
-      const total = Math.max(...durations.map((d, i) => d + (delays[i] ?? 0)))
-      return isFinite(total) && total > 0 ? total : 600
-    }
+// ---- Layout (params est une Promise -> on attend avant d'accéder à locale)
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: rawLocale } = await params;
+  const locale = (rawLocale as Locale) || 'fr';
+  if (!SUPPORTED.includes(locale)) notFound();
 
-    const fallbackTotal =
-      (prefersReduced ? 0 : minShowMs) + (prefersReduced ? 0 : getTransitionMs()) + (prefersReduced ? 0 : postGapMs) + 50
+  // Cast unique au boundary pour NextIntl
 
-    timers.current.push(window.setTimeout(finish, fallbackTotal))
-
-    return () => {
-      clearTimers()
-    }
-  }, [minShowMs, postGapMs])
-
-  const handleTransitionEnd: React.TransitionEventHandler<HTMLDivElement> = () => {
-    // Petit gap après le fade-out avant de retirer l’overlay
-    const prefersReduced =
-      typeof window !== 'undefined' &&
-      window.matchMedia &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-    const id = window.setTimeout(finish, prefersReduced ? 0 : postGapMs)
-    timers.current.push(id)
-  }
 
   return (
-    <div
-      ref={ref}
-      onTransitionEnd={handleTransitionEnd}
-      aria-hidden="true"
-      className={styles.wrapper}
-    >
-      <Loading />
-    </div>
-  )
+    <html lang={locale} className={`${archivo.variable} ${montserrat.variable}`}>
+      <body className="antialiased">
+
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+
+      </body>
+    </html>
+  );
 }

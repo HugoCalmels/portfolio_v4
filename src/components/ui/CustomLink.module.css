@@ -1,0 +1,12 @@
+.link {
+  color: var(--accent, #66ccff);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-thickness 0.15s ease, opacity 0.15s ease;
+}
+
+.link:hover {
+  text-decoration-thickness: 2px;
+  opacity: 0.95;
+}

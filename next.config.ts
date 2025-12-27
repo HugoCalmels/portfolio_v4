@@ -1,19 +1,16 @@
 import createNextIntlPlugin from 'next-intl/plugin';
-import intlConfig from './next-intl.config.js'; // ← doit rester .js
-
-const withNextIntl = createNextIntlPlugin(intlConfig);
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverActions: {}
-  },
+  experimental: { serverActions: {} },
+
   async redirects() {
     return [
       {
         source: '/',
         destination: '/fr',
-        permanent: true
+        permanent: false
       }
     ];
   }

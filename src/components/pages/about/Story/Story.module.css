@@ -1,0 +1,167 @@
+/* =========================
+   Layout
+========================= */
+
+.section {
+  padding-bottom: clamp(3rem, 8vh, 4.5rem);
+  scroll-margin-top: 60px;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* largeur de lecture */
+.header,
+.stack {
+  max-width: 76ch;
+}
+
+/* =========================
+   Header
+========================= */
+
+.header {
+  margin-bottom: 42px;
+}
+
+.lead {
+  margin: 14px 0 10px;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  opacity: 0.95;
+}
+
+.meta {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.65;
+  opacity: 0.74;
+}
+
+/* =========================
+   Stack / Blocks
+========================= */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.block {
+  /* volontairement simple */
+}
+
+/* =========================
+   Chapter headings
+========================= */
+
+.h3 {
+  margin: 0 0 6px;
+  font-size: 1.22rem;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.badge {
+  margin: 0 0 16px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  opacity: 0.58;
+}
+
+/* =========================
+   Prose
+========================= */
+
+.prose {
+  font-size: 1rem;
+  line-height: 1.66;
+}
+
+.prose p {
+  margin: 0 0 10px;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* Br : un peu d’air (mais pas trop) */
+.prose br {
+  content: '';
+  display: block;
+  margin-top: 0.18em;
+}
+
+/* Strong: léger */
+.prose strong {
+  font-weight: 650;
+}
+
+/* =========================
+   Responsive (tablet)
+========================= */
+
+@media (max-width: 900px) {
+  .header {
+    margin-bottom: 36px;
+  }
+
+  .stack {
+    gap: 42px;
+  }
+
+  .h3 {
+    font-size: 1.16rem;
+  }
+}
+
+/* =========================
+   Mobile only
+========================= */
+
+@media (max-width: 640px) {
+  .section {
+    /* ✅ plus de respiration sur mobile */
+    padding-top: 64px;
+    padding-bottom: 80px;
+  }
+
+  .inner {
+    /* ✅ padding horizontal (sinon c’est trop collé) */
+    padding: 0 16px;
+  }
+
+  .header,
+  .stack {
+    max-width: 100%;
+  }
+
+  .header {
+    margin-bottom: 32px;
+  }
+
+  .lead {
+    line-height: 1.7;
+  }
+
+  .stack {
+    gap: 36px;
+  }
+
+  .prose {
+    line-height: 1.62;
+  }
+
+  .prose p {
+    margin-bottom: 11px;
+  }
+
+  .badge {
+    margin-bottom: 14px;
+  }
+}

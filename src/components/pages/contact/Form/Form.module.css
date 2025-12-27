@@ -1,0 +1,342 @@
+.section {
+  width: 100%;
+ padding-bottom:  clamp(3rem, 8vh, 4.5rem);
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+  gap: 2rem;
+}
+
+.card,
+.sideCard {
+  background: rgba(15, 23, 42, 0.92);
+  border-radius: 18px;
+  padding: 1.8rem 2rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.cardTitle {
+  margin: 0 0 0.75rem;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardIntro {
+  margin: 0 0 1.4rem;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #e5e7eb;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.inlineFields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #cbd5f5;
+}
+
+.input,
+.select,
+.textarea {
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  background: rgba(15, 23, 42, 0.95);
+  padding: 0.55rem 0.7rem;
+  font-size: 14px;
+  color: #e5e7eb;
+  outline: none;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.helpText {
+  margin: 0.2rem 0 0.2rem;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #9ca3af;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+
+
+
+.secondary {
+  border-radius: 999px;
+  padding: 0.55rem 1.2rem;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  background: rgba(15, 23, 42, 0.6);
+  color: #e5e7eb;
+}
+
+.secondary:hover {
+  border-color: rgba(148, 163, 184, 0.75);
+  transform: translateY(-1px);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 1.1rem;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #e5e7eb;
+}
+
+.list li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.1rem;
+}
+
+.list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  color: var(--accent);
+}
+
+.contactBlock {
+  margin: 0.3rem 0 1.1rem;
+}
+
+.blockLabel {
+  margin: 0 0 0.35rem;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #9ca3af;
+}
+
+.contactLine {
+  margin: 0.15rem 0;
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.bookingHint {
+  margin: 0.2rem 0 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.smallNote {
+  margin: 0 0 0.7rem;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
+.secondaryFull {
+  width: 100%;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  background: rgba(15, 23, 42, 0.6);
+  color: #e5e7eb;
+}
+
+.secondaryFull:hover {
+  border-color: rgba(148, 163, 184, 0.75);
+  transform: translateY(-1px);
+}
+
+.privacy {
+  margin: 0.4rem 0 0;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: #9ca3af;
+}
+
+/* Mobile */
+
+@media (max-width: 960px) {
+  .inner {
+    padding: 0 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .card,
+  .sideCard {
+    padding: 1.5rem 1.4rem;
+  }
+
+  .inlineFields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* --- Validation states (rouge tant que invalide, bleu dès que OK) --- */
+
+.fieldInvalid {
+  border-color: rgba(239, 68, 68, 0.95) !important;
+  box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.25);
+}
+
+.fieldValid {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.25);
+}
+
+/* Message global */
+.formError {
+  margin: 0 0 0.8rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  background: rgba(239, 68, 68, 0.08);
+  color: #fecaca;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+/* Hint sous champ */
+.fieldHint {
+  margin: 0.25rem 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #fca5a5;
+}
+
+/* Labels */
+.required {
+  color: rgba(239, 68, 68, 0.95);
+  font-weight: 700;
+}
+
+.optional {
+  color: #9ca3af;
+  font-weight: 400;
+  font-size: 12px;
+  margin-left: 0.35rem;
+}
+
+/* Mini hint sous bouton */
+.miniHint {
+  margin: 0.35rem 0 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #9ca3af;
+}
+
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.3rem;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: #0f172a;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.submit:hover {
+  background: #3caee0;
+}
+
+@media (max-width: 640px) {
+  .submit {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* Message global (cadre rouge) sous bouton */
+.formError {
+  margin: 0.75rem 0 0;            /* ✅ sous le bouton */
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  background: rgba(239, 68, 68, 0.08);
+  color: #fecaca;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+/* Message global (cadre vert) sous bouton */
+.formSuccess {
+  margin: 0.75rem 0 0;            /* ✅ sous le bouton */
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  background: rgba(34, 197, 94, 0.10);
+  color: #bbf7d0;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+/* ✅ Si invalide ET focus, on garde un focus ring rouge (pas bleu) */
+.fieldInvalid:focus,
+.fieldInvalid:focus-visible {
+  border-color: rgba(239, 68, 68, 0.95) !important;
+  box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.35) !important;
+}
+
+/* ✅ Si valide ET focus, on garde le focus accent */
+.fieldValid:focus,
+.fieldValid:focus-visible {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35) !important;
+}

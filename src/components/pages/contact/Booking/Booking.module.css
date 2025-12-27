@@ -1,0 +1,79 @@
+.section {
+  width: 100%;
+  padding: 0 0 3.5rem;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin: 0 0 1.2rem;
+}
+
+.title {
+  margin: 0 0 0.6rem;
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #d1d5db;
+  max-width: 720px;
+}
+
+/* ✅ conteneur "fenêtre" */
+.calOuter {
+  margin: 1.6rem auto 0;
+  width: 100%;
+  max-width: 980px;            /* un peu moins large que full */
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/*
+  ✅ On garde une iframe "grande" à l’intérieur, puis on scale.
+  -> ça évite l’effet crop/zoom.
+*/
+.calScaled {
+  transform: scale(0.85);
+  transform-origin: top center;
+
+  /* Compense la réduction pour éviter de couper le bas/droite */
+  width: calc(100% / 0.85);
+}
+
+/* On cible l’iframe générée par CalEmbed */
+.calScaled iframe {
+  width: 100%;
+  height: 720px;               /* hauteur "normale" */
+  border: 0;
+  display: block;
+}
+
+/* Mobile : pas de scale (sinon illisible) */
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 1.5rem;
+  }
+
+  .calOuter {
+    max-width: 100%;
+    border-radius: 18px;
+  }
+
+  .calScaled {
+    transform: none;
+    width: 100%;
+  }
+
+  .calScaled iframe {
+    height: 560px;
+  }
+}

@@ -1,0 +1,195 @@
+/* === Footer Layout === */
+.footer {
+  /* ⬇️ padding horizontal retiré pour éviter le double-gutter */
+  padding: 1rem 0;
+  border-top: 1px solid #3b3f46;
+  color: #aaa;
+  font-size: clamp(0.88rem, 1.4vw, 0.95rem);
+
+}
+
+/* === Columns === */
+.columns {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr; /* desktop */
+  gap: clamp(1.25rem, 3vw, 3rem);
+  max-width: 1800px;
+  margin: 0 auto 2rem;
+
+  /* ⬇️ unique source de padding horizontal (symétrique) */
+  padding-inline: clamp(16px, 4vw, 48px);
+
+  width: 100%;
+  box-sizing: content-box; /* évite les surprises avec max-width */
+
+}
+
+.column {
+  min-width: 220px;
+  max-width: 100%;
+}
+
+/* centre léger de la colonne pages sur grands écrans */
+.column:nth-of-type(2) {
+  margin: auto;
+}
+
+/* === Titles & Text === */
+.title {
+  font-weight: 600;
+  font-size: clamp(1.05rem, 1.6vw, 1.15rem);
+  color: #fff;
+  margin-bottom: 0.5rem;
+  margin-top:.5rem;
+}
+
+.subtitle {
+  font-weight: 500;
+  font-size: clamp(0.98rem, 1.4vw, 1.05rem);
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+.bottom span{
+  margin:0;
+
+}
+
+.description {
+  line-height: 1.5;
+  color: #bbb;
+  margin-bottom: 0.5rem;
+}
+
+/* === Links === */
+.link {
+  margin-top: 0.5rem;
+  color: var(--accent, #66ccff);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+.link:hover { opacity: 0.8; }
+
+/* === Lists === */
+.list,
+.listIcon {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.list li { display: block; }
+
+.list a,
+.listIcon a {
+  color: var(--accent, #66ccff);
+  text-decoration: none;
+}
+.list a:hover,
+.listIcon a:hover {
+  text-decoration: underline;
+}
+
+/* Liste avec icônes (colonne Contact) */
+.listIcon {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.listIcon li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Icônes */
+.icon {
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 1.05rem;
+  height: 1.05rem;
+  font-size: 1.05rem;
+  margin-top:1px;
+}
+
+/* Pages : 2 colonnes sur desktop, 1 sur mobile */
+.pageColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+/* === Bottom strip === */
+.bottom {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1800px;
+  margin: 0 auto;
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+  color: #999;
+  border-top: 1px solid #3b3f46;
+  padding-top: 1rem;
+  text-align: center;
+  flex-wrap: wrap;
+
+  /* ⬇️ même padding horizontal que .columns → symétrie garantie */
+  padding-inline: clamp(16px, 4vw, 48px);
+  box-sizing: content-box;
+}
+
+/* === Responsive === */
+
+/* ≤ 1024px : passe en 2 colonnes */
+@media (max-width: 1024px) {
+  .columns { grid-template-columns: 1fr 1fr; }
+  .column:nth-of-type(2) { margin: 0; }
+}
+
+/* ≤ 768px : 1 colonne, pages en colonne unique */
+@media (max-width: 768px) {
+  .columns {
+    grid-template-columns: 1fr;
+    margin-bottom: 1.5rem;
+    /* garde le padding-inline symétrique défini plus haut */
+  }
+  .pageColumns { grid-template-columns: 1fr; }
+  .bottom { padding-top: 1.25rem; }
+}
+/* ===== Fix mobile: gouttières symétriques + pas de débordement texte ===== */
+@media (max-width: 768px) {
+  .columns,
+  .bottom {
+    /* le padding compte dans la largeur → pas de décalage visuel */
+    box-sizing: border-box;
+    padding-inline: 16px; /* symétrique et constant */
+    width: 100%;
+  }
+
+  .column {
+    min-width: 0;   /* annule le 220px implicite sur mobile */
+    width: 100%;
+  }
+
+  /* casse propre des longues URLs/mots pour éviter les débords */
+  .description,
+  .list a,
+  .listIcon li {
+    overflow-wrap: anywhere;    /* casse si nécessaire */
+    word-break: break-word;     /* fallback */
+  }
+
+  /* petits ajustements de rythme */
+  .description { line-height: 1.55; }
+  .list { gap: 0.4rem; }
+}
+.description {
+  white-space: pre-line;
+}

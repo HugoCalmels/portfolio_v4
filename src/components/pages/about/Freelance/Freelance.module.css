@@ -1,0 +1,115 @@
+/* =========================
+   Layout
+========================= */
+
+.section {
+  padding-bottom: clamp(3rem, 8vh, 4.5rem);
+  scroll-margin-top: 60px;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* largeur de lecture */
+.header,
+.prose {
+  max-width: 76ch;
+}
+
+/* =========================
+   Header
+========================= */
+
+.header {
+  margin-bottom: 42px;
+}
+
+/* =========================
+   Prose
+========================= */
+
+.prose {
+  font-size: 1rem;
+  line-height: 1.66;
+}
+
+.prose p {
+  margin: 0 0 10px;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* h3 internes */
+.h3 {
+  margin: 18px 0 10px; /* séparation naturelle entre sections */
+  font-size: 1.22rem;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Br : un peu d’air (mais pas trop) */
+.prose br {
+  content: '';
+  display: block;
+  margin-top: 0.18em;
+}
+
+/* Strong: léger, pas “gras agressif” (si ta font le permet) */
+.prose strong {
+  font-weight: 650;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 900px) {
+  .header {
+    margin-bottom: 36px;
+  }
+
+  .h3 {
+    font-size: 1.16rem;
+  }
+}
+
+/* ✅ MOBILE ONLY: respiration + padding horizontal, sans toucher desktop */
+@media (max-width: 640px) {
+  .section {
+    /* donne de l’air autour de ce bloc (souvent la vraie cause du “trop serré”) */
+    padding-top: 64px;
+    padding-bottom: 84px;
+  }
+
+  .inner {
+    /* ✅ clé: évite le texte collé aux bords */
+    padding: 0 16px;
+  }
+
+  .header,
+  .prose {
+    max-width: 100%;
+  }
+
+  .header {
+    margin-bottom: 32px;
+  }
+
+  .prose {
+    line-height: 1.62;
+  }
+
+  .prose p {
+    margin-bottom: 11px;
+  }
+
+  .h3 {
+    margin-top: 18px;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,123 @@
+.section {
+  width: 100%;
+  padding-bottom: clamp(2rem, 6vh, 3.5rem);
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px; /* un poil plus large */
+  margin: 0 auto;
+}
+
+/* Grille : 2 colonnes larges (tu as 2 offres) */
+.offersGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(420px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 18px;
+  padding: 2rem 2.2rem; /* + de respiration */
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardText {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #e5e7eb;
+}
+
+/* LISTE avec "hanging indent" -> joli même sur 2 lignes */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0.35rem 0 0;
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: #e5e7eb;
+}
+
+.list li {
+  position: relative;
+  padding-left: 1.25rem;  /* espace bullet */
+  margin-bottom: 0.25rem;
+}
+
+/* bullet custom */
+.list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  color: var(--accent);
+}
+
+/* ✅ séparation visuelle tronc commun / extras */
+.divider {
+  height: 3px;
+  width: 52%;
+  border-radius: 999px;
+  background: var(--accent);
+  opacity: 0.9;
+  margin: 0.35rem 0 0.15rem;
+  margin-left: 1.05rem;
+}
+
+.commonList {
+  margin-top: 0.15rem;
+}
+
+.extrasList {
+  margin-top: 0.15rem;
+}
+
+.priceLine {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  font-size: 15px;
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+.pricingNote {
+  margin-top: 1.5rem;
+
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #9ca3af;
+
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .offersGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .inner {
+    padding: 0 1.5rem;
+  }
+
+  .card {
+    padding: 1.6rem 1.6rem;
+  }
+}
+.cardNote {
+  margin: 0.35rem 0 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #9ca3af;
+}

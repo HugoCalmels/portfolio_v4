@@ -1,0 +1,380 @@
+'use client'
+
+import {useState} from 'react'
+import styles from './ExpandableSections.module.css'
+import DashList from '@/components/ui/DashList'
+
+type Section = {
+  id: string
+  title: string
+  content: React.ReactNode
+}
+
+export default function ExpandableSectionsEn() {
+  const sections: Section[] = [
+    {
+      id: 'hosting',
+      title: 'Hosting & costs',
+      content: (
+        <>
+          <p className={styles.subText}>
+            Websites are hosted on modern and reliable infrastructure.
+            <br />
+            Basic hosting is included with no monthly fee.
+          </p>
+
+          <ul className={styles.subList}>
+            <li>
+              <strong>Hosting included</strong> (Netlify).
+            </li>
+            <li>
+              <strong>Monthly cost: €0</strong> for hosting the website.
+            </li>
+            <li>
+              <strong>Domain in the client’s name</strong>: I can help with purchase / setup if you prefer.
+            </li>
+          </ul>
+
+          <p className={styles.note}>
+            You only pay for your domain name (about €10 to €20 / year). No subscription is required for the
+            website.
+          </p>
+        </>
+      ),
+    },
+
+    {
+      id: 'content',
+      title: 'Add-on — Content updates',
+      content: (
+        <>
+          <p className={styles.subText}>
+            By default, the site does not include an editing interface. Updates can either be handled by me
+            or through an optional self-editing add-on.
+          </p>
+
+          <h4 className={styles.subTitle}>Self-editing (custom admin interface)</h4>
+
+          <p className={styles.subText}>
+            We define in advance what can be edited (text, images, blocks, pricing, opening hours…). I then
+            set up a secure admin page integrated directly into the website.
+          </p>
+
+          <ul className={styles.subList}>
+            <li>
+              <strong>10 editable items</strong> defined together.
+            </li>
+            <li>Secure access.</li>
+            <li>Maintenance and hosting included.</li>
+          </ul>
+
+          <p className={styles.subPrice}>
+            <strong>From €350</strong>
+            &nbsp;<br />
+            <strong>+€10/month</strong>
+          </p>
+
+          <p className={styles.note}>
+            Alternative: updates on demand — <strong>€30/hour</strong> or <strong>€125/day</strong>.
+          </p>
+        </>
+      ),
+    },
+
+    {
+      id: 'marketing',
+      title: 'Add-on — SEO & visibility',
+      content: (
+        <>
+          <p className={styles.subText}>
+            I’m less experienced in SEO than in website design and development.
+            <br />
+            So the approach is intentionally simple, with no long-term commitment, and a budget equivalent
+            to <strong>one day of work per month</strong>.
+          </p>
+
+          <ul className={styles.subList}>
+            <li>Simple keyword research with realistic priorities.</li>
+            <li>Optimization of existing pages (titles, content, lightweight structure).</li>
+            <li>Occasional creation or enrichment of targeted content.</li>
+            <li>Tracking via Search&nbsp;Console and ongoing adjustments.</li>
+            <li>
+              Occasional activation of other levers when relevant (local SEO, Google Ads tests, simple social
+              media, light link building depending on budget).
+            </li>
+          </ul>
+
+          <p className={styles.note}>
+            The priority is first a clear, fast, well-structured website. Visibility work comes next, built
+            on a solid foundation.
+          </p>
+
+          <p className={styles.price}>
+            <strong>€125/month</strong> — about 1 day of work
+            <br />
+            <span className={styles.note}>Monthly recap provided (actions taken + next steps).</span>
+          </p>
+        </>
+      ),
+    },
+
+    {
+      id: 'ecommerce',
+      title: 'Add-on — E-commerce',
+      content: (
+        <>
+          <p className={styles.subText}>
+            Two levels depending on your needs: simple checkout, or a shop with a cart.
+          </p>
+
+          <div className={styles.subSection}>
+            <h4 className={styles.subTitle}>Checkout (1–5 offers)</h4>
+            <ul className={styles.subList}>
+              <li>Stripe and/or PayPal payments.</li>
+              <li>Dedicated page or secure redirect.</li>
+              <li>Confirmation email.</li>
+            </ul>
+            <p className={styles.subPrice}>
+              <strong>From €400</strong>
+              <br />
+              <span>+ €10 / month</span>
+            </p>
+          </div>
+
+          <div className={styles.subSection}>
+            <h4 className={styles.subTitle}>Shop (catalog + cart)</h4>
+            <ul className={styles.subList}>
+              <li>Catalog (about 3 to 20 products).</li>
+              <li>Cart + Stripe/PayPal payments.</li>
+              <li>Order confirmation email.</li>
+              <li>Order management via Stripe / PayPal.</li>
+            </ul>
+
+            <p className={styles.note}>
+              Excludes complex cases (food, advanced taxation, specific logistics).
+            </p>
+
+            <p className={styles.subPrice}>
+              <strong>From €900</strong>
+              <br />
+              <span>+ €20 / month</span>
+            </p>
+          </div>
+
+          <p className={styles.note}>
+            Additional features available on request (stock management, business rules, options, filters,
+            variations, etc.).
+          </p>
+        </>
+      ),
+    },
+
+    {
+      id: 'services',
+      title: 'À la carte services',
+      content: (
+        <>
+          <p className={styles.subText}>
+            One-off services billed per task. No subscription, no commitment.
+          </p>
+
+          <DashList>
+            <li className={styles.serviceItem}>
+              <div className={styles.serviceHeader}>
+                <div className={styles.serviceLeft}>
+                  <span className={styles.serviceTitle}>Google Search Console</span>
+                  <span className={styles.serviceSep} aria-hidden="true">
+                    {' '}
+                    —{' '}
+                  </span>
+                  <span className={styles.serviceInlineText}>
+                    Add the site, verify the domain, submit the sitemap, and hand over access.
+                  </span>
+                </div>
+                <span className={styles.servicePrice}>€45</span>
+              </div>
+
+              <p className={styles.serviceMuted}>
+                Out of scope: complex DNS issues, ongoing tracking, or SEO optimizations.
+              </p>
+            </li>
+
+            <li className={styles.serviceItem}>
+              <div className={styles.serviceHeader}>
+                <div className={styles.serviceLeft}>
+                  <span className={styles.serviceTitle}>Google Business Profile</span>
+                  <span className={styles.serviceSep} aria-hidden="true">
+                    {' '}
+                    —{' '}
+                  </span>
+                  <span className={styles.serviceInlineText}>
+                    Create or optimize the listing (address, hours, link to the website).
+                  </span>
+                </div>
+                <span className={styles.servicePrice}>€60</span>
+              </div>
+
+              <p className={styles.serviceMuted}>
+                Out of scope: review strategy, ongoing management, regular posts.
+              </p>
+            </li>
+
+            <li className={styles.serviceItem}>
+              <div className={styles.serviceHeader}>
+                <div className={styles.serviceLeft}>
+                  <span className={styles.serviceTitle}>Professional email (website form)</span>
+                  <span className={styles.serviceSep} aria-hidden="true">
+                    {' '}
+                    —{' '}
+                  </span>
+                  <span className={styles.serviceInlineText}>
+                    Use <strong className={styles.inlineStrong}>contact@yourdomain</strong> as the sender +
+                    minimal SMTP/DNS setup.
+                  </span>
+                </div>
+                <span className={styles.servicePrice}>€60</span>
+              </div>
+
+              <p className={styles.serviceMuted}>
+                Out of scope: mailbox management, complex forwarding, long-term support.
+              </p>
+            </li>
+
+            <li className={styles.serviceItem}>
+              <div className={styles.serviceHeader}>
+                <div className={styles.serviceLeft}>
+                  <span className={styles.serviceTitle}>Simple booking tool</span>
+                  <span className={styles.serviceSep} aria-hidden="true">
+                    {' '}
+                    —{' '}
+                  </span>
+                  <span className={styles.serviceInlineText}>
+                    Cal.com or Calendly integration (dedicated page or direct link).
+                  </span>
+                </div>
+                <span className={styles.servicePrice}>€60</span>
+              </div>
+
+              <p className={styles.serviceMuted}>Out of scope: complex rules, integrated payments.</p>
+            </li>
+
+            <li className={styles.serviceItem}>
+              <div className={styles.serviceHeader}>
+                <div className={styles.serviceLeft}>
+                  <span className={styles.serviceTitle}>Google Maps embed</span>
+                  <span className={styles.serviceSep} aria-hidden="true">
+                    {' '}
+                    —{' '}
+                  </span>
+                  <span className={styles.serviceInlineText}>
+                    Responsive embed + link to directions.
+                  </span>
+                </div>
+                <span className={styles.servicePrice}>€45</span>
+              </div>
+            </li>
+
+            <li className={styles.serviceItem}>
+              <div className={styles.serviceHeader}>
+                <div className={styles.serviceLeft}>
+                  <span className={styles.serviceTitle}>Bilingual website (FR / EN)</span>
+                  <span className={styles.serviceSep} aria-hidden="true">
+                    {' '}
+                    —{' '}
+                  </span>
+                  <span className={styles.serviceInlineText}>
+                    Set up the multilingual structure (routes, language switcher) and integrate translated
+                    content across the whole site.
+                  </span>
+                </div>
+                <span className={styles.servicePrice}>€120</span>
+              </div>
+
+              <p className={styles.serviceMuted}>
+                Translations provided or validated by the client. Other languages on request.
+              </p>
+            </li>
+          </DashList>
+
+          <p className={styles.noteTight}>
+            If a service goes beyond the expected scope: custom quote or time spent (€30/hour).
+          </p>
+        </>
+      ),
+    },
+{
+  id: 'good-to-know',
+  title: 'Good to know',
+  content: (
+    <>
+      <p className={styles.subText}>
+        The timelines mentioned (2–5 days for a landing page, 5–10 days for a brochure website)
+        apply when the project is already clear:
+        defined activity, clear offer, identified key messages,
+        and a precise idea of what should appear on the website.
+      </p>
+
+      <p className={styles.subText}>
+        When a project starts from scratch,
+        it is not just about “building a website”.
+        It also involves deciding what to say,
+        what to highlight,
+        and how to organize everything.
+      </p>
+
+      <p className={styles.subText}>
+        As a concrete example,
+        my own website was built over several weeks.
+        The time was not spent only on development,
+        but also on refining the offer, the messaging and the structure,
+        with several iterations before reaching something coherent.
+      </p>
+
+      <p className={styles.note}>
+        This work is part of my job
+        and can be done for a client project,
+        but it cannot be compressed
+        into the short timelines mentioned here.
+      </p>
+    </>
+  ),
+}
+
+
+
+  ]
+
+  const [openId, setOpenId] = useState<string | null>(null)
+
+  return (
+    <section className={styles.section}>
+      <div className={styles.inner}>
+        {sections.map(section => {
+          const isOpen = openId === section.id
+
+          return (
+            <div key={section.id} className={styles.item}>
+              <button
+                type="button"
+                className={styles.header}
+                onClick={() => setOpenId(isOpen ? null : section.id)}
+                aria-expanded={isOpen}
+              >
+                <span className={styles.title}>{section.title}</span>
+                <span className={styles.icon} aria-hidden="true">
+                  {isOpen ? '–' : '+'}
+                </span>
+              </button>
+
+              {isOpen && (
+                <div className={styles.panel}>
+                  <div className={styles.content}>{section.content}</div>
+                </div>
+              )}
+            </div>
+          )
+        })}
+      </div>
+    </section>
+  )
+}

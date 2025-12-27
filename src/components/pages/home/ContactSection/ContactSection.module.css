@@ -1,0 +1,84 @@
+/* ContactSection.module.css */
+
+.contact {
+  width: 100%;
+  padding-top: clamp(3rem, 8vh, 4.5rem);
+
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header comme le hero */
+.header {
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.kicker {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(30px, 3.3vw, 40px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  font-family: var(--font-title);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+/* ✅ wrapper propre (pas de nesting CSS invalide) */
+.calWrapper {
+  margin-top: 1.5rem;
+  overflow: hidden; /* pour que l’iframe suive bien le radius */
+  background: transparent;
+}
+
+/* On force aussi le fond côté iframe au cas où */
+.calWrapper :global(.cal-iframe) {
+  background-color: #020617;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ✅ MOBILE: ajoute le padding latéral + empêche le débordement */
+@media (max-width: 640px) {
+  .inner {
+    padding: 0 1.5rem; /* <- c’est ça qui te manquait */
+  }
+
+  .calWrapper {
+    padding: 0; /* pas besoin de padding ici, sinon ça réduit encore */
+  }
+
+  /* si l'embed met une width fixe quelque part, ça le force à rentrer */
+  .calWrapper :global(iframe),
+  .calWrapper :global(.cal-iframe) {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+.altLink {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.altLink:hover {
+  text-decoration-thickness: 2px;
+}

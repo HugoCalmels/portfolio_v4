@@ -9,7 +9,7 @@ export default function NotFound() {
 
   return (
     <div className={styles.wrapper}>
-      <h2>TESTTTT</h2>
+
       <h1 className={styles.title}>😕 {t('title')}</h1>
       <p className={styles.message}>{t('message')}</p>
       <Link href={`/${locale}`} className={styles.backLink}>

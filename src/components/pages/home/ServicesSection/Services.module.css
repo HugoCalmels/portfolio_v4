@@ -1,0 +1,160 @@
+/* app/(fr)/components/Services/Services.module.css */
+
+.services {
+  width: 100%;
+  scroll-margin-top: 30px;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grid de cards */
+
+.grid {
+  margin-top: 2.3rem;
+  display: grid;
+
+  /* ✅ 2 cards = 2 colonnes, elles remplissent toute la largeur (1200px) */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1.6rem;
+}
+
+/* Card */
+
+.card {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 18px;
+  padding: 1.5rem 1.7rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+
+  align-items: flex-start;
+}
+
+.card > * {
+  max-width: 100%;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 600;
+  align-self: stretch;
+}
+
+.cardText {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: #e5e7eb;
+  align-self: stretch;
+}
+
+/* Liste */
+
+.list {
+  margin: 0.3rem 0 0.4rem;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  color: #cbd5f5;
+  align-self: stretch;
+}
+
+.list li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: var(--accent);
+}
+
+/* (Optionnel) Ancien CTA si encore utilisé ailleurs */
+
+.cardCta {
+  margin-top: auto;
+  align-self: flex-start;
+  width: auto;
+  max-width: max-content;
+
+  padding: 0.55rem 1.3rem;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: transparent;
+  color: #e5e7eb;
+  cursor: pointer;
+  text-decoration: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.16s ease, border-color 0.16s ease, transform 0.16s ease;
+}
+
+.cardCta:hover {
+  background: rgba(37, 99, 235, 0.08);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* ✅ Footer collé en bas + prix repère */
+
+.cardFooter {
+  margin-top: auto;
+  padding-top: 0.9rem;
+
+  align-self: stretch;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.price {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(229, 231, 235, 0.88);
+  letter-spacing: 0.01em;
+}
+
+/* Responsive */
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  /* ✅ uniquement mobile : scroll margin plus petit */
+  .services {
+    scroll-margin-top: 0px; /* ajuste ici (ex: 12–20) */
+
+    padding-top: 2.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .inner {
+    padding: 0 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

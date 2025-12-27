@@ -1,0 +1,290 @@
+.section {
+  width: 100%;
+  padding-bottom: clamp(4rem, 10vh, 6rem);
+
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+/* séparateurs “bourrins” mais clean */
+.item {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.22);
+}
+
+/* ligne cliquable */
+.header {
+  all: unset;
+  width: 100%;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1.6rem 0;
+
+}
+
+.title {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* + / – (plus présent) */
+.icon {
+  width: 3rem;
+  text-align: right;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1;
+  color: #e5e7eb;
+}
+
+/* contenu (aucune anim, juste clean) */
+.panel {
+  padding: 0 0 1.6rem;
+}
+
+.content {
+  max-width: 80ch;
+  color: #e5e7eb;
+}
+
+/* typo */
+.content p {
+  margin: 0 0 0.9rem;
+  font-size: 14.5px;
+  line-height: 1.8;
+}
+
+.content ul {
+  margin: 0 0 0.9rem;
+  padding: 0;
+  list-style: none;
+  font-size: 14.5px;
+  line-height: 1.85;
+}
+
+.content li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.content li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  color: var(--accent);
+}
+
+.price {
+  margin-top: 1.1rem;
+  font-size: 14.5px;
+}
+
+.note {
+  margin-top: 0.4rem;
+  font-size: 13.5px;
+  color: #9ca3af;
+}
+
+/* mobile */
+@media (max-width: 960px) {
+  .inner {
+    padding: 0 1.5rem;
+  }
+
+  .title {
+    font-size: 16.5px;
+  }
+
+  .icon {
+    font-size: 34px;
+    width: 2.6rem;
+  }
+}
+.inlinePrice {
+  margin-top: 0.35rem;
+  font-size: 14.5px;
+  color: #e5e7eb;
+  font-weight: 600;
+}
+/* Sous-blocs internes (pour éviter les lignes/traits) */
+.subSection {
+  margin-top: 2.1rem;
+  padding-top: 0.1rem; /* juste pour garder un rythme constant */
+}
+
+.subTitle {
+  margin: 0 0 0.35rem;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #e5e7eb;
+  letter-spacing: 0.01em;
+}
+
+.subText {
+  margin: 0 0 0.55rem;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #e5e7eb;
+  opacity: 0.92;
+  max-width: 80ch;
+}
+
+.subPrice {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #e5e7eb;
+  font-weight: 600;
+}
+/* Sous-blocs internes (déjà suggérés précédemment, garde-les si tu les as) */
+.subSection {
+  margin-top: 2.1rem;
+  padding-top: 0.1rem;
+}
+
+.subTitle {
+  margin: 0 0 0.35rem;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #e5e7eb;
+  letter-spacing: 0.01em;
+}
+
+.subText {
+  margin: 0 0 0.75rem;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #e5e7eb;
+  opacity: 0.92;
+  max-width: 80ch;
+}
+
+.subPrice {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+/* Liste interne, mêmes bullets que tes contenus */
+.subList {
+  margin: 0 0 0.9rem;
+  padding: 0;
+  list-style: none;
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: #e5e7eb;
+}
+
+.subList li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.subList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  color: var(--accent);
+}
+/* Services.module.css */
+
+/* Liste principale */
+.servicesList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 22px;
+}
+
+/* 1 service */
+.serviceItem {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header title/price */
+.serviceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+/* gauche = "Titre — texte" sur la même ligne */
+.serviceLeft {
+  min-width: 0; /* important pour ellipsis/wrap */
+  display: inline;
+}
+
+/* le titre reste bold */
+.serviceTitle {
+  font-weight: 600;
+  font-size: 15.5px;
+}
+
+/* séparateur visuel */
+.serviceSep {
+  opacity: 0.55;
+}
+
+/* le texte inline n'est PAS bold */
+.serviceInlineText {
+  font-weight: 400;
+  font-size: 13.8px;
+  line-height: 1.55;
+  opacity: 0.9;
+}
+
+/* si tu veux que le strong dans la phrase soit pas "trop" gras */
+.inlineStrong {
+  font-weight: 600;
+}
+
+/* prix à droite */
+.servicePrice {
+  font-weight: 600;
+  font-size: 14.5px;
+  white-space: nowrap;
+  opacity: 0.95;
+}
+
+/* Hors périmètre */
+.serviceMuted {
+  margin: 10px 0 0;
+  font-size: 13.5px;
+  line-height: 1.65;
+  opacity: 0.65;
+}
+
+/* intro + note finale (si tu les avais déjà) */
+.subText {
+  margin: 0 0 12px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.noteTight {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.55;
+  opacity: 0.7;
+}

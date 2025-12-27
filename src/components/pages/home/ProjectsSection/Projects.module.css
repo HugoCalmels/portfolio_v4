@@ -1,0 +1,142 @@
+/* sections/Projects/Projects.module.css */
+
+.projects {
+  width: 100%;
+  padding-top: clamp(3rem, 8vh, 4.5rem);
+
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+
+}
+
+/* Header */
+
+.header {
+  margin-bottom: 2.5rem;
+}
+
+.kicker {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #9ca3af;
+  margin-bottom: 0.6rem;
+}
+
+.title {
+  margin: 0 0 0.6rem;
+  font-size: clamp(26px, 2.6vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #d1d5db;
+  max-width: 620px;
+}
+
+/* Grid – 2 cartes à gauche, 1 carte à droite centrée */
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  column-gap: 2.5rem;
+  row-gap: 1.8rem;
+}
+
+/* Les deux cartes de gauche sont simplement les 1ère et 3ème dans le flux */
+
+/* Carte de droite qui span 2 lignes et se centre verticalement
+   -> visuel comme ton dessin (entre les 2 cartes de gauche) */
+.cardRight {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+}
+
+/* Cartes */
+
+.card {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 18px;
+  padding: 1.5rem 1.7rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: white;
+
+}
+
+.cardContent {
+  padding: 0.7rem .8rem .9rem;
+}
+
+.cardTitle {
+  margin: 0 0 0.25rem;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardMeta {
+  margin: 0 0 0.7rem;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.cardText {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+/* Responsive */
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cardRight {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects {
+    padding-top: 3rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .inner {
+    padding: 0 1.25rem;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .cardContent {
+    padding: 1rem 1rem 1.2rem;
+  }
+}
