@@ -54,6 +54,8 @@ export default function ContactFormFr() {
   // prod:  NEXT_PUBLIC_API_URL_PROD=https://ton-back
   const API_URL = process.env.NEXT_PUBLIC_API_URL ?? process.env.NEXT_PUBLIC_API_URL_PROD
 
+  console.log(API_URL);
+
   const errors = useMemo(() => {
     const e: Partial<Record<keyof Fields, string>> = {}
 
