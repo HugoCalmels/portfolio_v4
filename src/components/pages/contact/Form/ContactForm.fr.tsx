@@ -145,7 +145,8 @@ export default function ContactFormFr() {
         budget: fields.budget || '',
         message: fields.message.trim(),
       }
-
+      
+      console.log(API_URL);
       const res = await fetch(`${API_URL}/api/mail`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
