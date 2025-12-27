@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import styles from './MiniCTA.module.css'
+import styles from './MiniCta.module.css'
 
 type MiniCTAProps = {
   children: React.ReactNode

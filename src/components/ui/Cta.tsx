@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import styles from './CTA.module.css'
+import styles from './Cta.module.css'
 
 type CTAProps = {
   children: React.ReactNode
