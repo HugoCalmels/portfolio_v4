@@ -1,8 +1,8 @@
 // app/[locale]/a-propos/page.tsx
-import AboutFreelance from '@/components/pages/about/Freelance/AboutFreelance';
+import AboutBusinessModel from '@/components/pages/about/BusinessModel/AboutBusinessModel';
 import AboutHero from '@/components/pages/about/Hero/AboutHero';
 import Index from '@/components/pages/about/Index/Index';
-import AboutPerso from '@/components/pages/about/Perso/AboutPerso';
+import AboutSeo from '@/components/pages/about/Seo/AboutSeo';
 import AboutStory from '@/components/pages/about/Story/AboutStory';
 import TechStack from '@/components/pages/about/TechStack/TechStack';
 import type { Metadata } from 'next';
@@ -19,10 +19,14 @@ export default function AboutPage() {
     <>
       <AboutHero />
       <Index />
+            <AboutBusinessModel/>
+            <AboutSeo/>
+
       <AboutStory />
-      <AboutFreelance />
+
+
       <TechStack />
-      <AboutPerso />
+
     </>
   );
 }

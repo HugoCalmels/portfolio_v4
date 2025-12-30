@@ -1,0 +1,240 @@
+/* =========================
+   Layout
+========================= */
+
+.section {
+  padding-bottom: clamp(3rem, 8vh, 4.5rem);
+  scroll-margin-top: 60px;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* colonne de lecture */
+.header,
+.prose {
+  max-width: 76ch;
+}
+
+/* =========================
+   Header
+========================= */
+
+.header {
+  margin-bottom: 42px;
+}
+
+/* =========================
+   Prose
+========================= */
+
+.prose {
+  font-size: 1rem;
+  line-height: 1.66;
+}
+
+.prose p {
+  margin: 0 0 10px;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose strong {
+  font-weight: 650;
+}
+
+/* h3 internes */
+.h3 {
+  margin-top: 32px;
+  margin-bottom: 12px;
+
+  font-size: 1.15rem;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* =========================
+   Matrix (same width as text)
+========================= */
+
+.matrixA {
+  /* ✅ même largeur que la colonne texte */
+  width: 100%;
+  max-width: none;
+
+  /* ✅ plus d'air avec le texte */
+  margin: 22px 0 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  /* compact */
+  font-size: 0.86rem;
+
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.22);
+}
+
+.matrixTitle {
+  padding: 9px 12px;
+  font-weight: 760;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.matrixHeaderA {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.matrixTh {
+  padding: 8px 12px;
+  font-weight: 760;
+  font-size: 0.82rem;
+  opacity: 0.92;
+}
+
+.matrixTh + .matrixTh {
+  border-left: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.matrixGroup {
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.matrixGroup:first-of-type {
+  border-top: 0;
+}
+
+.matrixGroupTitle {
+  padding: 9px 12px;
+  font-weight: 820;
+  font-size: 0.87rem;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.matrixRowA {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0;
+}
+
+.matrixCell {
+  padding: 9px 12px;
+  min-width: 0;
+}
+
+.matrixCell + .matrixCell {
+  border-left: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+/* Lists with icons (dense) */
+.bulletsPlus,
+.bulletsMinus {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bulletsPlus li,
+.bulletsMinus li {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  column-gap: 8px;
+  margin: 0 0 5px;
+
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+.bulletsPlus li:last-child,
+.bulletsMinus li:last-child {
+  margin-bottom: 0;
+}
+
+.bulletsPlus li::before {
+  content: '✓';
+  font-weight: 900;
+  opacity: 0.95;
+  transform: translateY(-0.5px);
+}
+
+.bulletsMinus li::before {
+  content: '✕';
+  font-weight: 900;
+  opacity: 0.82;
+  transform: translateY(-0.5px);
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 900px) {
+  .header {
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: 64px;
+    padding-bottom: 84px;
+  }
+
+  .inner {
+    padding: 0 16px;
+  }
+
+  .header,
+  .prose {
+    max-width: 100%;
+  }
+
+  .header {
+    margin-bottom: 32px;
+  }
+
+  .prose {
+    line-height: 1.62;
+  }
+
+  .prose p {
+    margin-bottom: 11px;
+  }
+
+  .h3 {
+    margin-top: 18px;
+    margin-bottom: 10px;
+  }
+
+  .matrixA {
+    border-radius: 10px;
+    box-shadow: none;
+    margin: 20px 0 22px;
+  }
+
+  .matrixTitle,
+  .matrixTh,
+  .matrixGroupTitle,
+  .matrixCell {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

@@ -6,11 +6,23 @@ import styles from './Index.module.css'
 
 export default function IndexEn() {
   return (
-    <nav className={styles.section} aria-label="Page index">
+    <nav className={styles.section} aria-label="Page table of contents">
       <div className={styles.inner}>
         <HomeSectionTitle title="Index" />
 
         <ul className={styles.list}>
+          <li className={styles.item}>
+            <CustomLink href="#business-model" className={styles.link}>
+              Business model
+            </CustomLink>
+          </li>
+
+          <li className={styles.item}>
+            <CustomLink href="#seo" className={styles.link}>
+              SEO, visibility and positioning
+            </CustomLink>
+          </li>
+
           <li className={styles.item}>
             <CustomLink href="#parcours" className={styles.link}>
               Background
@@ -18,20 +30,8 @@ export default function IndexEn() {
           </li>
 
           <li className={styles.item}>
-            <CustomLink href="#freelance" className={styles.link}>
-              Freelancing, SEO & business model
-            </CustomLink>
-          </li>
-
-          <li className={styles.item}>
             <CustomLink href="#stack" className={styles.link}>
-              Languages, frameworks & tools
-            </CustomLink>
-          </li>
-
-          <li className={styles.item}>
-            <CustomLink href="#perso" className={styles.link}>
-              A personal touch
+              Languages, frameworks and tools
             </CustomLink>
           </li>
         </ul>

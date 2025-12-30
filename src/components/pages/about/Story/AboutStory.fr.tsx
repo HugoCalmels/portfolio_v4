@@ -1,6 +1,5 @@
 'use client'
 
-import DashList from '@/components/ui/DashList'
 import styles from './Story.module.css'
 import HomeSectionTitle from '@/components/ui/HomeSectionTitle'
 
@@ -11,12 +10,12 @@ export default function AboutStoryFr() {
         <header className={styles.header}>
           <HomeSectionTitle title="Parcours" />
 
-          <p className={styles.lead}>
+          <p className={styles.prose}>
             Je suis un développeur web, à <strong>80&nbsp;% autodidacte</strong>, 10&nbsp;% de formation et
             10&nbsp;% de mentorat.
           </p>
 
-          <p className={styles.meta}>
+          <p className={styles.prose}>
             <strong>Pas de diplôme.</strong>
             <br />
             Pas d’expérience professionnelle “classique” (ESN, éditeurs, agences).
@@ -35,8 +34,7 @@ export default function AboutStoryFr() {
 
             <div className={styles.prose}>
               <p>
-                Sur <strong>550 participants</strong>, seulement <strong>13</strong> ont obtenu la
-                certification.
+                Sur <strong>550 participants</strong>, seulement <strong>13</strong> ont obtenu la certification.
               </p>
 
               <p>
@@ -61,42 +59,41 @@ export default function AboutStoryFr() {
           </article>
 
           {/* Grind solo */}
-          {/* Grind solo */}
           <article className={styles.block}>
             <h3 className={styles.h3}>2 à 3 ans — Grind solo (apprentissage autodidacte)</h3>
             <p className={styles.badge}>Développeur fullstack Ruby / React</p>
 
             <div className={styles.prose}>
               <p>
-                Cette période a été consacrée à une <strong>pratique régulière et autonome</strong>&nbsp; du
-                développement web.
+                Cette période a été consacrée à une <strong>pratique régulière et autonome</strong>&nbsp; du développement
+                web.
                 <br />
-                L’objectif était simple&nbsp;: coder souvent, comprendre ce que je faisais, et progresser
-                sur des projets concrets.
+                L’objectif était simple&nbsp;: coder souvent, comprendre ce que je faisais, et progresser sur des projets
+                concrets.
               </p>
 
               <p>
-                Côté frontend, j’ai travaillé sur des interfaces en React&nbsp;: composants, gestion des
-                données à l’écran, interactions utilisateur, et échanges avec le backend via des API.
+                Côté frontend, j’ai travaillé sur des interfaces en React&nbsp;: composants, gestion des données à l’écran,
+                interactions utilisateur, et échanges avec le backend via des API.
               </p>
 
               <p>
                 J’ai aussi beaucoup progressé sur l’UI / UX.
                 <br />
-                Mes premières interfaces étaient brouillonnes, puis j’ai appris à organiser les pages,
-                rendre les parcours plus clairs, et éviter d’en faire trop.
+                Mes premières interfaces étaient brouillonnes, puis j’ai appris à organiser les pages, rendre les parcours
+                plus clairs, et éviter d’en faire trop.
               </p>
 
               <p>
                 Côté backend, j’ai travaillé surtout avec Ruby et PostgreSQL.
                 <br />
-                Création d’API, logique métier, authentification, envoi d’emails, gestion des données, et
-                structuration du code.
+                Création d’API, logique métier, authentification, envoi d’emails, gestion des données, et structuration du
+                code.
               </p>
 
               <p>
-                Cette phase m’a permis de comprendre&nbsp; <strong>comment fonctionne réellement un projet web</strong> : ce
-                qui se passe côté interface, côté serveur, et dans la base de données.
+                Cette phase m’a permis de comprendre&nbsp; <strong>comment fonctionne réellement un projet web</strong> :
+                ce qui se passe côté interface, côté serveur, et dans la base de données.
               </p>
 
               <p>
@@ -134,8 +131,7 @@ export default function AboutStoryFr() {
               </p>
 
               <p>
-                Le but était simple&nbsp;:
-                <strong> se former en développant un projet complet</strong>, comme en entreprise.
+                Le but était simple&nbsp;: <strong>se former en développant un projet complet</strong>, comme en entreprise.
               </p>
 
               <p>
@@ -161,41 +157,45 @@ export default function AboutStoryFr() {
             </div>
           </article>
 
-          {/* Galères marché */}
-          <article className={styles.block}>
-            <h3 className={styles.h3}>6 mois de galères</h3>
-            <p className={styles.badge}>Java / Angular / React</p>
+  <article className={styles.block}>
+  <h3 className={styles.h3}>Aujourd’hui — Freelance</h3>
+  <p className={styles.badge}>Java / React</p>
 
-            <div className={styles.prose}>
-              <p>
-                Reprise de l’entraînement sur des tests algorithmiques et des quizz.
-                <br />
-                Puis <strong>retour sur le marché de l’emploi</strong>.
-              </p>
+  <div className={styles.prose}>
+    <p>
+      En France, il arrive régulièrement que <strong>300 développeurs</strong> postulent
+      pour une même annonce
+      (certaines annonces aux US montent même jusqu’à <strong>1000 candidats</strong>).
+      Pour un junior aujourd’hui, c’est hyper dur d’obtenir un premier job en ESN
+      ou chez un éditeur, <strong>même au SMIC</strong>.
+    </p>
 
-              <DashList>
-                <li>
-                  <strong>100</strong> candidatures
-                </li>
-                <li>
-                  <strong>0</strong> entretien
-                </li>
-                <li>
-                  <strong>0</strong> test technique
-                </li>
-                <li>
-                  <strong>2 à 5&nbsp;%</strong> de clics vers mon site / portfolio
-                </li>
-              </DashList>
+    <p>
+      Beaucoup de profils <strong>bac+5</strong> ne trouvent rien.
+      Pour un autodidacte comme moi, c’est encore plus compliqué.
+    </p>
 
-              <p>
-                À ce moment-là, <strong>j’en ai eu marre</strong>.
-              </p>
-              <p>
-                Pause. Puis <strong>réflexion</strong>.
-              </p>
-            </div>
-          </article>
+    <p>
+      Je savais en revanche qu’il existait du travail en <strong>freelance</strong>&nbsp;
+      pour un développeur web — fullstack, frontend ou backend —
+      à condition de réussir à signer ses premiers contrats seul,
+      et de convaincre ses premiers clients finaux seul.
+    </p>
+
+    <p>
+      Il ne s’agit clairement pas du “freelance dream”.
+      C’est plutôt un choix qui s’est imposé&nbsp;:
+      pour rentrer de l’argent,
+      et pour rester proche de l’industrie.
+    </p>
+
+    <p>
+      Bref. Je continue à avancer comme ça, et je vois où ça mène.
+    </p>
+  </div>
+</article>
+
+
         </div>
       </div>
     </section>

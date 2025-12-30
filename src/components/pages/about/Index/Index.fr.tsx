@@ -11,17 +11,24 @@ export default function IndexFr() {
         <HomeSectionTitle title="Index" />
 
         <ul className={styles.list}>
+         <li className={styles.item}>
+            <CustomLink href="#business-model" className={styles.link}>
+              Modèle économique
+            </CustomLink>
+          </li>
+
+                   <li className={styles.item}>
+            <CustomLink href="#seo" className={styles.link}>
+              SEO, Visibilité et positionnement
+            </CustomLink>
+          </li>
+
           <li className={styles.item}>
             <CustomLink href="#parcours" className={styles.link}>
               Parcours
             </CustomLink>
           </li>
 
-          <li className={styles.item}>
-            <CustomLink href="#freelance" className={styles.link}>
-              Freelance, SEO et modèle économique
-            </CustomLink>
-          </li>
 
           <li className={styles.item}>
             <CustomLink href="#stack" className={styles.link}>
@@ -29,11 +36,6 @@ export default function IndexFr() {
             </CustomLink>
           </li>
 
-          <li className={styles.item}>
-            <CustomLink href="#perso" className={styles.link}>
-              Une touche personnelle
-            </CustomLink>
-          </li>
         </ul>
       </div>
     </nav>
