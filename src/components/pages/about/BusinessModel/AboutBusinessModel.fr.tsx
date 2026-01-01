@@ -13,7 +13,7 @@ export default function AboutBusinessModelFr() {
       <div className={styles.inner}>
         <header className={styles.header}>
           <div id="business-model-title">
-            <HomeSectionTitle title="Modèle économique" />
+            <HomeSectionTitle title="Mon business model est chelou" />
           </div>
         </header>
 

@@ -6,20 +6,14 @@ import styles from './Index.module.css'
 
 export default function IndexEn() {
   return (
-    <nav className={styles.section} aria-label="Page table of contents">
+    <nav className={styles.section} aria-label="Page index">
       <div className={styles.inner}>
         <HomeSectionTitle title="Index" />
 
         <ul className={styles.list}>
           <li className={styles.item}>
-            <CustomLink href="#business-model" className={styles.link}>
-              Business model
-            </CustomLink>
-          </li>
-
-          <li className={styles.item}>
-            <CustomLink href="#seo" className={styles.link}>
-              SEO, visibility and positioning
+            <CustomLink href="#how-i-work" className={styles.link}>
+              How I work
             </CustomLink>
           </li>
 
@@ -31,7 +25,7 @@ export default function IndexEn() {
 
           <li className={styles.item}>
             <CustomLink href="#stack" className={styles.link}>
-              Languages, frameworks and tools
+              Tech stack
             </CustomLink>
           </li>
         </ul>

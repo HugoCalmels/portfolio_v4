@@ -1,0 +1,97 @@
+/* app/[locale]/(site)/a-propos/_sections/Intro/Intro.module.css */
+
+/* =========================
+   Layout
+========================= */
+
+.section {
+  padding-bottom: clamp(2.25rem, 6vh, 3.5rem);
+  scroll-margin-top: 60px;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* colonne de lecture */
+.header,
+.prose {
+  max-width: 76ch;
+}
+
+/* =========================
+   Header
+========================= */
+
+.header {
+  margin-bottom: 32px;
+}
+
+/* =========================
+   Prose
+========================= */
+
+.prose {
+  font-size: 1rem;
+  line-height: 1.66;
+}
+
+.prose p {
+  margin: 0 0 10px;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* petite ligne meta (plus discrète) */
+.meta {
+  margin-top: 14px;
+  opacity: 0.82;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 900px) {
+  .header {
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .inner {
+    padding: 0 16px;
+  }
+
+  .header,
+  .prose {
+    max-width: 100%;
+  }
+
+  .prose {
+    line-height: 1.62;
+  }
+
+  .prose p {
+    margin-bottom: 11px;
+  }
+
+  .meta {
+    font-size: 0.94rem;
+  }
+}

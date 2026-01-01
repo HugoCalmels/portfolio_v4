@@ -5,25 +5,24 @@ import HomeSectionTitle from '@/components/ui/HomeSectionTitle'
 
 export default function AboutStoryEn() {
   return (
-    <section className={styles.section} id="parcours">
+    <section className={styles.section} id="background">
       <div className={styles.inner}>
         <header className={styles.header}>
           <HomeSectionTitle title="Background" />
 
           <p className={styles.prose}>
-            I am a web developer, <strong>80&nbsp;% self-taught</strong>, 10&nbsp;% formal training and
-            10&nbsp;% mentorship.
+            I’m a web developer, <strong>80% self-taught</strong>, with 10% formal training and
+            10% mentorship.
           </p>
 
           <p className={styles.prose}>
             <strong>No degree.</strong>
             <br />
-            No “traditional” professional experience (consulting firms, software
-            publishers, agencies).
+            No “traditional” professional experience (consulting firms, agencies, software vendors).
             <br />
             No internship or apprenticeship.
             <br />
-            <strong>Just 4 to 5 years of real, hands-on practice.</strong>
+            <strong>Just 4 to 5 years of real-world practice.</strong>
           </p>
         </header>
 
@@ -31,7 +30,7 @@ export default function AboutStoryEn() {
           {/* Bootcamp */}
           <article className={styles.block}>
             <h3 className={styles.h3}>6 months — Bootcamp (intensive training)</h3>
-            <p className={styles.badge}>Fullstack developer — Ruby / React</p>
+            <p className={styles.badge}>Fullstack Developer — Ruby / React</p>
 
             <div className={styles.prose}>
               <p>
@@ -45,7 +44,7 @@ export default function AboutStoryEn() {
               </p>
 
               <p>
-                It was not easy.
+                It wasn’t easy.
                 <br />
                 But I was clearly <strong>the most persistent in the group</strong>.
                 <br />
@@ -53,71 +52,63 @@ export default function AboutStoryEn() {
               </p>
 
               <p>
-                In the end, I had learned the basics, I had a roadmap,
-                but I knew that <strong>I was bad</strong>.
+                In the end, I had learned the basics, had a roadmap —
+                but I knew I was still <strong>bad at it</strong>.
               </p>
             </div>
           </article>
 
           {/* Solo grind */}
           <article className={styles.block}>
-            <h3 className={styles.h3}>2 to 3 years — Solo grind (self-taught learning)</h3>
-            <p className={styles.badge}>Fullstack developer — Ruby / React</p>
+            <h3 className={styles.h3}>2 to 3 years — Solo grind (self-directed learning)</h3>
+            <p className={styles.badge}>Fullstack Developer — Ruby / React</p>
 
             <div className={styles.prose}>
               <p>
-                This period was dedicated to <strong>regular, independent practice</strong> of web development.
+                This period was dedicated to <strong>consistent, autonomous practice</strong> in web development.
                 <br />
-                The goal was simple&nbsp;: code often, understand what I was doing,
-                and make progress through concrete projects.
+                The goal was simple: code often, understand what I was doing, and improve through real projects.
               </p>
 
               <p>
-                On the frontend side, I worked on React interfaces&nbsp;:
-                components, data handling on the UI,
-                user interactions, and communication with the backend via APIs.
+                On the frontend side, I worked on React interfaces: components, state and data rendering,
+                user interactions, and API communication with the backend.
               </p>
 
               <p>
                 I also made significant progress in UI / UX.
                 <br />
-                My early interfaces were messy;
-                over time, I learned how to structure pages,
-                make user flows clearer, and avoid overdoing things.
+                My early interfaces were messy; over time, I learned how to structure pages,
+                clarify user flows, and avoid overengineering.
               </p>
 
               <p>
-                On the backend side, I mainly worked with Ruby and PostgreSQL.
+                On the backend, I mainly worked with Ruby and PostgreSQL.
                 <br />
-                Building APIs, business logic, authentication,
-                email sending, data management, and code structure.
+                APIs, business logic, authentication, email delivery, data management,
+                and code organization.
               </p>
 
               <p>
-                This phase allowed me to understand{' '}
-                <strong>how a web project actually works</strong>&nbsp;:
-                what happens on the UI, on the server,
-                and in the database.
+                This phase helped me truly understand <strong>how a web project works end-to-end</strong>:
+                frontend, backend, and database.
               </p>
 
               <p>
-                I also trained on algorithmic exercises.
+                I also practiced algorithmic exercises.
                 <br />
-                Technically interesting, but with no real impact
-                in a context without technical interviews.
+                Technically interesting, but with little real-world impact outside interview contexts.
               </p>
 
               <p>
-                At that point, I had a <strong>sufficient technical level</strong>
-                to work on real projects.
+                At that point, I had a <strong>solid enough technical level</strong> to work on real projects.
                 <br />
-                But the market was tough&nbsp;: Ruby + React in Toulouse,
-                and very few opportunities for junior profiles in 2023.
+                But the market was tough: Ruby + React in Toulouse, and very few junior opportunities in 2023.
               </p>
 
               <p>
-                I therefore understood that I needed to learn another backend language
-                that was more in demand (Node, Java or Python).
+                I realized I needed to learn a more in-demand backend language
+                (Node, Java, or Python).
               </p>
             </div>
           </article>
@@ -131,79 +122,65 @@ export default function AboutStoryEn() {
               <p>
                 I chose <strong>Java</strong>.
                 <br />
-                Simply because I found a motivated mentor willing to help me —
+                Simply because I found a motivated mentor to guide me —
                 an engineer recently hired at <strong>Rolex</strong>.
               </p>
 
               <p>
-                The goal was simple&nbsp;:
-                <strong>to train by building a complete project</strong>,
-                as it would be done in a company.
+                The goal was straightforward:
+                <strong>learn by building a complete, production-like project</strong>.
               </p>
 
               <p>
-                I had never worked with either Java or Angular.
+                I had never worked with Java or Angular before.
                 <br />
-                I therefore had to <strong>learn the basics on my own</strong>
-                before starting the project.
+                So I first had to <strong>learn the fundamentals on my own</strong> before starting the project.
               </p>
 
               <p>
-                We developed a match scheduling tool for Dota&nbsp;2 teams.
+                We built a match planning tool for Dota&nbsp;2 teams.
                 <br />
-                Advanced security&nbsp;: OpenID, JWT, refresh tokens,
-                http-only cookies.
+                Advanced security: OpenID, JWT, refresh tokens, http-only cookies.
                 <br />
-                Sortable tables, team management, match scheduling,
-                time zone handling, and even{' '}
-                <strong>a bit of SSR and WebSockets</strong>.
+                Sortable tables, team management, match scheduling, time zone handling,
+                and even <strong>some SSR and WebSockets</strong>.
               </p>
 
               <p>
-                Every line of code had to be validated through code reviews,
+                Every line of code went through code reviews.
                 <br />
-                until reaching a <strong>solid junior level</strong>,
-                ready for the industry.
+                Until reaching a <strong>solid junior-level standard</strong>, ready for industry work.
               </p>
             </div>
           </article>
 
-          {/* Today */}
+          {/* Freelance */}
           <article className={styles.block}>
             <h3 className={styles.h3}>Today — Freelance</h3>
             <p className={styles.badge}>Java / React</p>
 
             <div className={styles.prose}>
               <p>
-                In France, it is common to see <strong>300 developers</strong>
-                applying for the same position
-                (some job postings in the US even reach <strong>1,000 candidates</strong>).
-                For a junior today, it is extremely hard to land a first job
-                at a consulting firm or a software publisher,
-                <strong>even at minimum wage</strong>.
+                Today, it’s common for <strong>hundreds of developers</strong> to apply for a single job posting.
+                For junior profiles, landing a first role at a consulting firm or software company
+                has become extremely difficult.
               </p>
 
               <p>
-                Many <strong>master’s-level</strong> profiles find nothing.
-                For a self-taught developer like me, it is even harder.
+                Many degree holders struggle to find a position.
+                For self-taught developers, market access is even more limited.
               </p>
 
               <p>
-                I did know, however, that there was work available in{' '}
-                <strong>freelance</strong> for a web developer — fullstack,
-                frontend or backend — as long as you can land your first contracts
-                on your own and convince your first end clients on your own.
+                Freelancing became a realistic alternative:
+                finding projects independently, working directly with end clients,
+                and staying close to hands-on development.
               </p>
 
               <p>
-                This is clearly not the “freelance dream”.
-                It is rather a choice that imposed itself&nbsp;:
-                to make a living,
-                and to stay close to the industry.
-              </p>
-
-              <p>
-                In short. I keep moving forward like this, and I see where it leads.
+                This is not a “freelance dream”.
+                It’s a pragmatic choice — to move forward, gain experience,
+                and see where this path leads.
               </p>
             </div>
           </article>

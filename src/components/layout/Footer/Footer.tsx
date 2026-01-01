@@ -10,6 +10,8 @@ import {
   FaEnvelope
 } from 'react-icons/fa'
 
+// ...imports inchangés
+
 const Footer = () => {
   const locale = useLocale()
   const t = useTranslations('Footer')
@@ -26,23 +28,63 @@ const Footer = () => {
     { label: t('pages.contact'), href: `/${locale}/contact` }
   ]
 
+const socialLinks = [
+  {
+    id: 'linkedin',
+    label: t('brand.linkedin'),
+    href: 'https://www.linkedin.com/in/hugo-calmels'
+  },
+  {
+    id: '404works',
+    label: t('brand.works404'),
+    href: 'https://www.404works.com/fr/profile/hugocalmels'
+  },
+  {
+    id: 'malt',
+    label: t('brand.malt'),
+    href: 'https://www.malt.fr/profile/hugocalmels'
+  },
+  {
+    id: 'codeur',
+    label: t('brand.codeur'),
+    href: 'https://www.codeur.com/-hugo-calmels'
+  },
+  {
+    id: 'github',
+    label: t('brand.github'),
+    href: 'https://github.com/HugoCalmels'
+  },
+  {
+    id: 'upwork',
+    label: t('brand.upwork'),
+    href: 'https://www.upwork.com/freelancers/~01090b775814eddbcb?viewMode=1'
+  }
+]
+
+
   return (
     <footer className={styles.footer}>
       <div className={styles.columns}>
         {/* Col 1 */}
         <div className={styles.column}>
           <h2 className={styles.title}>{t('brand.name')}</h2>
-          <p className={styles.description}>
-            {t('brand.description')}
-          </p>
-          <a
-            href="https://www.linkedin.com/in/hugo-calmels"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.link}
-          >
-            {t('brand.linkedin')}
-          </a>
+          <p className={styles.description}>{t('brand.description')}</p>
+
+          {/* 👇 Grid 2x3 */}
+          <ul className={styles.socialGrid} aria-label="Social links">
+            {socialLinks.map(link => (
+              <li key={link.id} className={styles.socialItem}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                >
+                  {link.label} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Col 2 — Pages */}

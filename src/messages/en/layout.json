@@ -9,27 +9,33 @@
       "contact": "Contact"
     }
   },
-  "Footer": {
-    "brand": {
-      "name": "Hugo Calmels",
-      "description": "Independent web developer based in Toulouse.\nCustom websites and web applications.",
-      "linkedin": "LinkedIn ↗"
-    },
-    "pages": {
-      "title": "Pages",
-      "home": "Home",
-      "sites": "Websites",
-      "apps": "Web apps",
-      "about": "About",
-      "contact": "Contact"
-    },
-    "contact": {
-      "title": "Contact",
-      "address": "13 rue Pégot",
-      "city": "31500 Toulouse, France"
-    },
-    "footer": {
-      "rights": "All rights reserved."
-    }
+"Footer": {
+  "brand": {
+    "name": "Hugo Calmels",
+    "description": "Independent web developer based in Toulouse.\nCustom-built websites and web software.",
+    "linkedin": "LinkedIn",
+    "works404": "404Works",
+    "malt": "Malt",
+    "codeur": "Codeur",
+    "github": "GitHub",
+    "upwork": "Upwork"
+  },
+  "pages": {
+    "title": "Pages",
+    "home": "Home",
+    "sites": "Websites",
+    "apps": "Web software",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "contact": {
+    "title": "Contact",
+    "address": "13 Rue Pégot",
+    "city": "31500 Toulouse, France"
+  },
+  "footer": {
+    "rights": "All rights reserved."
   }
+}
+
 }

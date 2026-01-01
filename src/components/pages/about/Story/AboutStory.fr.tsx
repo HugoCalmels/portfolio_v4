@@ -157,43 +157,37 @@ export default function AboutStoryFr() {
             </div>
           </article>
 
-  <article className={styles.block}>
+ <article className={styles.block}>
   <h3 className={styles.h3}>Aujourd’hui — Freelance</h3>
   <p className={styles.badge}>Java / React</p>
 
   <div className={styles.prose}>
     <p>
-      En France, il arrive régulièrement que <strong>300 développeurs</strong> postulent
-      pour une même annonce
-      (certaines annonces aux US montent même jusqu’à <strong>1000 candidats</strong>).
-      Pour un junior aujourd’hui, c’est hyper dur d’obtenir un premier job en ESN
-      ou chez un éditeur, <strong>même au SMIC</strong>.
+      Aujourd’hui, il n’est pas rare que <strong>plusieurs centaines de développeurs</strong>&nbsp;
+      postulent pour une même annonce.
+      Pour un profil junior, obtenir un premier poste en ESN ou chez un éditeur
+      est devenu très difficile.
     </p>
 
     <p>
-      Beaucoup de profils <strong>bac+5</strong> ne trouvent rien.
-      Pour un autodidacte comme moi, c’est encore plus compliqué.
+      Beaucoup de profils diplômés ne trouvent pas de place.
+      Pour un autodidacte, l’accès au marché est encore plus restreint.
     </p>
 
     <p>
-      Je savais en revanche qu’il existait du travail en <strong>freelance</strong>&nbsp;
-      pour un développeur web — fullstack, frontend ou backend —
-      à condition de réussir à signer ses premiers contrats seul,
-      et de convaincre ses premiers clients finaux seul.
+      Le freelance s’est donc imposé comme une alternative réaliste&nbsp;:
+      trouver des missions par soi-même, travailler directement avec des clients finaux
+      et rester proche de la pratique du développement.
     </p>
 
     <p>
-      Il ne s’agit clairement pas du “freelance dream”.
-      C’est plutôt un choix qui s’est imposé&nbsp;:
-      pour rentrer de l’argent,
-      et pour rester proche de l’industrie.
-    </p>
-
-    <p>
-      Bref. Je continue à avancer comme ça, et je vois où ça mène.
+      Ce n’est pas un “freelance dream”.
+      C’est un choix pragmatique, pour avancer, gagner en expérience
+      et voir où cette voie peut mener.
     </p>
   </div>
 </article>
+
 
 
         </div>

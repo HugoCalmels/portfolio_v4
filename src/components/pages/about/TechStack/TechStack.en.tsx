@@ -223,7 +223,7 @@ export default function TechStackEn() {
       <div className={styles.inner}>
         <header className={styles.header}>
           <div id="stack-title">
-            <HomeSectionTitle title="Languages, frameworks, and tools" />
+            <HomeSectionTitle title="Technologies" />
           </div>
 
           <p className={styles.lead}>

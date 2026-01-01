@@ -220,12 +220,11 @@ export default function TechStackFr() {
       <div className={styles.inner}>
         <header className={styles.header}>
           <div id="stack-title">
-            <HomeSectionTitle title="Langages, frameworks et outils" />
+            <HomeSectionTitle title="Technologies" />
           </div>
 
           <p className={styles.lead}>
-            Un inventaire simple : <strong>tech</strong>, <strong>ce que j’en pense</strong>, et{' '}
-            <strong>ma pratique</strong>.
+            Un inventaire tech simple.
           </p>
         </header>
 

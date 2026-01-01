@@ -78,12 +78,13 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: clamp(.85rem, 1.6vw, .95rem);
+  font-size: clamp(.8rem, 1.5vw, .90rem);
   font-weight: 500;
   padding: 6px 10px;
   cursor: pointer;
   transition: background .2s ease;
   border-radius: 6px; /* hover glitch fix */
+  font-family: var(--font-body);
 }
 .dropdownButton:hover { background: rgba(255, 255, 255, 0.1); }
 

@@ -12,14 +12,8 @@ export default function IndexFr() {
 
         <ul className={styles.list}>
          <li className={styles.item}>
-            <CustomLink href="#business-model" className={styles.link}>
-              Modèle économique
-            </CustomLink>
-          </li>
-
-                   <li className={styles.item}>
-            <CustomLink href="#seo" className={styles.link}>
-              SEO, Visibilité et positionnement
+            <CustomLink href="#how-i-work" className={styles.link}>
+              Comment je travaille
             </CustomLink>
           </li>
 
@@ -32,7 +26,7 @@ export default function IndexFr() {
 
           <li className={styles.item}>
             <CustomLink href="#stack" className={styles.link}>
-              Langages, frameworks et outils
+              Technos
             </CustomLink>
           </li>
 

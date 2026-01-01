@@ -15,11 +15,25 @@ type NavItem = NavLink | Separator
 
 const isLink = (item: NavItem): item is NavLink => 'href' in item
 
-const ChevronDown = () => (
-  <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden focusable="false">
-    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="2" />
+const ChevronDown = ({ size = 12 }: { size?: number }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    aria-hidden
+    focusable="false"
+  >
+    <path
+      d="M6 9l6 6 6-6"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 )
+
 
 const withLocale = (pathname: string, locale: 'fr' | 'en') => {
   const parts = pathname.split('/')
@@ -130,7 +144,7 @@ export default function Navbar() {
                 </span>
 
                 <span>{locale.toUpperCase()}</span>
-                <ChevronDown />
+         <ChevronDown size={14} />
               </button>
 
               {openDropdown === 'lang' && (
@@ -172,7 +186,7 @@ export default function Navbar() {
                 type="button"
               >
                 <span>{t('menuButton')}</span>
-                <ChevronDown />
+    <ChevronDown size={14} />
               </button>
 
               {openDropdown === 'main' && (

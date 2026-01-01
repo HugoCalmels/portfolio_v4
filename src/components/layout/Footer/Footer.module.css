@@ -193,3 +193,47 @@
 .description {
   white-space: pre-line;
 }
+
+/* Social links grid (2 rows of 3) */
+.socialGrid {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 0.5rem 1rem; /* row / column */
+  align-items: start;
+}
+
+.socialItem {
+  margin: 0;
+}
+
+.socialLink {
+  color: var(--accent, #66ccff);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.2;
+  transition: opacity 0.2s;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .socialGrid {
+    grid-template-columns: repeat(2, max-content);
+  }
+}
+
+@media (max-width: 420px) {
+  .socialGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .socialLink {
+    width: 100%;
+  }
+}
