@@ -43,45 +43,54 @@ export default function ExpandableSectionsFr() {
         </>
       ),
     },
+{
+  id: 'content',
+  title: 'Module — Modification de contenu',
+  content: (
+    <>
+      <p className={styles.subText}>
+        Par défaut, le site ne dispose pas d’interface d’édition. Les modifications peuvent être
+        réalisées à la demande, ou via une interface d’édition autonome optionnelle.
+      </p>
 
-    {
-      id: 'content',
-      title: 'Module — Modification de contenu',
-      content: (
-        <>
-          <p className={styles.subText}>
-            Par défaut, le site ne dispose pas d’interface d’édition. Les modifications peuvent être
-            réalisées soit par mes soins, soit via un module d’édition autonome optionnel.
-          </p>
+      <h4 className={styles.subTitle}>Édition autonome (optionnelle)</h4>
 
-          <h4 className={styles.subTitle}>Édition autonome (interface sur mesure)</h4>
+      <p className={styles.subText}>
+        Mise en place d’une interface d’administration sécurisée, intégrée au site, avec un périmètre
+        défini à l’avance.
+      </p>
 
-          <p className={styles.subText}>
-            Définition en amont des éléments modifiables (textes, images, blocs, prix, horaires…). Mise en
-            place d’une page d’administration sécurisée, intégrée directement au site.
-          </p>
+      <ul className={styles.subList}>
+        <li>
+          Jusqu’à <strong>10 éléments modifiables</strong> (textes, images, prix, horaires…).
+        </li>
+        <li>Accès sécurisé.</li>
+        <li>Hébergement et maintenance inclus.</li>
+      </ul>
 
-          <ul className={styles.subList}>
-            <li>
-              <strong>10 éléments modifiables</strong> définis ensemble.
-            </li>
-            <li>Accès sécurisé.</li>
-            <li>Maintenance et hébergement inclus.</li>
-          </ul>
+      <p className={styles.subPrice}>
+        <strong>À partir de 350&nbsp;€</strong>
+        <br />
+        <strong>+10&nbsp;€/mois</strong>
+      </p>
 
-          <p className={styles.subPrice}>
-            <strong>À partir de 350&nbsp;€</strong>
-            &nbsp;<br />
-            <strong>+10&nbsp;€/mois</strong>
-          </p>
+      <p className={styles.subText}>
+        Selon le projet, d’autres approches de gestion de contenu peuvent être envisagées
+        (solution externe, approche headless légère, ou gestion sans interface dédiée).
+        Le choix est fait au cas par cas, en fonction du besoin réel.
+      </p>
 
-          <p className={styles.note}>
-            Alternative&nbsp;: modifications réalisées à la demande — <strong>30&nbsp;€/h</strong> ou{' '}
-            <strong>125&nbsp;€/jour</strong>.
-          </p>
-        </>
-      ),
-    },
+<p className={styles.note}>
+  En pratique, la majorité des clients préfèrent me demander ponctuellement des modifications,
+  afin d’éviter toute manipulation technique&nbsp;:
+  <strong> 15&nbsp;€/h</strong> ou <strong>100&nbsp;€/jour</strong>.
+</p>
+
+    </>
+  ),
+},
+
+
 
     {
       id: 'marketing',
@@ -112,7 +121,7 @@ export default function ExpandableSectionsFr() {
           </p>
 
           <p className={styles.price}>
-            <strong>125&nbsp;€/mois</strong> — environ 1&nbsp;journée de travail
+            <strong>100&nbsp;€/mois</strong> — environ 1&nbsp;journée de travail
             <br />
             <span className={styles.note}>Point mensuel fourni (actions réalisées + pistes pour la suite).</span>
           </p>
@@ -193,7 +202,7 @@ export default function ExpandableSectionsFr() {
                     Ajout du site, vérification du domaine, soumission du sitemap, accès transmis.
                   </span>
                 </div>
-                <span className={styles.servicePrice}>45&nbsp;€</span>
+                <span className={styles.servicePrice}>30&nbsp;€</span>
               </div>
 
               <p className={styles.serviceMuted}>
@@ -213,7 +222,7 @@ export default function ExpandableSectionsFr() {
                     Création ou optimisation de la fiche (adresse, horaires, lien vers le site).
                   </span>
                 </div>
-                <span className={styles.servicePrice}>60&nbsp;€</span>
+                <span className={styles.servicePrice}>45&nbsp;€</span>
               </div>
 
               <p className={styles.serviceMuted}>
@@ -234,7 +243,7 @@ export default function ExpandableSectionsFr() {
                     comme expéditeur + config SMTP/DNS minimale.
                   </span>
                 </div>
-                <span className={styles.servicePrice}>60&nbsp;€</span>
+                <span className={styles.servicePrice}>45&nbsp;€</span>
               </div>
 
               <p className={styles.serviceMuted}>
@@ -254,7 +263,7 @@ export default function ExpandableSectionsFr() {
                     Intégration Cal.com ou Calendly (page dédiée ou lien direct).
                   </span>
                 </div>
-                <span className={styles.servicePrice}>60&nbsp;€</span>
+                <span className={styles.servicePrice}>45&nbsp;€</span>
               </div>
 
               <p className={styles.serviceMuted}>Hors périmètre : règles complexes, paiement intégré.</p>
@@ -272,7 +281,7 @@ export default function ExpandableSectionsFr() {
                     Intégration responsive + lien vers l’itinéraire.
                   </span>
                 </div>
-                <span className={styles.servicePrice}>45&nbsp;€</span>
+                <span className={styles.servicePrice}>30&nbsp;€</span>
               </div>
             </li>
 
@@ -299,7 +308,7 @@ export default function ExpandableSectionsFr() {
           </DashList>
 
           <p className={styles.noteTight}>
-            Si une prestation dépasse le périmètre prévu : devis ou temps passé (30 &nbsp;€/h).
+            Si une prestation dépasse le périmètre prévu : devis ou temps passé (15 &nbsp;€/h).
           </p>
         </>
       ),
@@ -311,33 +320,17 @@ export default function ExpandableSectionsFr() {
   content: (
     <>
       <p className={styles.subText}>
-        Les délais annoncés (2–5 jours pour une landing, 5–10 jours pour un site vitrine)
-        s’appliquent quand le projet est déjà clair&nbsp;:
-        activité définie, offre comprise, messages principaux identifiés,
-        et idée précise de ce qui doit apparaître sur le site.
+        Les délais annoncés s’appliquent quand le contenu est à peu près prêt
+        (activité claire, offre définie, messages principaux en tête).
       </p>
 
       <p className={styles.subText}>
-        Quand un projet démarre de zéro,
-        il ne s’agit pas seulement de “faire un site”.
-        Il faut aussi décider quoi dire,
-        quoi mettre en avant,
-        et comment organiser l’ensemble.
-      </p>
-
-      <p className={styles.subText}>
-        À titre d’exemple,
-        mon propre site s’est construit sur plusieurs semaines.
-        Le temps n’a pas été consacré uniquement au développement,
-        mais aussi à réfléchir à l’offre, aux messages et à la structure,
-        avec plusieurs ajustements avant d’arriver à quelque chose de cohérent.
-      </p>
-
-      <p className={styles.note}>
-        Ce travail fait partie de mon métier
-        et peut être réalisé pour un projet client,
-        mais il ne peut pas être compressé
-        dans les délais courts indiqués ici.
+        <strong>Je peux aider sur le contenu</strong>,
+        mais dans une certaine limite.
+        Si le projet demande plus de réflexion
+        (positionnement, messages, structure),
+        cela sort du cadre initial
+        et fera l’objet d’un ajustement du délai et du budget.
       </p>
     </>
   ),

@@ -43,43 +43,53 @@ export default function ExpandableSectionsEn() {
       ),
     },
 
-    {
-      id: 'content',
-      title: 'Add-on — Content updates',
-      content: (
-        <>
-          <p className={styles.subText}>
-            By default, the site does not include an editing interface. Updates can either be handled by me
-            or through an optional self-editing add-on.
-          </p>
+  {
+  id: 'content',
+  title: 'Add-on — Content Management',
+  content: (
+    <>
+      <p className={styles.subText}>
+        By default, the website does not include an editing interface. Content updates can be
+        handled on request, or through an optional self-managed editing interface.
+      </p>
 
-          <h4 className={styles.subTitle}>Self-editing (custom admin interface)</h4>
+      <h4 className={styles.subTitle}>Self-managed editing (optional)</h4>
 
-          <p className={styles.subText}>
-            We define in advance what can be edited (text, images, blocks, pricing, opening hours…). I then
-            set up a secure admin page integrated directly into the website.
-          </p>
+      <p className={styles.subText}>
+        Setup of a secure administration interface, integrated into the website, with a clearly
+        defined scope agreed in advance.
+      </p>
 
-          <ul className={styles.subList}>
-            <li>
-              <strong>10 editable items</strong> defined together.
-            </li>
-            <li>Secure access.</li>
-            <li>Maintenance and hosting included.</li>
-          </ul>
+      <ul className={styles.subList}>
+        <li>
+          Up to <strong>10 editable elements</strong> (text, images, prices, opening hours…).
+        </li>
+        <li>Secure access.</li>
+        <li>Hosting and maintenance included.</li>
+      </ul>
 
-          <p className={styles.subPrice}>
-            <strong>From €350</strong>
-            &nbsp;<br />
-            <strong>+€10/month</strong>
-          </p>
+      <p className={styles.subPrice}>
+        <strong>Starting from €350</strong>
+        <br />
+        <strong>+ €10/month</strong>
+      </p>
 
-          <p className={styles.note}>
-            Alternative: updates on demand — <strong>€30/hour</strong> or <strong>€125/day</strong>.
-          </p>
-        </>
-      ),
-    },
+      <p className={styles.subText}>
+        Depending on the project, alternative content management approaches may be considered
+        (external solutions, lightweight headless setups, or content management without a dedicated
+        admin interface). The final approach is chosen on a case-by-case basis, according to the
+        actual needs of the project.
+      </p>
+
+      <p className={styles.note}>
+        In practice, most clients prefer to delegate content updates in order to avoid any technical
+        handling:
+        <strong> €15/hour</strong> or <strong>€100/day</strong>.
+      </p>
+    </>
+  ),
+},
+
 
     {
       id: 'marketing',
@@ -110,7 +120,7 @@ export default function ExpandableSectionsEn() {
           </p>
 
           <p className={styles.price}>
-            <strong>€125/month</strong> — about 1 day of work
+            <strong>€100/month</strong> — about 1 day of work
             <br />
             <span className={styles.note}>Monthly recap provided (actions taken + next steps).</span>
           </p>
@@ -191,7 +201,7 @@ export default function ExpandableSectionsEn() {
                     Add the site, verify the domain, submit the sitemap, and hand over access.
                   </span>
                 </div>
-                <span className={styles.servicePrice}>€45</span>
+                <span className={styles.servicePrice}>€30</span>
               </div>
 
               <p className={styles.serviceMuted}>
@@ -211,7 +221,7 @@ export default function ExpandableSectionsEn() {
                     Create or optimize the listing (address, hours, link to the website).
                   </span>
                 </div>
-                <span className={styles.servicePrice}>€60</span>
+                <span className={styles.servicePrice}>€45</span>
               </div>
 
               <p className={styles.serviceMuted}>
@@ -232,7 +242,7 @@ export default function ExpandableSectionsEn() {
                     minimal SMTP/DNS setup.
                   </span>
                 </div>
-                <span className={styles.servicePrice}>€60</span>
+                <span className={styles.servicePrice}>€45</span>
               </div>
 
               <p className={styles.serviceMuted}>
@@ -252,7 +262,7 @@ export default function ExpandableSectionsEn() {
                     Cal.com or Calendly integration (dedicated page or direct link).
                   </span>
                 </div>
-                <span className={styles.servicePrice}>€60</span>
+                <span className={styles.servicePrice}>€45</span>
               </div>
 
               <p className={styles.serviceMuted}>Out of scope: complex rules, integrated payments.</p>
@@ -270,7 +280,7 @@ export default function ExpandableSectionsEn() {
                     Responsive embed + link to directions.
                   </span>
                 </div>
-                <span className={styles.servicePrice}>€45</span>
+                <span className={styles.servicePrice}>€30</span>
               </div>
             </li>
 
@@ -297,7 +307,7 @@ export default function ExpandableSectionsEn() {
           </DashList>
 
           <p className={styles.noteTight}>
-            If a service goes beyond the expected scope: custom quote or time spent (€30/hour).
+            If a service goes beyond the expected scope: custom quote or time spent (€15/hour).
           </p>
         </>
       ),
@@ -308,37 +318,22 @@ export default function ExpandableSectionsEn() {
   content: (
     <>
       <p className={styles.subText}>
-        The timelines mentioned (2–5 days for a landing page, 5–10 days for a brochure website)
-        apply when the project is already clear:
-        defined activity, clear offer, identified key messages,
-        and a precise idea of what should appear on the website.
+        The stated timelines apply when the content is mostly ready
+        (clear activity, defined offer, main messages already in mind).
       </p>
 
       <p className={styles.subText}>
-        When a project starts from scratch,
-        it is not just about “building a website”.
-        It also involves deciding what to say,
-        what to highlight,
-        and how to organize everything.
-      </p>
-
-      <p className={styles.subText}>
-        As a concrete example,
-        my own website was built over several weeks.
-        The time was not spent only on development,
-        but also on refining the offer, the messaging and the structure,
-        with several iterations before reaching something coherent.
-      </p>
-
-      <p className={styles.note}>
-        This work is part of my job
-        and can be done for a client project,
-        but it cannot be compressed
-        into the short timelines mentioned here.
+        <strong>I can help with the content</strong>,
+        but only to a reasonable extent.
+        If the project requires deeper thinking
+        (positioning, messaging, structure),
+        it falls outside the initial scope
+        and will require an adjustment to the timeline and budget.
       </p>
     </>
   ),
 }
+
 
 
 

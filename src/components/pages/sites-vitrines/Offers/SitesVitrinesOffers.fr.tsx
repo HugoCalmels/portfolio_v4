@@ -37,7 +37,7 @@ export default function SitesVitrinesOffersFr() {
             </ul>
 
             <p className={styles.priceLine}>
-              <strong>À partir de 350&nbsp;€</strong>
+              <strong>À partir de 400&nbsp;€</strong>
             </p>
 
             <p className={styles.cardNote}>
@@ -54,16 +54,19 @@ export default function SitesVitrinesOffersFr() {
               Un site structuré pour présenter vos services et organiser vos contenus.
             </p>
 
-            <ul className={`${styles.list} ${styles.commonList}`}>
-              <li>Design sur mesure & responsive (mobile&nbsp;/&nbsp;desktop).</li>
-              <li>Identité visuelle minimale (favicon, logo, couleurs).</li>
-              <li>Site sécurisé (HTTPS).</li>
-              <li>Formulaire de contact (en Gmail).</li>
-              <li>Mentions légales.</li>
-              <li>Mise en ligne.</li>
-              <li>SEO de base&nbsp;: balises et indexation par Google.</li>
-              <li>30 jours de petites modifications incluses.</li>
-            </ul>
+<ul className={`${styles.list} ${styles.commonList}`}>
+  <li>Design sur mesure & responsive (mobile&nbsp;/&nbsp;desktop).</li>
+  <li>Identité visuelle minimale (favicon, logo, couleurs).</li>
+  <li>Site sécurisé (HTTPS).</li>
+  <li>Formulaire de contact.</li>
+  <li>Mentions légales.</li>
+  <li>Mise en ligne.</li>
+  <li>SEO de base&nbsp;: balises et indexation par Google.</li>
+  <li>Configuration Google Search Console.</li>
+  <li>Intégration d’une carte Google Maps.</li>
+  <li>30 jours de petites modifications incluses.</li>
+</ul>
+
 
             <div className={styles.divider} aria-hidden="true" />
 
@@ -74,7 +77,7 @@ export default function SitesVitrinesOffersFr() {
             </ul>
 
             <p className={styles.priceLine}>
-              <strong>À partir de 600&nbsp;€</strong>
+              <strong>À partir de 700&nbsp;€</strong>
             </p>
 
             <p className={styles.cardNote}>

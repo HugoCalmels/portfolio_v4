@@ -18,16 +18,19 @@ export default function SitesVitrinesOffersEn() {
               A single page to present your business and make it easy to get in touch.
             </p>
 
-            <ul className={`${styles.list} ${styles.commonList}`}>
-              <li>Custom & responsive design (mobile&nbsp;/&nbsp;desktop).</li>
-              <li>Minimal visual identity (favicon, logo, colors).</li>
-              <li>Secure website (HTTPS).</li>
-              <li>Contact form (sent to Gmail).</li>
-              <li>Legal notices.</li>
-              <li>Go-live.</li>
-              <li>Basic SEO: meta tags and Google indexing.</li>
-              <li>15 days of small changes included.</li>
-            </ul>
+<ul className={`${styles.list} ${styles.commonList}`}>
+  <li>Custom & responsive design (mobile&nbsp;/&nbsp;desktop).</li>
+  <li>Minimal visual identity (favicon, logo, color palette).</li>
+  <li>Secure website (HTTPS).</li>
+  <li>Contact form.</li>
+  <li>Legal notices.</li>
+  <li>Deployment & go-live.</li>
+  <li>Basic SEO: meta tags and Google indexing.</li>
+  <li>Google Search Console setup.</li>
+  <li>Google Maps integration.</li>
+  <li>15 days of small changes included.</li>
+</ul>
+
 
             <div className={styles.divider} aria-hidden="true" />
 
@@ -37,7 +40,7 @@ export default function SitesVitrinesOffersEn() {
             </ul>
 
             <p className={styles.priceLine}>
-              <strong>From €350</strong>
+              <strong>From €400</strong>
             </p>
 
             <p className={styles.cardNote}>
@@ -73,7 +76,7 @@ export default function SitesVitrinesOffersEn() {
             </ul>
 
             <p className={styles.priceLine}>
-              <strong>From €600</strong>
+              <strong>From €700</strong>
             </p>
 
             <p className={styles.cardNote}>
