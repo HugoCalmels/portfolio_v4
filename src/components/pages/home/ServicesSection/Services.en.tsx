@@ -45,9 +45,10 @@ export default function ServicesEn() {
           <article className={styles.card}>
             <h3 className={styles.cardTitle}>Web software</h3>
 
-            <p className={styles.cardText}>
-              Web tools built for a specific need, for internal use or for your customers.
-            </p>
+<p className={styles.cardText}>
+  Web tools designed to meet a specific need, whether for internal use or for your customers.
+</p>
+
 
             <ul className={styles.list}>
               <li>Back-office & admin interfaces</li>
