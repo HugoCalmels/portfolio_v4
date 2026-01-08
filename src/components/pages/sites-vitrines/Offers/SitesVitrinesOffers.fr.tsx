@@ -19,13 +19,15 @@ export default function SitesVitrinesOffersFr() {
             </p>
 
             <ul className={`${styles.list} ${styles.commonList}`}>
-              <li>Design sur mesure & responsive (mobile&nbsp;/&nbsp;desktop).</li>
-              <li>Identité visuelle minimale (favicon, logo, couleurs).</li>
-              <li>Site sécurisé (HTTPS).</li>
-              <li>Formulaire de contact (en Gmail).</li>
-              <li>Mentions légales.</li>
-              <li>Mise en ligne.</li>
-              <li>SEO de base&nbsp;: balises et indexation par Google.</li>
+  <li>Design sur mesure & responsive (mobile&nbsp;/&nbsp;desktop).</li>
+  <li>Identité visuelle minimale (favicon, logo, couleurs).</li>
+  <li>Site sécurisé (HTTPS).</li>
+  <li>Formulaire de contact.</li>
+  <li>Mentions légales.</li>
+  <li>Mise en ligne.</li>
+  <li>SEO de base&nbsp;: balises et indexation par Google.</li>
+  <li>Configuration Google Search Console.</li>
+  <li>Intégration d’une carte Google Maps.</li>
               <li>15 jours de petites modifications incluses.</li>
             </ul>
 

@@ -56,16 +56,18 @@ export default function SitesVitrinesOffersEn() {
               A structured website to present your services and organize your content.
             </p>
 
-            <ul className={`${styles.list} ${styles.commonList}`}>
-              <li>Custom & responsive design (mobile&nbsp;/&nbsp;desktop).</li>
-              <li>Minimal visual identity (favicon, logo, colors).</li>
-              <li>Secure website (HTTPS).</li>
-              <li>Contact form (sent to Gmail).</li>
-              <li>Legal notices.</li>
-              <li>Go-live.</li>
-              <li>Basic SEO: meta tags and Google indexing.</li>
-              <li>30 days of small changes included.</li>
-            </ul>
+<ul className={`${styles.list} ${styles.commonList}`}>
+  <li>Custom & responsive design (mobile&nbsp;/&nbsp;desktop).</li>
+  <li>Minimal visual identity (favicon, logo, color palette).</li>
+  <li>Secure website (HTTPS).</li>
+  <li>Contact form.</li>
+  <li>Legal notices.</li>
+  <li>Deployment & go-live.</li>
+  <li>Basic SEO: meta tags and Google indexing.</li>
+  <li>Google Search Console setup.</li>
+  <li>Google Maps integration.</li>
+  <li>30 days of small changes included.</li>
+</ul>
 
             <div className={styles.divider} aria-hidden="true" />
 
