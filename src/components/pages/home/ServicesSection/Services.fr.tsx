@@ -37,7 +37,7 @@ export default function ServicesFr() {
             <MiniCTA href={`/${locale}/sites-web`}>En savoir plus</MiniCTA>
 
             <div className={styles.cardFooter}>
-              <span className={styles.price}>À partir de 400€              <br/>et 0€ / mois</span>
+              <span className={styles.price}>À partir de 200€              <br/>et 0€ / mois</span>
 
             </div>
           </article>

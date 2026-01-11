@@ -35,11 +35,11 @@ export default function SitesVitrinesOffersFr() {
 
             <ul className={`${styles.list} ${styles.extrasList}`}>
               <li>1 page (sections définies).</li>
-              <li>Livraison rapide : 2 à 5 jours ouvrés.</li>
+
             </ul>
 
             <p className={styles.priceLine}>
-              <strong>À partir de 400&nbsp;€</strong>
+              <strong>À partir de 200&nbsp;€</strong>
             </p>
 
             <p className={styles.cardNote}>
@@ -75,11 +75,10 @@ export default function SitesVitrinesOffersFr() {
             <ul className={`${styles.list} ${styles.extrasList}`}>
               <li>Jusqu’à 5 pages incluses (pages supplémentaires possibles).</li>
               <li>Arborescence & navigation.</li>
-              <li>Délais indicatifs : 5 à 10 jours ouvrés.</li>
             </ul>
 
             <p className={styles.priceLine}>
-              <strong>À partir de 700&nbsp;€</strong>
+              <strong>À partir de 400&nbsp;€</strong>
             </p>
 
             <p className={styles.cardNote}>

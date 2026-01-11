@@ -36,11 +36,10 @@ export default function SitesVitrinesOffersEn() {
 
             <ul className={`${styles.list} ${styles.extrasList}`}>
               <li>1 page (defined sections).</li>
-              <li>Fast delivery: 2 to 5 business days.</li>
             </ul>
 
             <p className={styles.priceLine}>
-              <strong>From €400</strong>
+              <strong>From €200</strong>
             </p>
 
             <p className={styles.cardNote}>
@@ -74,11 +73,11 @@ export default function SitesVitrinesOffersEn() {
             <ul className={`${styles.list} ${styles.extrasList}`}>
               <li>Up to 5 pages included (extra pages possible).</li>
               <li>Site structure & navigation.</li>
-              <li>Indicative timeline: 5 to 10 business days.</li>
+
             </ul>
 
             <p className={styles.priceLine}>
-              <strong>From €700</strong>
+              <strong>From €400</strong>
             </p>
 
             <p className={styles.cardNote}>
