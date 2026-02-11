@@ -4,8 +4,6 @@
 
 Site web développé avec **Next.js**, initialement conçu comme portfolio technique, puis progressivement orienté vers l’acquisition de clients non techniques (freelance).
 
----
-
 ## Contexte
 
 Ce projet a évolué avec mon parcours :
