@@ -16,8 +16,6 @@ Ce projet a évolué avec mon parcours :
 
 L’objectif principal est la génération de contacts clients, plus que la démonstration technique.
 
----
-
 ## Choix techniques
 
 Le site est développé avec **Next.js** plutôt que React pour :
@@ -30,15 +28,11 @@ Le site est développé avec **Next.js** plutôt que React pour :
 
 Avec une base en **Java / Spring Boot / TypeScript**, j’apprécie les frameworks qui imposent une structure claire et évitent les erreurs classiques (routing, SEO, rendering).
 
----
-
 ## SEO
 
 Une première version du site a atteint ~10k vues en SEO local (Toulouse).  
 Le site a ensuite été reconstruit en priorisant le message client plutôt que l’optimisation SEO.  
 Le référencement pourra être retravaillé ultérieurement.
-
----
 
 ## Statut
 
