@@ -1,4 +1,4 @@
-# Hugo Calmels — Portfolio / Site professionnel
+# Portfolio / Site professionnel
 
 🌐 https://hugo-calmels.fr
 
