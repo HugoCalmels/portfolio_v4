@@ -1,4 +1,6 @@
-# Portfolio / Site professionnel
+# Hugo Calmels — Portfolio / Site professionnel
+
+🌐 https://hugo-calmels.fr
 
 Site web développé avec **Next.js**, initialement conçu comme portfolio technique, puis progressivement orienté vers l’acquisition de clients non techniques (freelance).
 
@@ -47,9 +49,3 @@ Le site continue d’évoluer selon :
 - positionnement freelance  
 - acquisition client  
 - amélioration produit  
-
----
-
-## Lien
-
-https://hugo-calmels.fr
